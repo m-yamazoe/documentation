@@ -202,11 +202,24 @@ Set Dependencies
 ~~~~~~~~~~~~~~~~
 This step is critical. Dependencies let enStratus know how to *orchestrate* the deployment
 launch and service configuration.
-Wordpress to DataSource
 
+For this tutorial, we're going to set a dependency for the wordpress service. It's going
+to depend on the *data source* installed as part of the MySQL service. What this means is
+that at run time, enStratus will ensure:
+
+1. The MySQL service is installed and successfully configured
+2. The datasource is successfully installed on the MySQL service.
+
+and then, and only then will
+
+3. The application service be installed, since it *depends* on steps 1 and 2.
+
+Screenshot(s)
 
 Configure Launch Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The next and final thing to do is to 
+
 
 Set Scaling Rules
 ~~~~~~~~~~~~~~~~~
