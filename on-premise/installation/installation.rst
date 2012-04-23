@@ -336,7 +336,7 @@ install.credentials
 
   [ Monitor Logging Files ]
 
-  /services/monitor/log/\*.log
+  /services/monitor/log/*.log
 
   [ Workers Configuration Files ]
 
@@ -375,3 +375,15 @@ install.credentials
 
   /services/console/tomcat/logs/catalina.out
 
+  [ API Configuration Files ]
+
+  /services/api/bin/tomcat
+  /services/api/bin/enstratus
+  /services/api/tomcat/webapps/ROOT/META-INF/context.xml
+  /services/api/tomcat/webapps/ROOT/WEB-INF/classes/enstratus-webservices.cfg
+  /services/api/tomcat/webapps/ROOT/WEB-INF/classes/dasein-persistence.properties
+  /services/api/tomcat/webapps/ROOT/WEB-INF/classes/custom/networks.cfg
+
+  [ API Logging File ]
+
+  /services/api/tomcat/logs/catalina.out
