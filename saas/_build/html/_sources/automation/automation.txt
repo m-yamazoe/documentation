@@ -3,8 +3,6 @@ Automation
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
-   :titlesonly:
 
    prerequisites
 
