@@ -9,7 +9,7 @@ balancers, databases, and IP Addresses are all examples of items that have an as
 cost in many of the public clouds. The values for each of these items is used to calculate
 a run rate and project costs.
 
-.. |H| figure:: ./images/budgetCodeInitial.png
+.. figure:: ./images/budgetCodeInitial.png
    :height: 600px
    :width: 2000 px
    :scale: 50 %
@@ -114,7 +114,7 @@ Users
 Users may be a part of one or more billing codes as shown in the user profile, located in
 User Manager > Users.
 
-.. |H| figure:: ./images/userBudgetCodes.png
+.. figure:: ./images/userBudgetCodes.png
    :height: 700px
    :width: 600 px
    :scale: 60 %
@@ -133,7 +133,7 @@ To see the functionality of budget codes and how they can be used to restrict a 
 ability to provision infrastructure, let's try to start a server from a machine image
 and examine the budget code options presented.
 
-.. |H| figure:: ./images/launchInstance.png
+.. figure:: ./images/launchInstance.png
    :height: 600px
    :width: 700 px
    :scale: 60 %
@@ -154,7 +154,7 @@ To create a budget code, navigate to Finance > Budget Codes. The list of active 
 codes will be shown as in Figure 1. To add a new budget code, select + add budget code
 and complete the resulting dialog box.
 
-.. |H| figure:: ./images/createBudgetCode.png
+.. figure:: ./images/createBudgetCode.png
    :height: 400px
    :width: 600 px
    :scale: 60 %
@@ -167,7 +167,7 @@ and complete the resulting dialog box.
 Once the dialog box is complete, the new budget code will be added to the list of
 available budget codes.
 
-.. |H| figure:: ./images/newBudgetCodeAdded.png
+.. figure:: ./images/newBudgetCodeAdded.png
    :height: 400px
    :width: 2000 px
    :scale: 50 %
@@ -181,7 +181,7 @@ available budget codes.
 
 To edit a billing code, click on the actions option and choose edit.
 
-.. |H| figure:: ./images/editBudgetCode.png
+.. figure:: ./images/editBudgetCode.png
    :height: 450px
    :width: 600 px
    :scale: 50 %
@@ -192,7 +192,7 @@ To edit a billing code, click on the actions option and choose edit.
 
 Once the changes are made, the list of billing codes will be updated immediately.
 
-.. |H| figure:: ./images/quotaChanged.png
+.. figure:: ./images/quotaChanged.png
    :height: 400px
    :width: 2000 px
    :scale: 50 %
@@ -211,7 +211,7 @@ via reports in the old billing code.
 To deactivate a billing code, select the code marked for deactivation, click on actions,
 and choose deactivate.
 
-.. |H| figure:: ./images/deactivateBudgetCode.png
+.. figure:: ./images/deactivateBudgetCode.png
    :height: 350px
    :width: 600 px
    :scale: 50 %
@@ -226,7 +226,7 @@ code is removed from the active list.
 
 Screenshot
 
-.. |H| figure:: ./images/budgetCodeInitial.png
+.. figure:: ./images/budgetCodeInitial.png
    :height: 600px
    :width: 2000 px
    :scale: 50 %
