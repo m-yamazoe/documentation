@@ -12,6 +12,7 @@ accomplish this, you will need the following information:
 Cost Granularity
 ~~~~~~~~~~~~~~~~
 .. tabularcolumns:: |l|l|l|
+
 +-----------------+------------------------------+-----------+
 | Resource        | Database Table               | Frequency |
 +=================+==============================+===========+

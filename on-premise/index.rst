@@ -15,8 +15,7 @@ Contents:
    :glob:
 
    introduction/introduction
-   installation/prerequisites
    installation/installation
-   installation/services
+   services/services
    troubleshooting/troubleshooting
    advanced/advanced

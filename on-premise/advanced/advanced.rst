@@ -1,4 +1,7 @@
 Advanced
 ========
 
-.. include:: storage_hybrid.rst
+.. toctree::
+   :maxdepth: 1
+
+   storage_hybrid

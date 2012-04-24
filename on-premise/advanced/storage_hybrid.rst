@@ -28,20 +28,20 @@ We assume that both the CloudStack and OpenStack clouds are operational, and joi
 project at the point where the storage VM running the swift software has been added.
 
 CloudStack Cloud
-++++++++++++++++
+^^^^^^^^^^^^^^^^
 
 CloudStack cloud installations have no inherent cloud (object/file) storage cababilities,
 so it's often useful to drop in as a module a third-party modular storage component such
 as OpenStack Swift or Eucalyptus Walrus. 
 
 OpenStack Cloud
-++++++++++++++++
+^^^^^^^^^^^^^^^^
 
 OpenStack clouds are modular enough that they can be deployed in several configurations,
 including a configuration where there is no advertised cloud storage component.
 
 Swift
-+++++
+^^^^^
 
 Swift is the OpenStack object storage component. 
 

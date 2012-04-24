@@ -1,11 +1,12 @@
 .. _troubleshooting:
 
-***************
 Troubleshooting
-***************
+===============
 
-.. include:: cloud.rst
-.. include:: costs.rst
-.. include:: url.rst
-.. include:: updateLicense.rst
+.. toctree::
+   :maxdepth: 1
 
+   cloud
+   costs
+   url
+   updateLicense
