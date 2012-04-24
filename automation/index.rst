@@ -17,5 +17,6 @@ Contents:
    introduction/introduction
    overview/overview
    services/services
+   configuration_management/configuration_management
    deployment_configuration/deployment_configuration
    deployment_operation/deployment_operation
