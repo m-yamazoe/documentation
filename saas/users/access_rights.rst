@@ -51,6 +51,7 @@ Roles Example
 You have three servers with the following ownership:
 
 .. tabularcolumns:: |l|l|l|l|
+
 +----------+------------+--------------+---------------+
 | Resource | User Group | Budget Code  | Owner         |
 +==========+============+==============+===============+
