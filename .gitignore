@@ -2,6 +2,7 @@
 makeAll
 openAllCSS
 openAllLayouts
+makeAgent
 sync
 *_build/*
 *.html
