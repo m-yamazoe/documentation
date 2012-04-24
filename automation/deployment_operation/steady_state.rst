@@ -1,3 +1,0 @@
-Steady State Operations
------------------------
-

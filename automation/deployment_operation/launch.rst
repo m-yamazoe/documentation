@@ -1,5 +1,6 @@
 Launch
 ------
+
 Launching a deployment triggers a series of highly orchestrated and controlled events
 leading to a successful deployment and configuration of an application stack.
 
