@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview &mdash; The enStratus Documentation Project</title>
+    <title>8.1. Overview &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="8. Agent" href="agent.html" />
+    <link rel="next" title="8.2. Provided Images" href="provided_images.html" />
+    <link rel="prev" title="8. Agent" href="agent.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Overview</h1></div>
+	<div id="title"><h1>8.1. Overview</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="provided_images.html" title="8.2. Provided Images" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="agent.html" title="8. Agent" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,7 +54,7 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
@@ -57,7 +62,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent.html">8. Agent</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="agent.html">8. Agent</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">8.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provided_images.html">8.2. Provided Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">8.3. Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="additional_information.html">8.4. Additional Information</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
 </ul>
 
@@ -98,7 +109,7 @@
           <div class="body">
             
   <div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<h1>8.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>The enStratus agent is composed of a lightweight tomcat application used for communicating
 with the enStratus provisioning server and a set of associated shell scripts. The shell
 scripts are responsible for executing some actions on the server and are extensible by end
@@ -114,7 +125,7 @@ Server 2003/2008. The agent functions in both 32- and 64-bit environments.</p>
 <p>The enStratus agent and the associated scripts can be found in /enstratus on a GNU/Linux
 system, and in C:enstratus on a Windows server.</p>
 <div class="section" id="functionality">
-<h2>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h2>
+<h2>8.1.1. Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h2>
 <p>Installing the enStratus agent opens the server to the full functionality provided by
 enStratus including user management, automation, scheduled termination, statistics,
 logging, and alerting.</p>
@@ -138,7 +149,8 @@ deployment, enStratus will take the further step of restoring lost servers.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Overview
+		<a href="agent.html" accesskey="U">8. Agent</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		8.1. Overview
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

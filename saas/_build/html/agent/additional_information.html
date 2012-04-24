@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Additional Information &mdash; The enStratus Documentation Project</title>
+    <title>8.4. Additional Information &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="8. Agent" href="agent.html" />
+    <link rel="next" title="9. API" href="../api/api.html" />
+    <link rel="prev" title="8.3. Installation" href="installation.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Additional Information</h1></div>
+	<div id="title"><h1>8.4. Additional Information</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../api/api.html" title="9. API" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="installation.html" title="8.3. Installation" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,7 +54,7 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
@@ -57,7 +62,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
-<li class="toctree-l1"><a class="reference internal" href="agent.html">8. Agent</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="agent.html">8. Agent</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">8.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="provided_images.html">8.2. Provided Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">8.3. Installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">8.4. Additional Information</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
 </ul>
 
@@ -98,16 +109,16 @@
           <div class="body">
             
   <div class="section" id="additional-information">
-<h1>Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h1>
+<h1>8.4. Additional Information<a class="headerlink" href="#additional-information" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="updating">
-<h2>Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
+<h2>8.4.1. Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
 <p>Updating the agent on a Ubuntu/Debian server can be accomplished by using the .deb
 package. The installation routine will detect previously installed versions and do a
 backup, preserving any customizations by preserving the contents of the
 /enstratus/custom/bin directory.</p>
 </div>
 <div class="section" id="extending-the-agent">
-<h2>Extending the Agent<a class="headerlink" href="#extending-the-agent" title="Permalink to this headline">¶</a></h2>
+<h2>8.4.2. Extending the Agent<a class="headerlink" href="#extending-the-agent" title="Permalink to this headline">¶</a></h2>
 <p>Agent scripts are designed to be extended and customized. The scripts located in
 /enstratus/bin are not designed to be edited directly as these scripts are overwritten
 during an upgrade. Instead, use the /enstratus/custom/bin directory to run custom scripts
@@ -123,7 +134,7 @@ script after the default enStratus script, place a script called $scriptName-pos
 <p>/enstratus/custom/bin/addUser-post - if exists, will be executed after this script</p>
 </div>
 <div class="section" id="starting-from-scratch">
-<h2>Starting from Scratch<a class="headerlink" href="#starting-from-scratch" title="Permalink to this headline">¶</a></h2>
+<h2>8.4.3. Starting from Scratch<a class="headerlink" href="#starting-from-scratch" title="Permalink to this headline">¶</a></h2>
 <p>At enStratus we use the EC2 images supplied by Alestic www.alestic.com with success. The
 .deb installer has been tested with the latest releases of Ubuntu (10.04) and Debian
 (5.0).</p>
@@ -146,7 +157,8 @@ trouble installing on your own, please contact support at enStratus.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Additional Information
+		<a href="agent.html" accesskey="U">8. Agent</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		8.4. Additional Information
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

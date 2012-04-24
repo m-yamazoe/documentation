@@ -1,7 +1,10 @@
 Agent
 =====
 
-.. include:: overview.rst
-.. include:: provided_images.rst
-.. include:: installation.rst
-.. include:: additional_information.rst
+.. toctree::
+   :maxdepth: 1
+
+   overview
+   provided_images
+   installation
+   additional_information
