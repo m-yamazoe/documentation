@@ -45,6 +45,21 @@ Overview
    There are usually many ways to approach the processes we're describing, this is just
    one.
 
+Create Firewall
+~~~~~~~~~~~~~~~
+Let's create a firewall (security group) for use in this tutorial.
+
+.. figure:: ./images/firewall0.png
+   :height: 400px
+   :width: 800 px
+   :scale: 50 %
+   :alt: Create Firewall
+   :align: center
+
+   Create Firewall
+
+Open ports 22 and 80 to your IP for testing. enStratus will automatically adjust the
+firewall for the applications deployed according to the services > ports settings.
 
 Make Image
 ~~~~~~~~~~
@@ -54,7 +69,7 @@ Eric's team has recently begun publishing only 64-bit images. Any generic ubuntu
 
 .. figure:: ./images/ami0.png
    :height: 400px
-   :width: 1500 px
+   :width: 1800 px
    :scale: 50 %
    :alt: Search for AMI
    :align: center
@@ -627,7 +642,7 @@ of 1/1 in each tier. We'll work on scaling the deployment later.
 
 Launch Deployment
 ~~~~~~~~~~~~~~~~~
-The deployment is now configured for launch. 
+The deployment is now configured for launch. Click launch.
 
 .. figure:: ./images/startDeployment.png
    :height: 1000px

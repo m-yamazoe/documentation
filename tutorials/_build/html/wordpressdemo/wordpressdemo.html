@@ -57,17 +57,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#purpose">2.1. Purpose</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">2.2. Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overview">2.3. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#make-image">2.4. Make Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upload-services">2.5. Upload Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upload-datasource">2.6. Upload DataSource</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#design-deployment">2.7. Design Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#create-tiers">2.8. Create Tiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#add-services">2.9. Add Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ports">2.10. Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-dependencies">2.11. Set Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configure-launch-configuration">2.12. Configure Launch Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#set-scaling-rules">2.13. Set Scaling Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#launch-deployment">2.14. Launch Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-firewall">2.4. Create Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#make-image">2.5. Make Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-services">2.6. Upload Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-datasource">2.7. Upload DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-deployment">2.8. Design Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-tiers">2.9. Create Tiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-services">2.10. Add Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ports">2.11. Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-dependencies">2.12. Set Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-launch-configuration">2.13. Configure Launch Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-scaling-rules">2.14. Set Scaling Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-deployment">2.15. Launch Deployment</a></li>
 </ul>
 </li>
 </ul>
@@ -155,13 +156,23 @@ There are usually many ways to approach the processes we&#8217;re describing, th
 one.</p>
 </div>
 </div>
+<div class="section" id="create-firewall">
+<h2>2.4. Create Firewall<a class="headerlink" href="#create-firewall" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s create a firewall (security group) for use in this tutorial.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/firewall0.png"><img alt="Create Firewall" src="../_images/firewall0.png" style="width: 400.0px; height: 200.0px;" /></a>
+<p class="caption">Create Firewall</p>
+</div>
+<p>Open ports 22 and 80 to your IP for testing. enStratus will automatically adjust the
+firewall for the applications deployed according to the services &gt; ports settings.</p>
+</div>
 <div class="section" id="make-image">
-<h2>2.4. Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
+<h2>2.5. Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
 <p>To make an image, start with a generic EC2 image from <a class="reference external" href="http://alestic.com/">Alestic</a>.
 Eric&#8217;s team has recently begun publishing only 64-bit images. Any generic ubuntu image
 <em>should</em> work, but this tutorial has only been tested with images from Alestic.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/ami0.png"><img alt="Search for AMI" src="../_images/ami0.png" style="width: 750.0px; height: 200.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/ami0.png"><img alt="Search for AMI" src="../_images/ami0.png" style="width: 900.0px; height: 200.0px;" /></a>
 <p class="caption">Search for AMI</p>
 </div>
 <ol class="arabic simple">
@@ -253,7 +264,7 @@ options in the actions menu as shown.</p>
 <p>While the image builds, it&#8217;s time to upload the service images for use by enStratus.</p>
 </div>
 <div class="section" id="upload-services">
-<h2>2.5. Upload Services<a class="headerlink" href="#upload-services" title="Permalink to this headline">¶</a></h2>
+<h2>2.6. Upload Services<a class="headerlink" href="#upload-services" title="Permalink to this headline">¶</a></h2>
 <p>Using Automation &gt; Service Images, upload wordpress.tar.gz and mysql.tar.gz as service
 image files. enStratus stores these files in cloud files storage and will initiate a
 download of these files at launch time by the enStratus agent.</p>
@@ -273,7 +284,7 @@ download of these files at launch time by the enStratus agent.</p>
 </div>
 </div>
 <div class="section" id="upload-datasource">
-<h2>2.6. Upload DataSource<a class="headerlink" href="#upload-datasource" title="Permalink to this headline">¶</a></h2>
+<h2>2.7. Upload DataSource<a class="headerlink" href="#upload-datasource" title="Permalink to this headline">¶</a></h2>
 <p>Using Automation &gt; Datasource, upload wordpresscontent.tar.gz as datasource files.
 enStratus stores datasource files in cloud files storage and will initiate a download of
 this file to services that are configured to have datasources.</p>
@@ -288,7 +299,7 @@ this file to services that are configured to have datasources.</p>
 </div>
 </div>
 <div class="section" id="design-deployment">
-<h2>2.7. Design Deployment<a class="headerlink" href="#design-deployment" title="Permalink to this headline">¶</a></h2>
+<h2>2.8. Design Deployment<a class="headerlink" href="#design-deployment" title="Permalink to this headline">¶</a></h2>
 <p>Now that those steps are complete, it&#8217;s time to start building the application
 architecture.</p>
 <p>First, create a new deployment by navigating to Automation &gt; Designer. If you have not yet
@@ -309,7 +320,7 @@ created a deployment, a placeholder image greets you:</p>
 </div>
 </div>
 <div class="section" id="create-tiers">
-<h2>2.8. Create Tiers<a class="headerlink" href="#create-tiers" title="Permalink to this headline">¶</a></h2>
+<h2>2.9. Create Tiers<a class="headerlink" href="#create-tiers" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Use the designer diagram to add a tier. Give the tier a high-level generic name like
 Application Tier. Tiers can hold many services, and we&#8217;ll give a more specific name for
@@ -340,7 +351,7 @@ This tier will hold the MySQL service.</li>
 </div>
 </div>
 <div class="section" id="add-services">
-<h2>2.9. Add Services<a class="headerlink" href="#add-services" title="Permalink to this headline">¶</a></h2>
+<h2>2.10. Add Services<a class="headerlink" href="#add-services" title="Permalink to this headline">¶</a></h2>
 <p>Adding services to tiers means telling enStratus what service should be installed on
 servers running in the tier. This action only needs to be completed once, no matter how
 many regions/clouds the tier spans.</p>
@@ -372,7 +383,7 @@ what the relationship is, if any, between the services and what information shou
 passed to dynamically configure the service at run time.</p>
 </div>
 <div class="section" id="ports">
-<h2>2.10. Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h2>
+<h2>2.11. Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h2>
 <p>The ports option in the actions menu for services allows the application designer to
 specify ports information that will be passed to the service at run time.</p>
 <p>For the MySQL service, make the ports setting as shown:</p>
@@ -410,7 +421,7 @@ specify ports information that will be passed to the service at run time.</p>
 <p class="caption">Service, Ports</p>
 </div>
 <div class="section" id="data-source">
-<h3>2.10.1. Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
+<h3>2.11.1. Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
 <p>The Datasource options in actions menu for services allows the application designer to
 associate a starting datasource with a database service. On the MySQL service, associate
 the datasource uploaded earlier as shown:</p>
@@ -435,7 +446,7 @@ once the mysql service is configured. On the MySQL service, choose actions &gt; 
 </div>
 </div>
 <div class="section" id="set-dependencies">
-<h2>2.11. Set Dependencies<a class="headerlink" href="#set-dependencies" title="Permalink to this headline">¶</a></h2>
+<h2>2.12. Set Dependencies<a class="headerlink" href="#set-dependencies" title="Permalink to this headline">¶</a></h2>
 <p>This step is critical. Dependencies let enStratus know how to <em>orchestrate</em> the deployment
 launch and service configuration.</p>
 <p>For this tutorial, we&#8217;re going to set a dependency for the wordpress service. It&#8217;s going
@@ -470,7 +481,7 @@ menu.</p>
 </div>
 </div>
 <div class="section" id="configure-launch-configuration">
-<h2>2.12. Configure Launch Configuration<a class="headerlink" href="#configure-launch-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>2.13. Configure Launch Configuration<a class="headerlink" href="#configure-launch-configuration" title="Permalink to this headline">¶</a></h2>
 <p>The next and final thing to do is to configure virtual resources to use in the deployment.
 By now, the imaged we prepared earlier should be ready for use in the launch
 configuration.</p>
@@ -507,13 +518,13 @@ to the bottom, and use the previously created firewall.</p>
 </div>
 </div>
 <div class="section" id="set-scaling-rules">
-<h2>2.13. Set Scaling Rules<a class="headerlink" href="#set-scaling-rules" title="Permalink to this headline">¶</a></h2>
+<h2>2.14. Set Scaling Rules<a class="headerlink" href="#set-scaling-rules" title="Permalink to this headline">¶</a></h2>
 <p>By default, enStratus will set the deployment tiers to use a minimum/maximum server value
 of 1/1 in each tier. We&#8217;ll work on scaling the deployment later.</p>
 </div>
 <div class="section" id="launch-deployment">
-<h2>2.14. Launch Deployment<a class="headerlink" href="#launch-deployment" title="Permalink to this headline">¶</a></h2>
-<p>The deployment is now configured for launch.</p>
+<h2>2.15. Launch Deployment<a class="headerlink" href="#launch-deployment" title="Permalink to this headline">¶</a></h2>
+<p>The deployment is now configured for launch. Click launch.</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/startDeployment.png"><img alt="Launch Deployment" src="../_images/startDeployment.png" style="width: 900.0px; height: 500.0px;" /></a>
 <p class="caption">Launch Deployment</p>
