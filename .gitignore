@@ -4,5 +4,5 @@ openAllCSS
 openAllLayouts
 makeAgent
 sync
-*_build/*
+_build/
 *.html
