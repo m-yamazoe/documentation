@@ -627,7 +627,7 @@ of 1/1 in each tier. We'll work on scaling the deployment later.
 
 Launch Deployment
 ~~~~~~~~~~~~~~~~~
-The deployment is now configured for launch. Click launch.
+The deployment is now configured for launch. 
 
 .. figure:: ./images/startDeployment.png
    :height: 1000px

@@ -15,11 +15,3 @@ enStratus Tutorials
     
    introduction/introduction
    wordpressdemo/wordpressdemo
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

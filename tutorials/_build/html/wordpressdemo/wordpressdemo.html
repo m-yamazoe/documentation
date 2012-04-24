@@ -1,0 +1,542 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Wordpress Demo &mdash; The enStratus Documentation Project</title>
+    
+    <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="prev" title="1. Introduction" href="../introduction/introduction.html" />
+    <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>The enStratus Documentation Project</p>
+</div>
+<div id="header">
+	<div id="title"><h1>2. Wordpress Demo</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="http://www.enstratus.com">enStratus</a></div>
+			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../introduction/introduction.html" title="1. Introduction" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="http://onpremise.enstratus.com">On-Premise</a></div>
+			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
+			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
+			<div class="headerButton"><a href="http://agent.enstratus.com">enStratus Agent</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. Wordpress Demo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose">2.1. Purpose</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">2.2. Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">2.3. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#make-image">2.4. Make Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-services">2.5. Upload Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-datasource">2.6. Upload DataSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#design-deployment">2.7. Design Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-tiers">2.8. Create Tiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-services">2.9. Add Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ports">2.10. Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-dependencies">2.11. Set Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-launch-configuration">2.12. Configure Launch Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-scaling-rules">2.13. Set Scaling Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-deployment">2.14. Launch Deployment</a></li>
+</ul>
+</li>
+</ul>
+
+    <h3>Downloads</h3>
+    <a href="http://es-onpremise-documentation.s3.amazonaws.com/enStratus.pdf">PDF Version</a>
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/wordpressdemo/wordpressdemo.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="../search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="wordpress-demo">
+<h1>2. Wordpress Demo<a class="headerlink" href="#wordpress-demo" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Estimated time to complete this tutorial will vary based on several factors such
+as the speed of the cloud provider, and the skill level of the operator.</p>
+<p>New Guy, no SSH skills, no Linux: 1 mo.</p>
+<p>SSH/Firewall skills, cloud-savvy: 2 hrs, maybe less.</p>
+<p class="last">Cloud god: 1 hr.</p>
+</div>
+<div class="section" id="purpose">
+<h2>2.1. Purpose<a class="headerlink" href="#purpose" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this document is to start from scratch and build a deployable enStratus
+application architecture including a Wordpress web application backed by a MySQL database.</p>
+</div>
+<div class="section" id="prerequisites">
+<h2>2.2. Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Users seeking to successfully complete this tutorial must have the following items/skills.</p>
+<ol class="arabic">
+<li><p class="first">A cloud account or cloud accounts connected to enStratus. EC2 is the cloud I will cover
+here.</p>
+</li>
+<li><p class="first">Cloud files (object) storage</p>
+</li>
+<li><p class="first">Familiarity with SSH.</p>
+<p>Users will need to be able to use the secure copy program (scp) or an equivalent to
+move the chef cookbook used to prepare the image.</p>
+</li>
+<li><p class="first">Rudimentary familiarity with the Linux operating system command line. However, most of
+the instructions should be copy-and-paste.</p>
+</li>
+</ol>
+<div class="section" id="downloads">
+<h3>2.2.1. Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h3>
+<p>Chef solo cookbook: wordpress-demo-prep.tar.gz
+Wordpress service: wordpress.tar.gz
+MySQL service: mysql.tar.gz
+Datasource: wordpresscontent.sql</p>
+</div>
+</div>
+<div class="section" id="overview">
+<h2>2.3. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some of the step are purposefully suboptimal to illustrate the process at hand.
+There are usually many ways to approach the processes we&#8217;re describing, this is just
+one.</p>
+</div>
+</div>
+<div class="section" id="make-image">
+<h2>2.4. Make Image<a class="headerlink" href="#make-image" title="Permalink to this headline">¶</a></h2>
+<p>To make an image, start with a generic EC2 image from <a class="reference external" href="http://alestic.com/">Alestic</a>.
+Eric&#8217;s team has recently begun publishing only 64-bit images. Any generic ubuntu image
+<em>should</em> work, but this tutorial has only been tested with images from Alestic.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ami0.png"><img alt="Search for AMI" src="../_images/ami0.png" style="width: 750.0px; height: 200.0px;" /></a>
+<p class="caption">Search for AMI</p>
+</div>
+<ol class="arabic simple">
+<li>Start the image as a VM, choose a large product size, not t1.micro for best results.
+Also, generate and use an SSH key during the launch.</li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ami1.png"><img alt="Launch, General Information" src="../_images/ami1.png" style="width: 400.0px; height: 350.0px;" /></a>
+<p class="caption">Launch, General Information</p>
+</div>
+<p>Save the key and chmod it</p>
+<div class="highlight-bash"><div class="highlight"><pre>chmod 600 demoKey
+</pre></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ami3.png"><img alt="Launch, Create/Use Key" src="../_images/ami3.png" style="width: 600.0px; height: 250.0px;" /></a>
+<p class="caption">Launch, Create/Use Key</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>While the image launches, open the firewall so you can access port 22 from your
+location.</li>
+<li>Once the VM is started, copy the wordpress-demo-prep.tar.gz file to the instance.
+The command to do so will be something of the form:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre>scp -i demoKey wordpress-demo-prep.tar.gz ubuntu@ip.of.running.instance:~
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Next, ssh onto the running instance, and take root:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre>ssh -i theKey ubuntu@ip.of.running.instance
+
+sudo su
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Install the chef client:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;deb http://apt.opscode.com/ `lsb_release -cs`-0.10 main&quot;</span> | sudo tee /etc/apt/sources.list.d/opscode.list
+sudo mkdir -p /etc/apt/trusted.gpg.d
+gpg --keyserver keys.gnupg.net --recv-keys 83EF826A
+gpg --export packages@opscode.com | sudo tee /etc/apt/trusted.gpg.d/opscode-keyring.gpg &gt; /dev/null
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get -y install chef
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li>Extract the wordpress-demo-prep.tar.gz file:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre>tar -xzf wordpress-demo-prep.tar.gz
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li>Execute the chef-solo run:</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre>chef-solo -j node.json -c solo.rb
+</pre></div>
+</div>
+<p>During this step, some packages necessary for running a typical LAMP stack application
+will be installed, along with the latest enStratus agent. Depending on your connection and
+mirror speeds, this may take up to 5-7 minutes.</p>
+<p>The purpose of this step is to prepare the image for running PHP and MySQL applications,
+not to install the application itself, that comes later durin the launch and orchestration
+steps of a deployment launch.</p>
+<p>Once this step completes, initiate the build of the machine image from within the
+enStratus console.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If the image is not built using the server actions &gt; Make Image menu option
+in the enStratus console, it will not be available for use in the deployment. This measure
+is in place to protect users from attempting to use an image that does not have the agent
+on it for automation.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As a sanity check that the agent is working, you should see an expanded list of
+options in the actions menu as shown.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/makeImage1.png"><img alt="Server, Make Image" src="../_images/makeImage1.png" style="width: 990.0px; height: 315.0px;" /></a>
+<p class="caption">Server, Make Image</p>
+</div>
+<p>Once this process completes, select action &gt; Make Image from the server&#8217;s action menu.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/makeImage0.png"><img alt="Make Image" src="../_images/makeImage0.png" style="width: 350.0px; height: 150.0px;" /></a>
+<p class="caption">Make Image</p>
+</div>
+<p>While the image builds, it&#8217;s time to upload the service images for use by enStratus.</p>
+</div>
+<div class="section" id="upload-services">
+<h2>2.5. Upload Services<a class="headerlink" href="#upload-services" title="Permalink to this headline">¶</a></h2>
+<p>Using Automation &gt; Service Images, upload wordpress.tar.gz and mysql.tar.gz as service
+image files. enStratus stores these files in cloud files storage and will initiate a
+download of these files at launch time by the enStratus agent.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/serviceUpload0.png"><img alt="Service Upload, Wordpress" src="../_images/serviceUpload0.png" style="width: 350.0px; height: 150.0px;" /></a>
+<p class="caption">Service Upload, Wordpress</p>
+</div>
+<p>Repeat this action for the mysql service.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/serviceUpload1.png"><img alt="Service Upload, MySQL" src="../_images/serviceUpload1.png" style="width: 350.0px; height: 150.0px;" /></a>
+<p class="caption">Service Upload, MySQL</p>
+</div>
+<p>Once this action is complete, there will be (minimally) 2 services.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/serviceUpload2.png"><img alt="Services Uploaded" src="../_images/serviceUpload2.png" style="width: 945.0px; height: 225.0px;" /></a>
+<p class="caption">Services Uploaded</p>
+</div>
+</div>
+<div class="section" id="upload-datasource">
+<h2>2.6. Upload DataSource<a class="headerlink" href="#upload-datasource" title="Permalink to this headline">¶</a></h2>
+<p>Using Automation &gt; Datasource, upload wordpresscontent.tar.gz as datasource files.
+enStratus stores datasource files in cloud files storage and will initiate a download of
+this file to services that are configured to have datasources.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dataSourceUpload0.png"><img alt="Data Source, Upload" src="../_images/dataSourceUpload0.png" style="width: 350.0px; height: 150.0px;" /></a>
+<p class="caption">Data Source, Upload</p>
+</div>
+<p>After upload, the datasource will appear as shown:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dataSourceUpload1.png"><img alt="Data Source, Upload" src="../_images/dataSourceUpload1.png" style="width: 945.0px; height: 180.0px;" /></a>
+<p class="caption">Data Source, Upload</p>
+</div>
+</div>
+<div class="section" id="design-deployment">
+<h2>2.7. Design Deployment<a class="headerlink" href="#design-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Now that those steps are complete, it&#8217;s time to start building the application
+architecture.</p>
+<p>First, create a new deployment by navigating to Automation &gt; Designer. If you have not yet
+created a deployment, a placeholder image greets you:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment0.png"><img alt="Deployment Designer" src="../_images/deployment0.png" style="width: 750.0px; height: 400.0px;" /></a>
+<p class="caption">Deployment Designer</p>
+</div>
+<p>To create a new deployment, select the actions menu and choose Create a New Deployment.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment1.png"><img alt="Deployment Designer, Create New Deployment" src="../_images/deployment1.png" style="width: 750.0px; height: 400.0px;" /></a>
+<p class="caption">Deployment Designer, Create New Deployment</p>
+</div>
+<p>And that&#8217;s it, the deployment is created.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment2.png"><img alt="Deployment Designer, Create Tier" src="../_images/deployment2.png" style="width: 750.0px; height: 400.0px;" /></a>
+<p class="caption">Deployment Designer, Create Tier</p>
+</div>
+</div>
+<div class="section" id="create-tiers">
+<h2>2.8. Create Tiers<a class="headerlink" href="#create-tiers" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Use the designer diagram to add a tier. Give the tier a high-level generic name like
+Application Tier. Tiers can hold many services, and we&#8217;ll give a more specific name for
+the services. This tier will house only one service for this tutorial, the wordpress
+application.</li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment3.png"><img alt="Deployment Designer, Add Tier" src="../_images/deployment3.png" style="width: 550.0px; height: 375.0px;" /></a>
+<p class="caption">Deployment Designer, Add Tier</p>
+</div>
+<p>When the tier is added, the designer diagram is updated.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment4.png"><img alt="Deployment Designer, Add Tier" src="../_images/deployment4.png" style="width: 650.0px; height: 300.0px;" /></a>
+<p class="caption">Deployment Designer, Add Tier</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Use the desginer diagram to add another tier. Give the tier a name like Database Tier.
+This tier will hold the MySQL service.</li>
+</ol>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment5.png"><img alt="Deployment Designer, Add Tier" src="../_images/deployment5.png" style="width: 550.0px; height: 375.0px;" /></a>
+<p class="caption">Deployment Designer, Add Tier</p>
+</div>
+<p>When the tier is added, the designer diagram is updated.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/deployment6.png"><img alt="Deployment Designer, Add Tier" src="../_images/deployment6.png" style="width: 650.0px; height: 300.0px;" /></a>
+<p class="caption">Deployment Designer, Add Tier</p>
+</div>
+</div>
+<div class="section" id="add-services">
+<h2>2.9. Add Services<a class="headerlink" href="#add-services" title="Permalink to this headline">¶</a></h2>
+<p>Adding services to tiers means telling enStratus what service should be installed on
+servers running in the tier. This action only needs to be completed once, no matter how
+many regions/clouds the tier spans.</p>
+<p>To add a service to a tier, select the tier by clicking on it in the designer diagram and
+choose +add service. enStratus will present the list of the services available for
+attaching to the tier. This list should have at a minimum the two services uploaded above.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addService0.png"><img alt="Add Service, Wordpress" src="../_images/addService0.png" style="width: 350.0px; height: 200.0px;" /></a>
+<p class="caption">Add Service, Wordpress</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If there was a previously running deployment where automated backups were made,
+it is also possible to tell enStratus to use a previously generated backup as a service.</p>
+<p class="last">Pretty cool.</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addService1.png"><img alt="Add Service, MySQL" src="../_images/addService1.png" style="width: 350.0px; height: 200.0px;" /></a>
+<p class="caption">Add Service, MySQL</p>
+</div>
+<p>Associate the wordpress service with the application tier and the mysql service with the
+database tier.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addService2.png"><img alt="Services Added" src="../_images/addService2.png" style="width: 945.0px; height: 270.0px;" /></a>
+<p class="caption">Services Added</p>
+</div>
+<p>Next, it&#8217;s time to configure the services. Configuring services means telling enStratus
+what the relationship is, if any, between the services and what information should be
+passed to dynamically configure the service at run time.</p>
+</div>
+<div class="section" id="ports">
+<h2>2.10. Ports<a class="headerlink" href="#ports" title="Permalink to this headline">¶</a></h2>
+<p>The ports option in the actions menu for services allows the application designer to
+specify ports information that will be passed to the service at run time.</p>
+<p>For the MySQL service, make the ports setting as shown:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports0.png"><img alt="Service, Ports" src="../_images/ports0.png" style="width: 950.0px; height: 250.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports1.png"><img alt="Service, Ports" src="../_images/ports1.png" style="width: 400.0px; height: 150.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports2.png"><img alt="Service, Ports" src="../_images/ports2.png" style="width: 400.0px; height: 200.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports3.png"><img alt="Service, Ports" src="../_images/ports3.png" style="width: 400.0px; height: 200.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<p>For the wordpress service, make ports setting as shown:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports4.png"><img alt="Service, Ports" src="../_images/ports4.png" style="width: 950.0px; height: 250.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports5.png"><img alt="Service, Ports" src="../_images/ports5.png" style="width: 400.0px; height: 150.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports6.png"><img alt="Service, Ports" src="../_images/ports6.png" style="width: 400.0px; height: 200.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/ports7.png"><img alt="Service, Ports" src="../_images/ports7.png" style="width: 400.0px; height: 200.0px;" /></a>
+<p class="caption">Service, Ports</p>
+</div>
+<div class="section" id="data-source">
+<h3>2.10.1. Data Source<a class="headerlink" href="#data-source" title="Permalink to this headline">¶</a></h3>
+<p>The Datasource options in actions menu for services allows the application designer to
+associate a starting datasource with a database service. On the MySQL service, associate
+the datasource uploaded earlier as shown:</p>
+<p>The MySQL service is special, enStratus will execute a routine to install a datasource
+once the mysql service is configured. On the MySQL service, choose actions &gt; Data Sources</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addDataSource0.png"><img alt="Service, Data Source" src="../_images/addDataSource0.png" style="width: 950.0px; height: 250.0px;" /></a>
+<p class="caption">Service, Data Source</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addDataSource1.png"><img alt="Service, Data Source" src="../_images/addDataSource1.png" style="width: 400.0px; height: 150.0px;" /></a>
+<p class="caption">Service, Data Source</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addDataSource2.png"><img alt="Service, Data Source" src="../_images/addDataSource2.png" style="width: 450.0px; height: 350.0px;" /></a>
+<p class="caption">Service, Data Source</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/addDataSource3.png"><img alt="Service, Data Source" src="../_images/addDataSource3.png" style="width: 425.0px; height: 150.0px;" /></a>
+<p class="caption">Service, Data Source</p>
+</div>
+</div>
+</div>
+<div class="section" id="set-dependencies">
+<h2>2.11. Set Dependencies<a class="headerlink" href="#set-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>This step is critical. Dependencies let enStratus know how to <em>orchestrate</em> the deployment
+launch and service configuration.</p>
+<p>For this tutorial, we&#8217;re going to set a dependency for the wordpress service. It&#8217;s going
+to depend on the <em>data source</em> installed as part of the MySQL service. What this means is
+that at run time, enStratus will ensure:</p>
+<ol class="arabic simple">
+<li>The MySQL service is installed and successfully configured</li>
+<li>The datasource is successfully installed on the MySQL service.</li>
+</ol>
+<p>and then, and only then will</p>
+<ol class="arabic simple" start="3">
+<li>The application service be installed, since it <em>depends</em> on steps 1 and 2.</li>
+</ol>
+<p>To set up a dependency, select the actions menu on the wordpress service.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dependency0.png"><img alt="Dependency" src="../_images/dependency0.png" style="width: 950.0px; height: 250.0px;" /></a>
+<p class="caption">Dependency</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dependency1.png"><img alt="Dependency, Add" src="../_images/dependency1.png" style="width: 425.0px; height: 150.0px;" /></a>
+<p class="caption">Dependency, Add</p>
+</div>
+<p>Choose Target Type: Data Source, and select the previously created data source from the
+menu.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dependency2.png"><img alt="Dependency, Data Source" src="../_images/dependency2.png" style="width: 425.0px; height: 200.0px;" /></a>
+<p class="caption">Dependency, Data Source</p>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dependency3.png"><img alt="Dependency, Saved" src="../_images/dependency3.png" style="width: 425.0px; height: 200.0px;" /></a>
+<p class="caption">Dependency, Saved</p>
+</div>
+</div>
+<div class="section" id="configure-launch-configuration">
+<h2>2.12. Configure Launch Configuration<a class="headerlink" href="#configure-launch-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The next and final thing to do is to configure virtual resources to use in the deployment.
+By now, the imaged we prepared earlier should be ready for use in the launch
+configuration.</p>
+<p>In these steps, we&#8217;ll tell enStratus what Image to use when starting servers, along with
+what firewall into which the servers will be started.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For this tutorial, we&#8217;ll be using the same image for both launch configurations.
+In practice, this would probably not be the case, as a dedicate image would be used to
+support the application, and likewise the database.</p>
+</div>
+<p>Set an image for use in each of the launch configurations, as shown:</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/lc1.png"><img alt="Launch Configuration, Wordpress" src="../_images/lc1.png" style="width: 650.0px; height: 550.0px;" /></a>
+<p class="caption">Launch Configuration, Wordpress</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/lc2.png"><img alt="Launch Configuration, MySQL" src="../_images/lc2.png" style="width: 650.0px; height: 550.0px;" /></a>
+<p class="caption">Launch Configuration, MySQL</p>
+</div>
+<p>Once the initial launch configurations are set, click on the launch configuration, scroll
+to the bottom, and use the previously created firewall.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/lc3.png"><img alt="Launch Configuration, Wordpress" src="../_images/lc3.png" style="width: 1050.0px; height: 300.0px;" /></a>
+<p class="caption">Launch Configuration, Wordpress</p>
+</div>
+<p>Do the same thing for the MySQL launch configuration.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/lc3.png"><img alt="Launch Configuration, MySQL" src="../_images/lc3.png" style="width: 1050.0px; height: 300.0px;" /></a>
+<p class="caption">Launch Configuration, MySQL</p>
+</div>
+</div>
+<div class="section" id="set-scaling-rules">
+<h2>2.13. Set Scaling Rules<a class="headerlink" href="#set-scaling-rules" title="Permalink to this headline">¶</a></h2>
+<p>By default, enStratus will set the deployment tiers to use a minimum/maximum server value
+of 1/1 in each tier. We&#8217;ll work on scaling the deployment later.</p>
+</div>
+<div class="section" id="launch-deployment">
+<h2>2.14. Launch Deployment<a class="headerlink" href="#launch-deployment" title="Permalink to this headline">¶</a></h2>
+<p>The deployment is now configured for launch.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/startDeployment.png"><img alt="Launch Deployment" src="../_images/startDeployment.png" style="width: 900.0px; height: 500.0px;" /></a>
+<p class="caption">Launch Deployment</p>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2012, enStratus Networks Inc..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		2. Wordpress Demo
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
+  </body>
+</html>
