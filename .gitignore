@@ -3,3 +3,5 @@ makeAll
 openAllCSS
 openAllLayouts
 sync
+*_build
+*.html
