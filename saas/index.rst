@@ -12,7 +12,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :glob:
     
    console/console
    configuration_management/configuration_management
@@ -23,3 +22,10 @@ Contents:
    budget/budget
    agent/agent
    api/api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
