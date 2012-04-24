@@ -22,6 +22,7 @@ In diagram above, there are several billing codes in various quota states. Billi
 are color coded for quick reference regarding the state of the billing code.
 
 .. tabularcolumns:: |l|l|
+
 +--------+---------------------------------------------------------------------------------+
 | Color  | Meaning                                                                         |
 +========+=================================================================================+
