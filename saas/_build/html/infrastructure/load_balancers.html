@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Load Balancers &mdash; The enStratus Documentation Project</title>
+    <title>4.4. Load Balancers &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="4. Infrastructure" href="infrastructure.html" />
+    <link rel="next" title="4.5. Firewalls" href="firewalls.html" />
+    <link rel="prev" title="4.3. IP Addresses" href="ip_addresses.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Load Balancers</h1></div>
+	<div id="title"><h1>4.4. Load Balancers</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="firewalls.html" title="4.5. Firewalls" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="ip_addresses.html" title="4.3. IP Addresses" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,11 +54,20 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="servers.html">4.1. Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="machine_images.html">4.2. Machine Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ip_addresses.html">4.3. IP Addresses</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4.4. Load Balancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firewalls.html">4.5. Firewalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volumes.html">4.6. Volumes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snapshots.html">4.7. Snapshots</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
@@ -98,12 +112,12 @@
           <div class="body">
             
   <div class="section" id="load-balancers">
-<h1>Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h1>
+<h1>4.4. Load Balancers<a class="headerlink" href="#load-balancers" title="Permalink to this headline">¶</a></h1>
 <p>Successful application load balancing involves dynamically adding and removing application
 nodes from the load balanced pool. This discussion is limited to addressing the activity
 that takes place on the load balancer.</p>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>enStratus supports a wide range of load balancers. In the Amazon Cloud, Elastic Load
 Balancers are available for provisioning and use from within enStratus. Server-based load
 balancers can be started for use or an existing server can be purposed as a load balancer
@@ -111,7 +125,7 @@ via HA-Proxy or ajp (mod_jk). Finally, third party load balancing solutions are 
 in the form of the Zeus load balancer.</p>
 </div>
 <div class="section" id="elastic-load-balancer">
-<h2>Elastic Load Balancer<a class="headerlink" href="#elastic-load-balancer" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.2. Elastic Load Balancer<a class="headerlink" href="#elastic-load-balancer" title="Permalink to this headline">¶</a></h2>
 <p>Elastic load balancers are an offering from Amazon Web Services that are well supported in
 enStratus. ELB are advantagous because they can be cheaper to operate than server based
 solutions. The configuration requirements for ELB is often simpler than using server-based
@@ -125,7 +139,7 @@ configuration options for the load balancer.</p>
 </div>
 </div>
 <div class="section" id="elb-discussion">
-<h2>ELB Discussion<a class="headerlink" href="#elb-discussion" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.3. ELB Discussion<a class="headerlink" href="#elb-discussion" title="Permalink to this headline">¶</a></h2>
 <p>The Name, Label, and Description fields should be self-explanatory. More care should be
 taken when configuring the Data Center portion of the dialog. Each configured data center
 will receive an equal portion of the traffic entering the load balancer. This means that
@@ -161,7 +175,7 @@ the ELB.</p>
 <p>Lastly, to delete an existing ELB, choose the delete option under the actions menu.</p>
 </div>
 <div class="section" id="elb-and-cname">
-<h2>ELB and CNAME<a class="headerlink" href="#elb-and-cname" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.4. ELB and CNAME<a class="headerlink" href="#elb-and-cname" title="Permalink to this headline">¶</a></h2>
 <p>One more item of interest with respect to ELB is the way domain names are resolved. Each
 ELB has a host name of the form: CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.</p>
 <p>Here is the step-by-step flow of what happens when a client requests a URL served by your
@@ -177,7 +191,7 @@ client connection starts with this IP address. The ELB will pass traffic as dire
 through this IP address to the balanced pool of servers.</p>
 </div>
 <div class="section" id="mod-jk">
-<h2>mod-jk<a class="headerlink" href="#mod-jk" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.5. mod-jk<a class="headerlink" href="#mod-jk" title="Permalink to this headline">¶</a></h2>
 <p>A second popular method for load balancing applications is to use mod_jk. Using mod_jk is
 one of two types of virtual machine based load balancing currently supported by enStratus.
 enStratus manages mod_jk balanced applications via the 5 mod_jk scripts that are a part of
@@ -191,7 +205,7 @@ the enStratus agent. These scripts are located in /enstratus/bin/</p>
 </ol>
 </div>
 <div class="section" id="modjk-agent-scripts">
-<h2>modjk Agent Scripts<a class="headerlink" href="#modjk-agent-scripts" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.6. modjk Agent Scripts<a class="headerlink" href="#modjk-agent-scripts" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="19%" />
@@ -227,7 +241,7 @@ the enStratus agent. These scripts are located in /enstratus/bin/</p>
 </div>
 </div>
 <div class="section" id="ha-proxy">
-<h2>HA-Proxy<a class="headerlink" href="#ha-proxy" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.7. HA-Proxy<a class="headerlink" href="#ha-proxy" title="Permalink to this headline">¶</a></h2>
 <p>Another popular method for load balancing is using the High Availability Proxy or HA-Proxy
 method. This method is the other type of virtual machine based load in active support by
 enstratus. Although HA-Proxy is highly customizable and extensible, the support scripts
@@ -239,7 +253,7 @@ haproxy-runLb &#8211; Ensures haproxy runs at start.  haproxy-startProxy &#8211;
 balanced node from /etc/haproxy.cfg.</p>
 </div>
 <div class="section" id="ha-proxy-agent-scripts">
-<h2>HA-Proxy Agent Scripts<a class="headerlink" href="#ha-proxy-agent-scripts" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.8. HA-Proxy Agent Scripts<a class="headerlink" href="#ha-proxy-agent-scripts" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="23%" />
@@ -281,7 +295,7 @@ balancing are:</p>
 configuration complexity</p>
 </div>
 <div class="section" id="zeus">
-<h2>Zeus<a class="headerlink" href="#zeus" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.9. Zeus<a class="headerlink" href="#zeus" title="Permalink to this headline">¶</a></h2>
 <p>The final method of application load balancing for this discussion is the Zeus Load Balancer.</p>
 <p>Zeus is a very powerful solution for high-availability and high-performance load
 balancing. It is available for use with enStratus and a demonstration of the auto-scaling
@@ -291,7 +305,7 @@ and recovery behavior can be viewed here:</p>
 /enstratus/bin/</p>
 </div>
 <div class="section" id="to-do">
-<h2>To Do:<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.10. To Do:<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Links to tutorials</li>
 <li>Links to agent discussion</li>
@@ -313,7 +327,8 @@ and recovery behavior can be viewed here:</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Load Balancers
+		<a href="infrastructure.html" accesskey="U">4. Infrastructure</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		4.4. Load Balancers
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

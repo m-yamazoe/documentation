@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Machine Images &mdash; The enStratus Documentation Project</title>
+    <title>4.2. Machine Images &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="4. Infrastructure" href="infrastructure.html" />
+    <link rel="next" title="4.3. IP Addresses" href="ip_addresses.html" />
+    <link rel="prev" title="4.1. Servers" href="servers.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Machine Images</h1></div>
+	<div id="title"><h1>4.2. Machine Images</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="ip_addresses.html" title="4.3. IP Addresses" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="servers.html" title="4.1. Servers" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,11 +54,20 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="infrastructure.html">4. Infrastructure</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="servers.html">4.1. Servers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4.2. Machine Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ip_addresses.html">4.3. IP Addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="load_balancers.html">4.4. Load Balancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="firewalls.html">4.5. Firewalls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volumes.html">4.6. Volumes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snapshots.html">4.7. Snapshots</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../budget/budget.html">7. Budget</a></li>
@@ -98,9 +112,9 @@
           <div class="body">
             
   <div class="section" id="machine-images">
-<h1>Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h1>
+<h1>4.2. Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.1. Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A machine image is a saved template of a server. Running servers are started from machine images.</p>
 <p>If you are going to be utilizing enStratus images to begin your cloud work, please follow this workflow:</p>
 <ol class="arabic simple">
@@ -119,14 +133,14 @@ private servers can be started. enStratus allows searching and starting of any p
 available machine images.</p>
 </div>
 <div class="section" id="renaming">
-<h2>Renaming<a class="headerlink" href="#renaming" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.2. Renaming<a class="headerlink" href="#renaming" title="Permalink to this headline">¶</a></h2>
 <p>To rename a machine image, click on the image name indicated by a brown dashed line. A
 text window will appear. Enter the desired name and select OK.</p>
 <p>To change the label color of a machine image, click on the label color and choose the
 desired color from the resulting choices.</p>
 </div>
 <div class="section" id="starting">
-<h2>Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.3. Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
 <p>To start a server from a machine image, click on the green action button and select
 launch. A dialog box will appear allowing for customization of launch options.</p>
 <p>Some of the launch parameters are governed by the functionality provided for by the
@@ -134,20 +148,20 @@ underlying cloud provider. Most cloud providers allow for customization of the a
 hardware (CPU, Memory, storage) provisioned for the server.</p>
 </div>
 <div class="section" id="security-group">
-<h2>Security Group<a class="headerlink" href="#security-group" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.4. Security Group<a class="headerlink" href="#security-group" title="Permalink to this headline">¶</a></h2>
 <p>Security parameters in the form of firewall or security group are also chosen at the time
 of server launch.</p>
 <p>enStratus layers additional functionality in the form of groups and billing codes into
 server launch for all cloud providers.</p>
 </div>
 <div class="section" id="key-pair">
-<h2>Key Pair<a class="headerlink" href="#key-pair" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.5. Key Pair<a class="headerlink" href="#key-pair" title="Permalink to this headline">¶</a></h2>
 <p>Some cloud providers allow servers to be started with a root keypair. enStratus provides
 for this functionality by allowing the user to choose from a set of existing keypairs or
 to create a new keypair at launch.</p>
 </div>
 <div class="section" id="volumes">
-<h2>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h2>
+<h2>4.2.6. Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h2>
 <p>Additionally, through some cloud providers it is possible to specify a volume group to be
 attached, formatted, put into a RAID configuration, and optionally encrypted at launch
 time.</p>
@@ -173,7 +187,8 @@ be ready for use.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Machine Images
+		<a href="infrastructure.html" accesskey="U">4. Infrastructure</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		4.2. Machine Images
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
