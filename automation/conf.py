@@ -1,4 +1,10 @@
 #intersphinx_cache_limit = 10     # days to keep the cached inventories
+intersphinx_mapping = {
+   'saas':('http://http://es-saas.s3.amazonaws.com/',None),
+   'agent':('http://es-agent.s3.amazonaws.com/',None),
+   'automation':('http://es-automation.s3.amazonaws.com/',None),
+   'on-premise':('http://es-onpremise.s3.amazonaws.com/',None),
+}
 #intersphinx_mapping = {
 #   'sphinx': ('http://sphinx.pocoo.org',  None),
 #   'python':('http://docs.python.org/2.7',None),
