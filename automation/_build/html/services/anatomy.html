@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Anatomy &mdash; The enStratus Documentation Project</title>
+    <title>3.2. Anatomy &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="3. Services" href="services.html" />
+    <link rel="next" title="3.3. Behavior" href="behavior.html" />
+    <link rel="prev" title="3.1. Overview" href="overview.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Anatomy</h1></div>
+	<div id="title"><h1>3.2. Anatomy</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="behavior.html" title="3.3. Behavior" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="overview.html" title="3.1. Overview" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,10 +54,15 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">2. enStratus Deployment Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services.html">3. Services</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="services.html">3. Services</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">3.1. Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">3.2. Anatomy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="behavior.html">3.3. Behavior</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment_configuration/deployment_configuration.html">4. Deployment Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deployment_operation/deployment_operation.html">5. Deployment Operation</a></li>
 </ul>
@@ -94,12 +104,12 @@
           <div class="body">
             
   <div class="section" id="anatomy">
-<h1>Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h1>
+<h1>3.2. Anatomy<a class="headerlink" href="#anatomy" title="Permalink to this headline">¶</a></h1>
 <p>The anatomy of a service is very free-form. This allows for great flexibility in designing
 or adapting an application for use in a multi-cloud environment.</p>
 <p>An enStratus service should have the following structure:</p>
 <div class="section" id="bin">
-<h2>bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.1. bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h2>
 <p>Inside the bin/ directory, minimally 3 files:</p>
 <ol class="arabic simple">
 <li>enstratus-start</li>
@@ -111,7 +121,7 @@ automation sections. When a service is deployed enStratus will, using the enStra
 trigger events to configure each service in the appropriate order.</p>
 </div>
 <div class="section" id="cfg">
-<h2>cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.2. cfg<a class="headerlink" href="#cfg" title="Permalink to this headline">¶</a></h2>
 <p>The cfg directory is a directory where enStratus writes configuration files generated at
 run time with information the application will need to operate in the cloud. This
 directory is a good place for putting configuration file &#8220;templates&#8221;.</p>
@@ -128,13 +138,13 @@ management system. Beyond that, additional directories can be added to suit the
 application. For example, a third directory might be:</p>
 </div>
 <div class="section" id="app">
-<h2>app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.3. app<a class="headerlink" href="#app" title="Permalink to this headline">¶</a></h2>
 <p>index.html</p>
 <p>Where the application directory holds the application files, in this case a lonely
 index.html.</p>
 </div>
 <div class="section" id="mysql-service">
-<h2>MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h2>
+<h2>3.2.4. MySQL Service<a class="headerlink" href="#mysql-service" title="Permalink to this headline">¶</a></h2>
 <p>The MySQL service structure looks like this:</p>
 <p>bin/</p>
 <table class="hlist"><tr><td><ul class="simple">
@@ -192,7 +202,8 @@ index.html.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Anatomy
+		<a href="services.html" accesskey="U">3. Services</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		3.2. Anatomy
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
