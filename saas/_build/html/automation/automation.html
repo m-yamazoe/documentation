@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
-    <link rel="next" title="4. Infrastructure" href="../infrastructure/infrastructure.html" />
-    <link rel="prev" title="2. Configuration Management" href="../configuration_management/configuration_management.html" />
+    <link rel="next" title="3.1. Pre-requisites" href="prerequisites.html" />
+    <link rel="prev" title="2. Using Chef" href="../configuration_management/using_chef.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -40,8 +40,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="../infrastructure/infrastructure.html" title="4. Infrastructure" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="../configuration_management/configuration_management.html" title="2. Configuration Management" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="prerequisites.html" title="3.1. Pre-requisites" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="../configuration_management/using_chef.html" title="2. Using Chef" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -57,8 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">3. Automation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">3.2. Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prerequisites.html">3.1. Pre-requisites</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
@@ -107,9 +106,12 @@
             
   <div class="section" id="automation">
 <h1>3. Automation<a class="headerlink" href="#automation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="introduction">
-<h2>3.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>enStratus automation encompasses many facets of infrastructure mangement and orchstration.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">3.1. Pre-requisites</a></li>
+</ul>
+</div>
+<p>enStratus automation encompasses many facets of infrastructure mangement and orchestration.</p>
 <ol class="arabic simple">
 <li>Automated backups. enStratus will perform backup/maintenance of the application and
 hardware infrastructure according to the specification of the deployment. Backups
@@ -119,22 +121,6 @@ demand.</li>
 <li>Resiliency. Cloud servers by their nature are ephemeral, configuring a deployment will
 allow applications to survive the unexpected termination of a node.</li>
 </ol>
-</div>
-<div class="section" id="pre-requisites">
-<h2>3.2. Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li>The most important pre-requisite for automation is the installation of the enStratus
-agent. The enStratus agent is the secure access point to each running instance for the
-enStratus cloud management software.</li>
-</ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>This pre-requisite is one of the most frequently asked questions about
-automation. Before a machine image can be used in a deployment launch configuration,
-the enStratus agent must be installed.</p>
-<p class="last">For more information on how to install the agent, please see the agent documentation.</p>
-</div>
-</div>
 </div>
 
 
