@@ -5,8 +5,11 @@ Many clouds support Platform-as-a-Service (PaaS) offerings such as cloud files/o
 storage, databases, and content distribution systems. Accessing PaaS offerings using
 enStratus is done via the Platform menu.
 
-.. include:: relational_databases.rst
-.. include:: key_value_databases.rst
-.. include:: notification_topics.rst
-.. include:: distributions.rst
-.. include:: files.rst
+.. toctree::
+   :maxdepth: 1
+
+   relational_databases
+   key_value_databases
+   notification_topics
+   distributions
+   files

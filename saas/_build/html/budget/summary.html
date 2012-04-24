@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Summary &mdash; The enStratus Documentation Project</title>
+    <title>7.4. Summary &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="7. Budget" href="budget.html" />
+    <link rel="next" title="8. Agent" href="../agent/agent.html" />
+    <link rel="prev" title="7.3. Reports" href="reports.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Summary</h1></div>
+	<div id="title"><h1>7.4. Summary</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="../agent/agent.html" title="8. Agent" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="reports.html" title="7.3. Reports" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,14 +54,20 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="budget.html">7. Budget</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="budget.html">7. Budget</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="budget_codes.html">7.1. Budget Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">7.2. Invoices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html">7.3. Reports</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">7.4. Summary</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
 </ul>
@@ -98,7 +109,19 @@
           <div class="body">
             
   <div class="section" id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<h1>7.4. Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>enStratus has the concept of billing codes, which can have soft and hard quotas. A soft
+quota will alert when it has been reached, but the code is still allowed to have charges
+against it. A hard quota will also alert, but when it has been reached no more
+infrastructure or resources may be charged against that code.</p>
+<p>We looked at some definitions related to billing codes as well as some examples of
+alerting messages for both soft and hard quotas, We saw the functionality around how
+billing codes are enforced. We covered creating and editing billing codes as well as what
+happens when a billing code is deactivated. We also looked at viewing invoices.</p>
+<p>Finally, we looked at a very granular method for obtaining information about cloud
+resource usage in the form of reports. Using reports it is possible to filter and sort
+usage based on billing code, resource, user, and group. Reports are a very powerful method
+for learning how cloud resources are being used.</p>
 </div>
 
 
@@ -115,7 +138,8 @@
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Summary
+		<a href="budget.html" accesskey="U">7. Budget</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		7.4. Summary
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>

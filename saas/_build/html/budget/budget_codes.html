@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Budget Codes &mdash; The enStratus Documentation Project</title>
+    <title>7.1. Budget Codes &mdash; The enStratus Documentation Project</title>
     
     <link rel="stylesheet" href="../_static/adctheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,6 +26,9 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="top" title="The enStratus Documentation Project" href="../index.html" />
+    <link rel="up" title="7. Budget" href="budget.html" />
+    <link rel="next" title="7.2. Invoices" href="invoices.html" />
+    <link rel="prev" title="7. Budget" href="budget.html" />
     <link media="only screen and (max-device-width: 480px)" href="../_static/mobile.css" type="text/css" rel="stylesheet" /> 
   </head>
   <body>
@@ -33,11 +36,13 @@
 	<p>The enStratus Documentation Project</p>
 </div>
 <div id="header">
-	<div id="title"><h1>Budget Codes</h1></div>
+	<div id="title"><h1>7.1. Budget Codes</h1></div>
 	<ul id="headerButtons">
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="../genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="invoices.html" title="7.2. Invoices" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="budget.html" title="7. Budget" accesskey="P">previous</a></div>
 			<div class="headerButton"><a href="http://on-premise.enstratus.com">On-Premise</a></div>
 			<div class="headerButton"><a href="http://docs.enstratus.com">SaaS</a></div>
 			<div class="headerButton"><a href="http://automation.enstratus.com">Advanced Automation</a></div>
@@ -49,14 +54,20 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="../index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../console/console.html">1. Console</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../configuration_management/configuration_management.html">2. Configuration Management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../automation/automation.html">3. Automation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../infrastructure/infrastructure.html">4. Infrastructure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../platform/platform.html">5. Platform</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users/users.html">6. Users</a></li>
-<li class="toctree-l1"><a class="reference internal" href="budget.html">7. Budget</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="budget.html">7. Budget</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">7.1. Budget Codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="invoices.html">7.2. Invoices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reports.html">7.3. Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html">7.4. Summary</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/agent.html">8. Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/api.html">9. API</a></li>
 </ul>
@@ -98,7 +109,7 @@
           <div class="body">
             
   <div class="section" id="budget-codes">
-<h1>Budget Codes<a class="headerlink" href="#budget-codes" title="Permalink to this headline">¶</a></h1>
+<h1>7.1. Budget Codes<a class="headerlink" href="#budget-codes" title="Permalink to this headline">¶</a></h1>
 <p>enStratus tracks infrastructure costs based on the costs reported by the cloud provider or
 in the case of an on-premise installation of enStratus, against a customizable set of
 values.</p>
@@ -138,7 +149,7 @@ infrastructure/capacity may be charged against this code.</td>
 </tbody>
 </table>
 <div class="section" id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<h2>7.1.1. Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <p><strong>RUN RATE</strong></p>
 <p>The run rate is the calculated usage per hour costs for all of the
 infrastructure being tracked against this code.</p>
@@ -151,11 +162,11 @@ current usage value should be approximately one third of the projected usage.</p
 based on the current run rate.</p>
 </div>
 <div class="section" id="email-warning-messages">
-<h2>Email Warning Messages<a class="headerlink" href="#email-warning-messages" title="Permalink to this headline">¶</a></h2>
+<h2>7.1.2. Email Warning Messages<a class="headerlink" href="#email-warning-messages" title="Permalink to this headline">¶</a></h2>
 <p>An example of the email message that is sent when the soft quota is exceeded is shown
 below:</p>
 <div class="section" id="soft-quota-exceeded">
-<h3>Soft Quota Exceeded<a class="headerlink" href="#soft-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.2.1. Soft Quota Exceeded<a class="headerlink" href="#soft-quota-exceeded" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:59:41 UTC Cloud: Amazon Web Services
 Account: Company Subject: NEW EVENT #312218 (Severity 5) - Monthly Soft Run-Rate Exceeded
 for Company Company (YACNGH)
@@ -177,7 +188,7 @@ below:
 </div>
 </div>
 <div class="section" id="hard-quota-exceeded">
-<h3>Hard Quota Exceeded<a class="headerlink" href="#hard-quota-exceeded" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.2.2. Hard Quota Exceeded<a class="headerlink" href="#hard-quota-exceeded" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none"><div class="highlight"><pre>New Cloud Event: Wed 01 Dec 2010 02:11:15 UTC Cloud: Amazon Web Services Account: Company
 Acc Subject: NEW EVENT #312214 (Severity 7) - Monthly Hard Run-Rate Exceeded for Website
 (WWW)
@@ -203,7 +214,7 @@ any drastic actions such as deleting infrastructure to bring the run rate below 
 </div>
 </div>
 <div class="section" id="users">
-<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<h2>7.1.3. Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
 <p>Users may be a part of one or more billing codes as shown in the user profile, located in
 User Manager &gt; Users.</p>
 <div class="figure align-center">
@@ -226,7 +237,7 @@ enStratus console. If a user is only a part of one budget code <em>and</em> that
 exceeded its hard quota, that user will be unable to provision any resources.</p>
 </div>
 <div class="section" id="creating-and-editing-budget-codes">
-<h2>Creating and Editing Budget Codes<a class="headerlink" href="#creating-and-editing-budget-codes" title="Permalink to this headline">¶</a></h2>
+<h2>7.1.4. Creating and Editing Budget Codes<a class="headerlink" href="#creating-and-editing-budget-codes" title="Permalink to this headline">¶</a></h2>
 <p>To create a budget code, navigate to Finance &gt; Budget Codes. The list of active budget
 codes will be shown as in Figure 1. To add a new budget code, select + add budget code
 and complete the resulting dialog box.</p>
@@ -257,7 +268,7 @@ their profile using User Manager.</p>
 </div>
 </div>
 <div class="section" id="deactivating-billing-codes">
-<h2>Deactivating Billing Codes<a class="headerlink" href="#deactivating-billing-codes" title="Permalink to this headline">¶</a></h2>
+<h2>7.1.5. Deactivating Billing Codes<a class="headerlink" href="#deactivating-billing-codes" title="Permalink to this headline">¶</a></h2>
 <p>When a billing code is deactivated, a replacement code must be specified. Any
 infrastructure/services being tracked against the billing code set for deactivation will
 be tracked in the replacement code going forward. Historical data will still be available
@@ -292,7 +303,8 @@ code is removed from the active list.</p>
       <div class="clearer"></div>
     </div>
 	<div id="breadcrumbs">
-		Budget Codes
+		<a href="budget.html" accesskey="U">7. Budget</a><img src="../_static/triangle_closed.png" height="9" width="9" alt="&gt;">
+		7.1. Budget Codes
 		</ul>
 	</div>
 	<script type="text/javascript" charset="utf-8" src="../_static/toc.js"></script>
