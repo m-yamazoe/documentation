@@ -9,8 +9,6 @@ management systems, Chef and Object Store.
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
-   :titlesonly:
 
    chef
    using_chef
