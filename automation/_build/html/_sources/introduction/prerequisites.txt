@@ -29,11 +29,13 @@ first step to being able to leverage dynamically provisioned resources.
 Best Practices
 ~~~~~~~~~~~~~~
 
-1. IP Addresses. Often, IP addresses change with every newly provisioned instance. A cloudy application will be able to leverage this for scalability.
-2. Storage. Storing data on ephemeral storage is risky, putting application/database data on more persistent data storage is preferable.
-3. Backups. enStratus considers two types of backups: Snapshots and Service. Used in combination, these backups provide a very reliable and customizable solution.
+#. IP Addresses. Often, IP addresses change with every newly provisioned instance. A cloudy application will be able to leverage this for scalability.
+#. Storage. Storing data on ephemeral storage is risky, putting application/database data on more persistent data storage is preferable.
+#. Backups. enStratus considers two types of backups: Snapshots and Service. Used in combination, these backups provide a very reliable and customizable solution.
+
   * Snapshots: Backups accomplished by taking a snapshot of a data volume. The result of this operation is a snapshot.
   * Services: Backups accomplished by calling a user defined script. The result of this operation is a file, which can be stored in cloud files storage.
-4. Disaster Recovery. Disaster recovery for enStratus means storing the files resulting
-from service backups in a geographically distinct cloud region (EC2 East, West, etc...) or
-a separate cloud altogether. 
+
+#. Disaster Recovery. Disaster recovery for enStratus means storing the files resulting
+   from service backups in a geographically distinct cloud region (EC2 East, West, etc...) or
+   a separate cloud altogether. 
