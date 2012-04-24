@@ -20,11 +20,3 @@ Contents:
    linux/linux
    windows/windows
    extending/extending
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

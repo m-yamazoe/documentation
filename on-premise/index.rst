@@ -20,12 +20,3 @@ Contents:
    installation/services
    troubleshooting/troubleshooting
    advanced/advanced
-   
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

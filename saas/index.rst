@@ -23,13 +23,3 @@ Contents:
    budget/budget
    agent/agent
    api/api
-
-   
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

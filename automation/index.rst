@@ -19,13 +19,3 @@ Contents:
    services/services
    deployment_configuration/deployment_configuration
    deployment_operation/deployment_operation
-
-   
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
