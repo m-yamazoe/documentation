@@ -12,6 +12,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    :numbered:
+   :hidden:
     
    console/console
    configuration_management/configuration_management
@@ -23,9 +24,4 @@ Contents:
    agent/agent
    api/api
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
