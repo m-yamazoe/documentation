@@ -2,14 +2,16 @@
 
 Chef
 ----
-Chef is a configuration management tool created by Opscode. enStratus support both the
+Chef is a configuration management tool created by Opscode. enStratus supports both the
 hosted and private versions of Chef.
 
-Object Store is a simple script based Configuration Management System that allows you to
+Object Store is a simple script-based Configuration Management System that allows you to
 upload custom scripts into a cloud storage account, groups scripts into personalities, and
 automatically download and run the scripts when a new server is launched in your cloud
 account.
+
 Services
+~~~~~~~~
 
 To implement configuration management, you must first configure a service under
 Configuration Management > Services. If you choose Chef, you must supply an endpoint for
@@ -21,7 +23,7 @@ Accounts
 
 Once your service has been configured, you will need to create an account associated with
 that service under Configuration Management > Accounts. When you set up an account for a
-Chef service you associate a set of credentials with that account. Credentials are not
+Chef service, you associate a set of credentials with that account. Credentials are not
 necessary for Object Store services.
 
 Multiple accounts may be attached to the same Chef service with different sets of

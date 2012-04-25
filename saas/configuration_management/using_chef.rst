@@ -102,7 +102,7 @@ Configure an Image to use Chef
 
 Launch VM with Configuration Management Action
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To trigger a vm launch and and accompanying chef action, launch a vm and choose the
+To trigger a vm launch and and accompanying chef action, launch a VM and choose the
 appropriate configuration management engine. For Chef, use the text window to paste in
 json that will be passed to the chef-client call as shown.
 
@@ -117,7 +117,7 @@ Here, we're passing in a chef role.
 
    Launch VM with Configuration Management Action
 
-The process for launching a vm with a subsequent chef-client call is shown below.
+The process for launching a VM with a subsequent chef-client call is shown below.
 
 .. figure:: ./images/chefLaunchProcess.png
    :height: 600px

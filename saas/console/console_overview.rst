@@ -54,7 +54,7 @@ The navigation bar displays the first level of interaction with the cloud provid
 Content Pane
 ~~~~~~~~~~~~
 The main content window for interacting with cloud resources is the content pane. The
-content displayed in this main window depend on the selections made in the Primary and
+content displayed in this main window depends on the selections made in the Primary and
 Secondary navigation panes. For example, if Infrastructure > Servers is selected, all
 active servers will be displayed in the content pane.
 
@@ -83,7 +83,7 @@ machine.
 
 If the cloud administrator for your account has implemented groups and roles, the action
 button may or may not be present in all cases. Presenting or hiding the green action
-button is one method enStratus uses to enforce role based access controls for cloud
+button is one method enStratus uses to enforce role-based access controls for cloud
 infrastructure.
 
 The action button is available for many different aspects of cloud infrastructure. The sub
@@ -102,14 +102,14 @@ Status/Alert/Support Menu
 
 The status menu is located at the bottom of the content pane. If there are any alerts in
 any of the accounts of which you are a part, they will be displayed here. Alerts are
-categorized High, Medium, or Low. Clicking on an alert color will slide out a truncated
+categorized as High, Medium, or Low. Clicking on an alert color will slide out a truncated
 list of alerts, which are accessible by clicking.
 
 Options for interacting with alerts include clicking on them to view in more detail or
 deleting them.
 
 The support link provided at the bottom of the console provides an integration point for
-external help desk functionality such as Zendesk. In the SaaS offering for enStratus,
+external help desk functionality, such as Zendesk. In the SaaS offering for enStratus,
 clicking the support link will activate a dialog window for sending a support request to
 the enStratus team.
 
