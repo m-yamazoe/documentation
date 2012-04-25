@@ -1,3 +1,5 @@
+.. _saas_roles:
+
 Roles
 -----
 

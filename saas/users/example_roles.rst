@@ -1,5 +1,7 @@
-Available Access Rights
------------------------
+.. _saas_example_rights:
+
+Example Access Rights
+---------------------
 
 **CONSOLE**
 

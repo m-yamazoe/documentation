@@ -1,3 +1,5 @@
+.. _saas_users_manage:
+
 Managing Users
 --------------
 The challenge of user management breaks down roughly along two boundaries. The first of
