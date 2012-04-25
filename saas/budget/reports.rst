@@ -1,4 +1,5 @@
 .. _saas_budget_reports:
+
 Reports
 -------
 Using the enStratus console, it is also possible to view detailed reports of your account.

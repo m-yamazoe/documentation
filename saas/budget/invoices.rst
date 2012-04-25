@@ -1,4 +1,5 @@
 .. _saas_budget_invoices:
+
 Invoices
 --------
 
