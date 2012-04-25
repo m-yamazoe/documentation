@@ -1,3 +1,4 @@
+.. _saas_budget_summary:
 Summary
 -------
 

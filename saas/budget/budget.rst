@@ -1,3 +1,4 @@
+.. _saas_budget:
 Budget
 ======
 

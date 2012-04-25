@@ -1,3 +1,4 @@
+.. _saas_budget_codes:
 Budget Codes
 ------------
 enStratus tracks infrastructure costs based on the costs reported by the cloud provider or
