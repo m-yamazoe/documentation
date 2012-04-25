@@ -1,3 +1,5 @@
+.. _linux_scripts:
+
 Linux
 -----
 

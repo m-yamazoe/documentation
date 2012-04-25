@@ -1,3 +1,5 @@
+.. _agent_downloads:
+
 Agent Downloads (Version 16)
 ============================
 
