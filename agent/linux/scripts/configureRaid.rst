@@ -1,5 +1,5 @@
 configureRaid
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 configureRaid - Creates RAID devices
 

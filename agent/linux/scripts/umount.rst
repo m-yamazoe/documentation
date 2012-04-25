@@ -8,7 +8,7 @@ umount - It umounts any filesystem mounted at a given folder
 
 
 Synopsis
-+++++++
+++++++++
 
 umount MOUNT_POINT
 
