@@ -1,3 +1,5 @@
+.. _console_examples:
+
 Alert Examples
 --------------
 
