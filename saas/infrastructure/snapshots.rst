@@ -1,3 +1,5 @@
+.. _saas_snapshots:
+
 Snapshots
 ---------
 Snapshots are the reciprocal of volumes. When a snapshot of a volume is created, a

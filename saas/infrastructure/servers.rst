@@ -1,3 +1,5 @@
+.. _saas_servers:
+
 Servers
 -------
 enStratus monitors all servers in your account. Use the green actions button to access

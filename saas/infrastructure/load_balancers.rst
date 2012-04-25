@@ -1,3 +1,5 @@
+.. _saas_load_balancers:
+
 Load Balancers
 --------------
 Successful application load balancing involves dynamically adding and removing application

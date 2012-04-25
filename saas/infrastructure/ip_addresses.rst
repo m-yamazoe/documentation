@@ -1,3 +1,5 @@
+.. _saas_ipaddresses:
+
 IP Addresses
 ------------
 

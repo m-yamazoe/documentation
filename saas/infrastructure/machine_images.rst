@@ -1,3 +1,5 @@
+.. _saas_machine_images:
+
 Machine Images
 --------------
 
