@@ -10,10 +10,10 @@ is included in the actions menu.
 
 Expanded information 
 ~~~~~~~~~~~~~~~~~~~~
-* Info: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.
-* Analytics: A graphical representation of CPU Load (in %) over the last hour.
-* Console: Hypervisor information.
-* Agent: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages. 
+* **Info**: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.
+* **Analytics**: A graphical representation of CPU Load (in %) over the last hour.
+* **Console**: Hypervisor information.
+* **Agent**: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages. 
 
 Make Image
 ~~~~~~~~~~
@@ -23,7 +23,7 @@ made to the operating system such as patches or updates.
 
 Make Snapshot
 ~~~~~~~~~~~~~
-Making a snapshot means create a differential backup of any attached volumes. 
+Making a snapshot means creating a differential backup of any attached volumes. 
 
 Shell/Remote Access
 ~~~~~~~~~~~~~~~~~~~
