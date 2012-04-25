@@ -10,7 +10,7 @@ enStratus Tutorials
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :hidden:
    :glob:
     
    introduction/introduction
