@@ -21,5 +21,3 @@ enStratus SaaS Documentation
    budget/budget
    agent/agent
    api/api
-
-* :ref:`search`
