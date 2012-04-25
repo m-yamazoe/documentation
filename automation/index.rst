@@ -7,11 +7,9 @@
 enStratus Automation
 ====================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :hidden:
    :glob:
     
    introduction/introduction
