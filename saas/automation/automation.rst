@@ -8,7 +8,7 @@ Automation
 
    prerequisites
 
-enStratus automation encompasses many facets of infrastructure mangement and orchestration.
+enStratus automation encompasses many facets of infrastructure management and orchestration.
 
 #. Automated backups. enStratus will perform backup/maintenance of the application and
    hardware infrastructure according to the specification of the deployment. Backups
