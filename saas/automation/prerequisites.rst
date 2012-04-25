@@ -1,3 +1,5 @@
+.. _saas_automation_prerequisites:
+
 Pre-requisites
 --------------
 
