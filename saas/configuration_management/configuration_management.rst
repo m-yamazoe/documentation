@@ -1,3 +1,5 @@
+.. _saas_configuration_management:
+
 Configuration Management
 ========================
 

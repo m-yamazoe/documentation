@@ -1,3 +1,5 @@
+.. _saas_chef:
+
 Chef
 ----
 Chef is a configuration management tool created by Opscode. enStratus support both the

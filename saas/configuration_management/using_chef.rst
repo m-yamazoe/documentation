@@ -1,3 +1,5 @@
+.. _saas_using_chef:
+
 Using Chef
 ----------
 
