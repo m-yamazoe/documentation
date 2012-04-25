@@ -1,3 +1,5 @@
+.. _saas_relational_database:
+
 Relational Databases
 --------------------
 

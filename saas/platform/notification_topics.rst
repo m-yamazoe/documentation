@@ -1,3 +1,5 @@
+.. _saas_notification_topics:
+
 Notification Topics
 -------------------
 

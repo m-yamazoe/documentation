@@ -1,3 +1,5 @@
+.. _saas_platform:
+
 Platform
 ========
 

@@ -1,3 +1,5 @@
+.. _saas_cloudfiles:
+
 Cloud Files
 -----------
 enStratus supports cloud file storage via the enStratus console. File storage allows users

@@ -1,3 +1,5 @@
+.. _saas_key_value:
+
 Key Value Databases
 -------------------
 
