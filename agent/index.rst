@@ -6,11 +6,9 @@
 
 .. include:: downloads/downloads.rst
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :hidden:
    :glob:
     
    downloads/downloads
