@@ -7,8 +7,6 @@
 enStratus on-Premise Documentation
 ==================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
    :hidden:

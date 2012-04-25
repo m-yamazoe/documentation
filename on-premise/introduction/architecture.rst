@@ -2,7 +2,7 @@ Architecture Requirements
 -------------------------
 
 .. image:: images/enstratusArchitecture.png
-	:scale: 70
+	:scale: 70%
 	:height: 600px
 	:width: 800px
 	:alt: 4-server Architecture
