@@ -9,7 +9,6 @@ enStratus SaaS Documentation
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :hidden:
     
    console/console
