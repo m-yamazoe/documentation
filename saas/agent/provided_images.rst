@@ -1,3 +1,5 @@
+.. _agent_provided_images:
+
 Provided Images
 ---------------
 The enStratus team provides some machine images that are pre-installed with the enStratus

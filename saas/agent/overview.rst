@@ -1,3 +1,5 @@
+.. _agent_overview:
+
 Overview
 --------
 The enStratus agent is composed of a lightweight tomcat application used for communicating

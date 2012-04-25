@@ -1,3 +1,5 @@
+.. _agent_installation:
+
 Installation
 ------------
 
