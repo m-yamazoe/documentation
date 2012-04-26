@@ -1,12 +1,14 @@
 Architecture Requirements
 -------------------------
 
-.. image:: images/enstratusArchitecture.png
-	:scale: 70%
-	:height: 600px
-	:width: 800px
-	:alt: 4-server Architecture
-	:align: right
+.. figure:: images/enstratusArchitecture.png
+   :height: 600px
+   :width: 800 px
+   :scale: 75 %
+   :alt: 4-server Architecture
+   :align: center
+
+   4-server Architecture
 
 To install enStratus on 4-5 machines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
