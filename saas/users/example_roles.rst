@@ -388,8 +388,6 @@ The following four roles are examples you can implement in your enStratus accoun
 +--------------+--------+-----------+
 | Resource     | Action | Qualifier |
 +==============+========+===========+
-| ANY          | ANY    | ANY       |
-+--------------+--------+-----------+
 | CONSOLE      | Access | ANY       |
 +--------------+--------+-----------+
 | CLUSTER      | ANY    | ANY       |
