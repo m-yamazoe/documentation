@@ -31,12 +31,12 @@ Shell/Remote Access
 Shell (Linux) and remote (Windows) access refers to creating user accounts on running
 servers. Each user in enStratus is assigned a user code of the form p123. When remote
 access is granted on a Linux server, a home user account is created on that server and the
-public ssh credentials defined in the enStratus user profile are set for the user. On
+public SSH credentials defined in the enStratus user profile are set for the user. On
 Windows, a home account is created and the user can access the running server using the
 RDP password set in the enStratus profile.
 
 .. note:: Before granting shell/remote access to a server, the user must define their
-  public ssh key and RDP password in their user profile. If the credentials change, the
+  public SSH key and RDP password in their user profile. If the credentials change, the
   remote servers are not notified of the change. To ensure the new credentials are used, the
   user must first be removed and re-added to remote access so the changes can propagate to
   their account. 
