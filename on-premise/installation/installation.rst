@@ -6,6 +6,7 @@ Installation
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    prerequisites
    km
