@@ -15,7 +15,18 @@
 }
 
 table.docutils {
-border: 1px solid black;
+  width:90%;
+  border-collapse:collapse;
+  border: 1px solid black;
+}
+
+th.head {
+    font-size:1.0em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#36636b;
+    color:#ffffff;
 }
 
 body {
