@@ -37,7 +37,7 @@ div.header-wrapper {
 
 /* Default body styles */
 a {
-  color: #ce5c00;
+  color: {{ linkcolor }};
 }
 
 div.bodywrapper a, div.footer a {
