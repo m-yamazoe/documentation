@@ -41,14 +41,14 @@ body {
 
 div.header, div.content, div.footer {
   width: {{ theme_pagewidth }};
-  margin-left: auto;
+  margin-left: 0.5cm;
   margin-right: auto;
 }
 
-div.header-wrapper {
+/* div.header-wrapper {
   background: {{ theme_headerbg }};
   border-bottom: 3px solid #2e3436;
-}
+} */
 
 
 /* Default body styles */
@@ -200,7 +200,7 @@ div.content-wrapper {
 
 div.document {
   width: {{ theme_documentwidth }};
-  float: left;
+  float: right;
 }
 
 div.body {
@@ -278,7 +278,7 @@ div.document ol {
 
 div.sidebar {
   width: {{ theme_sidebarwidth }};
-  float: right;
+  float: left;
   font-size: .9em;
 }
 
@@ -315,8 +315,7 @@ div.sidebar ul {
 div.sidebar li.toctree-l1 a {
   display: block;
   padding: 1px;
-  border: 1px solid #dddddd;
-  background-color: #eeeeec;
+  background-color: transparent;
   margin-bottom: .4em;
   padding-left: 3px;
   color: #2e3436;
@@ -340,9 +339,11 @@ div.sidebar li.toctree-l2:last-child a {
   border-bottom: none;
 }
 
+
 div.sidebar li.toctree-l1.current a {
-  border-right: 5px solid {{ theme_headerlinkcolor }};
+  background-color: #eeeeec;
 }
+
 
 div.sidebar li.toctree-l1.current li.toctree-l2 a {
   border-right: none;
