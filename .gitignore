@@ -6,4 +6,4 @@ makeAgent
 sync
 _build/
 *.html
-! layout.html
+!layout.html
