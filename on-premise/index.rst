@@ -4,8 +4,15 @@
    contain the root `toctree` directive.
 
 
-enStratus on-Premise Documentation
-==================================
+enStratus on-Premise
+====================
+
+.. figure:: ./images/onPremise.png
+   :height: 350px
+   :width: 800 px
+   :scale: 95 %
+   :alt: On Premise
+   :align: left
 
 .. toctree::
    :maxdepth: 2

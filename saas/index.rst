@@ -4,8 +4,15 @@
    contain the root `toctree` directive.
 
 
-enStratus SaaS Documentation
-============================
+enStratus SaaS
+==============
+
+.. figure:: ./images/docs.png
+   :height: 430px
+   :width: 800 px
+   :scale: 95 %
+   :alt: SaaS
+   :align: left
 
 
 .. toctree::
