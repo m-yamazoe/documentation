@@ -7,6 +7,14 @@
 enStratus Automation
 ====================
 
+.. figure:: ./images/deployment.png
+   :height: 430px
+   :width: 800 px
+   :scale: 95 %
+   :alt: Deployment Designer
+   :align: left
+
+
 .. toctree::
    :maxdepth: 2
    :hidden:
