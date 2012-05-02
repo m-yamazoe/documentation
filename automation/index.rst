@@ -7,6 +7,9 @@
 enStratus Automation
 ====================
 
+Welcome to the enStratus Automation portal. Use the menu on the left to learn more about
+cloud automation using enStratus.
+
 .. figure:: ./images/deployment.png
    :height: 430px
    :width: 800 px

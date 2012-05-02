@@ -39,11 +39,20 @@ body {
 
 /* Page layout */
 
-div.header, div.content, div.footer {
+div.header, div.content {
   width: {{ theme_pagewidth }};
   margin-left: 0.5cm;
   margin-right: auto;
 }
+
+div.footer {
+  width: {{ theme_pagewidth }};
+  margin-left: 0.5cm;
+  margin-right: auto;
+  font-size: 13px;
+}
+
+
 
 /* div.header-wrapper {
   background: {{ theme_headerbg }};
@@ -180,6 +189,8 @@ div.header div.rel a {
   color: {{ theme_headerlinkcolor }};
   letter-spacing: .1em;
   text-transform: uppercase;
+  color: #ffffff;
+  font-size:13px;
 }
 
 p.logo {
@@ -378,6 +389,7 @@ div.footer .right {
 
 div.footer .left {
   text-transform: uppercase;
+  font-size:13px;
 }
 
 

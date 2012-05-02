@@ -7,6 +7,9 @@
 enStratus on-Premise
 ====================
 
+Welcome to the enStratus on-premise documentation portal. Use the menu at left to learn
+more about managing an enStratus on-premise installation.
+
 .. figure:: ./images/onPremise.png
    :height: 350px
    :width: 800 px
