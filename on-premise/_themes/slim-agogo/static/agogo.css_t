@@ -304,8 +304,6 @@ div.sidebar a:hover, div.header a:hover div.links a:hover {
 div.links {
   display: block;
   padding: 1px;
-  border: 1px solid #dddddd;
-  background-color: #eeeeec;
   margin-bottom: .4em;
   padding-left: 3px;
   color: #2e3436;
@@ -329,7 +327,7 @@ div.sidebar li.toctree-l1 a {
   background-color: transparent;
   margin-bottom: .4em;
   padding-left: 3px;
-  color: #2e3436;
+  color: #C13B20;
 }
 
 div.sidebar li.toctree-l2 a {
