@@ -1,11 +1,11 @@
 #intersphinx_cache_limit = 10     # days to keep the cached inventories
-#intersphinx_mapping = {
-#   'sphinx': ('http://sphinx.pocoo.org',  None),
-#   'python':('http://docs.python.org/2.7',None),
-#   'matplotlib':('http://matplotlib.sourceforge.net', None),
-#   'numpy':('http://docs.scipy.org/doc/numpy',None),
-#   'doc2':('/Users/gmoselle/projects/onpremise-documentation2/',None),
-#}
+intersphinx_mapping = {
+   'saas':('http://es-saas.s3.amazonaws.com/',None),
+   'agent':('http://es-agent.s3.amazonaws.com/',None),
+   'automation':('http://es-automation.s3.amazonaws.com/',None),
+   'onpremise':('http://es-onpremise.s3.amazonaws.com/',None),
+   'tutorials':('http://es-tutorials.s3.amazonaws.com/',None),
+}
 # -*- coding: utf-8 -*-
 #
 # enStratus documentation build configuration file, created by

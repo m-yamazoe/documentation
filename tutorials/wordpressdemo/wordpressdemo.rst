@@ -1,6 +1,17 @@
 Wordpress Demo
 --------------
 
+Overview
+~~~~~~~~
+
+Wordpress is sufficiently complext to demonstrate the full suite of enStratus automation
+capabilities, including the orchestration of a two dependent tiers of scalable servers.
+
+LAMP application stacks are simple to deploy and scale, and enStratus gives you the
+framework to scale and provide for very high-availability applications.
+
+Please follow the Wordpress tutorial at left, you'll be scaling in no time.
+
 .. note:: Estimated time to complete this tutorial will vary based on several factors such
    as the speed of the cloud provider, and the skill level of the operator.
 
@@ -8,7 +19,7 @@ Wordpress Demo
 
    SSH/Firewall skills, cloud-savvy: 2 hrs, maybe less.
 
-   Cloud god: 1 hr.
+   God of the known cloud universe: 1 hr.
 
 Purpose
 ~~~~~~~
@@ -31,12 +42,15 @@ Users seeking to successfully complete this tutorial must have the following ite
    the instructions should be copy-and-paste.
 
 Downloads
-^^^^^^^^^
+~~~~~~~~~
 
-Chef solo cookbook: wordpress-demo-prep.tar.gz 
-Wordpress service: wordpress.tar.gz
-MySQL service: mysql.tar.gz
-Datasource: wordpresscontent.sql
+Chef solo cookbook: Not ready yet.
+
+Wordpress service: `Wordpress Service <http://es-download.s3.amazonaws.com/wordpress.tar.gz>`_
+
+MySQL service: `MySQL Service <http://http://es-download.s3.amazonaws.com/wordpress-mysql.tar.gz>`_
+
+Datasource: `MySQL Service <http://es-download.s3.amazonaws.com/wordpresscontent.sql>`_
 
 Overview
 ~~~~~~~~
@@ -80,8 +94,8 @@ Eric's team has recently begun publishing only 64-bit images. Any generic ubuntu
    Also, generate and use an SSH key during the launch.
 
 .. figure:: ./images/ami1.png
-   :height: 700px
-   :width: 800 px
+   :height: 600px
+   :width: 850 px
    :scale: 50 %
    :alt: Launch, General Information
    :align: center
@@ -95,7 +109,7 @@ Save the key and chmod it
    chmod 600 demoKey
 
 .. figure:: ./images/ami3.png
-   :height: 500px
+   :height: 450px
    :width: 1200 px
    :scale: 50 %
    :alt: Launch, Create/Use Key
@@ -165,8 +179,8 @@ enStratus console.
 
 .. figure:: ./images/makeImage1.png
    :height: 700px
-   :width: 2200 px
-   :scale: 45 %
+   :width: 2500 px
+   :scale: 35 %
    :alt: Server, Make Image
    :align: center
 
@@ -593,7 +607,7 @@ what firewall into which the servers will be started.
 Set an image for use in each of the launch configurations, as shown:
 
 .. figure:: ./images/lc1.png
-   :height: 1100px
+   :height: 900px
    :width: 1300 px
    :scale: 50 %
    :alt: Launch Configuration, Wordpress
@@ -616,24 +630,24 @@ Once the initial launch configurations are set, click on the launch configuratio
 to the bottom, and use the previously created firewall.
 
 .. figure:: ./images/lc3.png
-   :height: 600px
+   :height: 500px
    :width: 2100 px
    :scale: 50 %
    :alt: Launch Configuration, Wordpress
    :align: center
 
-   Launch Configuration, Wordpress
+   Launch Configuration, Edit Wordpress
 
 Do the same thing for the MySQL launch configuration.
 
 .. figure:: ./images/lc3.png
-   :height: 600px
+   :height: 500px
    :width: 2100 px
    :scale: 50 %
    :alt: Launch Configuration, MySQL
    :align: center
 
-   Launch Configuration, MySQL
+   Launch Configuration, Edit MySQL
 
 Set Scaling Rules
 ~~~~~~~~~~~~~~~~~
