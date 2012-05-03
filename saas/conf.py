@@ -4,6 +4,7 @@ intersphinx_mapping = {
    'agent':('http://es-agent.s3.amazonaws.com/',None),
    'automation':('http://es-automation.s3.amazonaws.com/',None),
    'onpremise':('http://es-onpremise.s3.amazonaws.com/',None),
+   'tutorials':('http://es-tutorials.s3.amazonaws.com/',None),
 }
 # -*- coding: utf-8 -*-
 #
