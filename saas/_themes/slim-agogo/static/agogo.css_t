@@ -327,7 +327,17 @@ div.sidebar li.toctree-l1 a {
   background-color: transparent;
   margin-bottom: .4em;
   padding-left: 3px;
-  color: #C13B20;
+  color: #000000;
+  text-decoration:none;
+}
+
+div.sidebar li.toctree-l1 a:hover {
+  display: block;
+  padding: 1px;
+  background-color: #EEE;
+  margin-bottom: .4em;
+  padding-left: 3px;
+  text-decoration:underline;
 }
 
 div.sidebar li.toctree-l2 a {
