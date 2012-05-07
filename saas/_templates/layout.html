@@ -8,8 +8,9 @@
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Security WP.pdf">Security Whitepaper</a></div>
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Identity & Access Controls WP.pdf">Identify & Access Controls</a></div>
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Enterprise Cloud Mgmt WP.pdf">Understanding Cloud Management</a></div>
-    {%- endblock %}
-    {%- block sidebarsearch %}
+{%- endblock %}
+
+{%- block sidebarsearch %}
     <h3 style="margin-top: 1.5em;">{{ _('Search') }}</h3>
     <form class="search" action="{{ pathto('search') }}" method="get">
       <input type="text" name="q" />
