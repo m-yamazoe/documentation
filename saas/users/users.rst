@@ -7,6 +7,7 @@ Users
    :maxdepth: 1
 
    intro
+   iam
    user_profile
    roles
    access_rights
