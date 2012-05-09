@@ -5,7 +5,7 @@ Chef solo cookbook: `Wordpress Prep Cookbook <http://es-download.s3.amazonaws.co
 
 Wordpress service: `Wordpress Service <http://es-download.s3.amazonaws.com/wordpress.tar.gz>`_
 
-MySQL service: `MySQL Service <http://http://es-download.s3.amazonaws.com/wordpress-mysql.tar.gz>`_
+MySQL service: `MySQL Service <http://es-download.s3.amazonaws.com/wordpress-mysql.tar.gz>`_
 
 Datasource: `MySQL Datasource <http://es-download.s3.amazonaws.com/wordpresscontent.sql>`_
 
