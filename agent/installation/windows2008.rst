@@ -195,12 +195,7 @@ Create the download client:
    $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/PSCX-1.2.msi',
    'C:\Users\Administrator\Desktop\PSCX-1.2.msi')
 
-Download the Sun Java 7 JDK:
-
-.. code-block:: powershell
-
-   $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/jdk-7-windows-i586.exe',
-   'C:\Users\Administrator\Desktop\jdk-7-windows-x64.exe')
+Download the Sun Java 7 JDK and install it.
 
 Download the enStratus Agent:
 
