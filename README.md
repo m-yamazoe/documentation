@@ -17,4 +17,5 @@ To Do
 
 1. Learn about sphinx restructured syntax
 	- http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#include-other-rst-files-with-the-toctree-directive
-	- learn how to customize the themes!
+  - http://www.siafoo.net/help/reST
+
