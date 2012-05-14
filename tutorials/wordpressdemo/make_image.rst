@@ -76,6 +76,23 @@ Save the key and chmod it
    tar -zxf wordpress-demo-prep.tar.gz > /dev/null 2>&1
    chef-solo -j node.json -c solo.rb 
 
+7. Update the node.json and solo.rb files nameserver and cookbook location
+
+.. code-block:: bash
+
+   cd wordpress-demp-prep
+   sudo vim node.json
+   # Change nameserver and search in the 'resolver' node
+   sudo vim solo.rb
+   # Change the 'cookbook_path' to the extracted wordpress-demo-prep path
+   # e.g. /tmp/wordpress-demo-prep/cookbooks
+
+8. Execute the chef-solo run:
+
+.. code-block:: bash
+
+   chef-solo -j node.json -c solo.rb
+
 .. note:: For reference, when running this on a m1.large VM in th us-west-2 (Oregon)
   region, the above script took 3 minutes and 9 seconds.
 
