@@ -1,6 +1,4 @@
 Wordpress Demo
-<<<<<<< HEAD
-==============
 
 .. toctree::
    :maxdepth: 1
@@ -25,7 +23,7 @@ Wordpress Demo
    launch
 
 .. figure:: ./images/demoLanding.png
-=======
+
 --------------
 
 .. note:: Estimated time to complete this tutorial will vary based on several factors such
@@ -165,18 +163,7 @@ Save the key and chmod it
 
    tar -xzf wordpress-demo-prep.tar.gz
 	
-7. Update the node.json and solo.rb files nameserver and cookbook location
-
-.. code-block:: bash
-	cd wordpress-demp-prep
-	sudo vim node.json
-	# Change nameserver and search in the 'resolver' node
-	sudo vim solo.rb
-	# Change the 'cookbook_path' to the extracted wordpress-demo-prep path
-	# e.g. /tmp/wordpress-demo-prep/cookbooks
-	
-
-8. Execute the chef-solo run:
+7. Execute the chef-solo run:
 
 .. code-block:: bash
 
@@ -418,7 +405,6 @@ Associate the wordpress service with the application tier and the mysql service 
 database tier.
 
 .. figure:: ./images/addService2.png
->>>>>>> Added instructions to change solo.rb and nodes.json
    :height: 600px
    :width: 1150 px
    :scale: 70 %
