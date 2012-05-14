@@ -12,6 +12,10 @@ How to use this documentation site
 4. make html
 5. open _build/html/index.html in your browser
 
+This documentation repository is provided under "best effort" of the enStratus team.
+It is not a part of the official enStratus product and is therefore not subject to support
+tickets.
+
 To Do
 ------
 
