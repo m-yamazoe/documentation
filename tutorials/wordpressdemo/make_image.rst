@@ -74,12 +74,7 @@ Save the key and chmod it
    sudo apt-get -y install chef
 
    tar -zxf wordpress-demo-prep.tar.gz > /dev/null 2>&1
-
-7. Execute the chef-solo run:
-
-.. code-block:: bash
-
-   chef-solo -j node.json -c solo.rb
+   chef-solo -j node.json -c solo.rb 
 
 .. note:: For reference, when running this on a m1.large VM in th us-west-2 (Oregon)
   region, the above script took 3 minutes and 9 seconds.
