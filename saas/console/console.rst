@@ -9,3 +9,4 @@ Console
    purpose
    console_overview
    examples  
+   notifications
