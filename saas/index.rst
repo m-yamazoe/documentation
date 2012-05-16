@@ -24,6 +24,13 @@ to automate.
 `enStratus Agent <http://agent.enstratus.com>`_ : enStratus Agent information.
 Installation and operation.
 
+New Content
+-----------
+
+`Notifications <http://docs.enstratus.com/console/notifications.html>`_
+
+`Identify and Access Management <http://docs.enstratus.com/users/iam.html>`_
+
 
 .. toctree::
    :maxdepth: 2
