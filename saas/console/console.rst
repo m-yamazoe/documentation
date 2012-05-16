@@ -8,4 +8,4 @@ Console
 
    purpose
    console_overview
-   examples  
+   examples 
