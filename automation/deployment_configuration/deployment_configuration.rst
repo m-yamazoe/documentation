@@ -21,7 +21,7 @@ Deployment Configuration
 The purpose of this section is to walk through the deployment configuration options in
 enStratus. 
 
-In the `Overview <../introduction/overview.html>`_ section, we covered the concepts
+In the :ref:`Overview <overview>` section, we covered the concepts
 involved with creating an enStratus deployment.
 
 .. note:: 
