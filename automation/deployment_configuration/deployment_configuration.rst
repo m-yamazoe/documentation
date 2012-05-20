@@ -3,6 +3,7 @@ Deployment Configuration
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    user_interface
    deployment_management

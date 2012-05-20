@@ -279,14 +279,14 @@ Editing a service presents several options. The options presented here control h
 enStratus treats your service and what information is passed to your service when changes
 occur.
 
-3. **Backup Frequency**
+1. **Backup Frequency**
 
    The backup frequency setting controls the frequency with which enStratus calls any custom
    backup script located in /mnt/services/$serviceID/enstratus/bin/enstratus-backupService.
    This is a service level backup and enStratus will store the resulting backup file in
    cloud storage.
 
-4. **Configuration**
+2. **Configuration**
 
    Configuration is a free form text field that allows an administrator to pass in sensitive
    information to the service. This information makes its way directly into the
@@ -294,16 +294,16 @@ occur.
    /mnt/services/$serviceID/bin/enstratus-configure as necessary during scaling and starting
    events. Remember that the enstratus.cfg file is securely erased after it is used.
 
-5. Run as User
+3. Run as User
 
    The run as user controls the user enStratus will use to start the service.
 
-6. Service Image
+4. Service Image
 
    The service image is the service image that will be used for the specified service.
    Service images must first be uploaded via Automation > Service Images.
 
-7. Scaling Model
+5. Scaling Model
 
    The scaling model has four options:
 
@@ -328,7 +328,7 @@ occur.
          This option tells enStratus to treat all database servers as peers with no
          master/slave relationship.
 
-8. SSL Certificate
+6. SSL Certificate
 
    SSL Certificates may be uploaded to enStratus via the interface at Infrastructure > SSL.
 
@@ -402,14 +402,10 @@ The relevant section of the enstratus.cfg file for ports is shown here:
   port.80.publicPort=80 
   port.80.privatePort=80 
 
-Credentials are also securely passed to the service via the enstratus.cfg file during
-deployment start. What happens to these credentials is determined by the actions taken by
-the enstratus-configure script which should be written by the application/service architect.
-
 Credentials
 ~~~~~~~~~~~
 
-Credentials are also securely passed to the service via the enstratus.cfg file during
+Credentials are securely passed to the service via the enstratus.cfg file during
 deployment start. What happens to these credentials is determined by the actions taken by
 the enstratus-configure script which should be written by the application/service
 architect.
@@ -431,10 +427,6 @@ The relevant section of the enstratus.cfg file for credentials is here:
   serviceKeys=admin 
   serviceKey.admin.user=adminUser
   serviceKey.admin.password=trustno1
-
-This configuration option controls the information that is passed to services via the
-enstratus.cfg file. What happens to this information is determined by the actions
-specified in the enstratus-configure script written by your application architect.
 
 Data Sources
 ~~~~~~~~~~~~
