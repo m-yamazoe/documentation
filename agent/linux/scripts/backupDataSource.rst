@@ -3,7 +3,7 @@ backupDataSource
 
 Name
 ~~~~
-backupDataSource ~ Dumps a data source to the specified file location
+backupDataSource - Dumps a data source to the specified file location
 
 Synopsis
 ~~~~~~~~
@@ -16,7 +16,7 @@ Description
 It invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-backupDataSource , if
 existent, to backup a Data Source. enstratus~backupDataSource is usually an ad~hoc script
 meant to backup an specific kind of data source, for example using mysqldump for MySQL
-databases, pgdump for PostGRESQL, etc.
+databases, pgdump for PostgreSQL, etc.
 
 
 Options
