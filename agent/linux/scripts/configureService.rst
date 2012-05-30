@@ -1,24 +1,24 @@
 configureService
-~~~~~~~~~~~~~~~~
+----------------
 
 Name
-++++
+~~~~
 
 configureService ~ Launcher for service-specific configuration script
 
 Synopsis
-++++++++
+~~~~~~~~
 
 configureService USER_ID CUSTOMER_ID SERVICE_ID [[ SSL_ADDRESS CERT_FILE_PATH KEY_FILE_PATH ] CHAIN_FILE_PATH ]
 
 Description
-+++++++++++
+~~~~~~~~~~~
 
 enStratus invokes the script /mnt/services/$SERVICE_ID/bin/enstratus-configure, if it exists, to run a service specific configuration script
 
 
 Options
-+++++++
+~~~~~~~
 
 USER_ID
 	User under whose authority the service configuration process will run. It can be set in the configuration of the service, otherwise enStratus will assign one.
@@ -42,30 +42,30 @@ CHAIN_FILE_PATH
 	Path of a file containing additional CA certificated that may be required to validate the certificate.
 	
 Examples
-++++++++
+~~~~~~~~
 
 configureService c100 c100 a12000
 
 
 Invocation
-++++++++++
+~~~~~~~~~~
 
 This script is called automatically by enStratus if the service needs to be configured in that server.
 
 
 Dependencies
-++++++++++++
+~~~~~~~~~~~~
 
 * None
 
 Permission
-++++++++++
+~~~~~~~~~~
 
-It is launched by the enStratus user.
+It is called by the enStratus user.
 
 
 Overrides
-+++++++++
+~~~~~~~~~
 
 Override: No
 
