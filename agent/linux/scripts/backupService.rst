@@ -3,7 +3,8 @@ backupService
 
 Name
 ~~~~~
-backupService ~ Backs up the target service.
+
+backupService - Backs up the target service.
 
 Synopsis
 ~~~~~~~~

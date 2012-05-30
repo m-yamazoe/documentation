@@ -4,7 +4,7 @@ configureService
 Name
 ~~~~
 
-configureService ~ Launcher for service-specific configuration script
+configureService - Launcher for service-specific configuration script
 
 Synopsis
 ~~~~~~~~
