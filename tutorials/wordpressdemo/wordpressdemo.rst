@@ -19,7 +19,6 @@ Wordpress Demo
    configure_datasource
    dependencies
    launch_configuration
-   prerequisites
    scaling_rules
    launch
 
