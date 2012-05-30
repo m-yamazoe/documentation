@@ -233,7 +233,7 @@ Download the MS C Runtime Library:
 
 6. Extract the enStratus Agent 
 
-   Right-click on enstratus-agent-windows-64bit-latest.zip  and select "Extract All".
+   Right-click on enstratus-agent-windows-64bit-latest.zip and select "Extract All".
 
    Change the location to C:\Program Files\enstratus-agent-windows-64bit-latest, and
    click Next.
