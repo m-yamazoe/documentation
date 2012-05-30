@@ -1,6 +1,11 @@
 listDevices
 -----------
 
+name
+~~~~
+
+listDevices 
+
 Synopsis
 ~~~~~~~~
 

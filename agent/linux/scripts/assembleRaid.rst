@@ -1,6 +1,9 @@
 assembleRaid
 ------------
 
+name
+~~~~
+
 assembleRaid - Assembles RAID devices
 
 Synopsis

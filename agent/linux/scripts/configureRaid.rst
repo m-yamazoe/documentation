@@ -1,6 +1,9 @@
 configureRaid
 -------------
 
+name
+~~~~
+
 configureRaid - Creates RAID devices
 
 Synopsis
