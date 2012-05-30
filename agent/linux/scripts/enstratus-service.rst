@@ -4,7 +4,7 @@ enstratus-service
 Name
 ~~~~
 
-enstratus-service ~ Manages the enStratus agent daemon
+enstratus-service - Manages the enStratus agent daemon
 
 Synopsis
 ~~~~~~~~
@@ -26,14 +26,17 @@ ACTION
 Examples
 ~~~~~~~~
 
-.. code-block:: sh
+.. code-block:: bash
 
 	$ /enstratus/bin/enstratus-service stop
+
 	Using CATALINA_BASE:   /enstratus/ws/tomcat
 	Using CATALINA_HOME:   /enstratus/ws/tomcat
 	Using CATALINA_TMPDIR: /enstratus/ws/tomcat/temp
 	Using JRE_HOME:       /usr/java/jdk
+
 	$ /enstratus/bin/enstratus-service start
+
 	Using CATALINA_BASE:   /enstratus/ws/tomcat
 	Using CATALINA_HOME:   /enstratus/ws/tomcat
 	Using CATALINA_TMPDIR: /enstratus/ws/tomcat/temp
