@@ -1,18 +1,18 @@
 mount
-~~~~~
+-----
 
 Name
-++++
+~~~~
 
 mount - It mounts a storage device at a directory. 
 
 Description
-+++++++++++
+~~~~~~~~~~~
 
 It mounts a storage device at a directory. Additional the mount point will be added to the /etc/fstab file so it is mounted automatically on server restart.
 
 Usage
-+++++
+~~~~~
 
 mount DEVICE_ID FILE_SYSTEM MOUNT_POINT
 
@@ -28,7 +28,7 @@ MOUNT_POINT
 
 
 Invocation
-++++++++++
+~~~~~~~~~~
 
 This script is called when:
 
@@ -37,19 +37,20 @@ This script is called when:
 * When a server is launched within a deployment and its Launch Configuration has been set to automatically create a volume. In this case volume is mounted in /mnt/services and given a xfs filesystem.
 
 Dependencies
-++++++++++++
+~~~~~~~~~~~~
 
 * sudo
 * Kernel modules required for mounting the filesystem
 
 Permissions
-+++++++++++
+~~~~~~~~~~~
 
-It is launched by the enstratus user. It needs sudo authority for mounting a filesystem and editing the /etc/fstab file. User enstratus will own the mount point and will be writeable by the user and group enstratus.
-
+It is called by the enstratus user. It needs sudo authority for mounting a filesystem and
+editing the /etc/fstab file. User enstratus will own the mount point and will be writeable
+by the user and group enstratus.
 
 Overrides
-+++++++++
+~~~~~~~~~
 
 Override: Yes, pre and post
 
