@@ -21,7 +21,7 @@ Options
 ~~~~~~~
 
 USER_ID
-	User name to be created. User Ids in enStratus follow the pattern pXXX, where XXX is a numeric sequence.
+	User name to be removed. User IDs in enStratus follow the pattern pXXX, where XXX is a numeric sequence.
 
 
 Invocation
