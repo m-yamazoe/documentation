@@ -1,14 +1,14 @@
 format
-~~~~~~
+------
 
 Function
-++++++++
+~~~~~~~~
 
 It creates a filesystem in a given physical or logical storage volume. Additionally it adds an entry for that volume in /etc/fstab so the volume can be mounted easily. Actual volume mount is performed by the mount script.
 
 
 Usage
-+++++
+~~~~~
 
 format DEVICE_ID FILE_SYSTEM MOUNT_POINT ENCRYPTED
 
@@ -27,7 +27,7 @@ ENCRYPTED
 
 
 Invocation
-++++++++++
+~~~~~~~~~~
 
 This script is called when:
 
@@ -35,20 +35,20 @@ This script is called when:
 * When a server is launched within a deployment and the launch configuration has been set to automatically create a volume. In this case volume is mounted in /mnt/services and given a xfs filesystem.
 
 Dependencies
-++++++++++++
+~~~~~~~~~~~~
 
 * sudo
 * mkfs utility for the selected filesystem, that's is mkfs.xfs for XFS support, mkfs.ext3 for ext3
 * Kernel modules required for mounting the filesystem
 
 Permission
-++++++++++
+~~~~~~~~~~
 
-It is launched by the enstratus user. It needs sudo authority for creating a filesystem and editing the /etc/fstab file.
+It is called by the enstratus user. It needs sudo authority for creating a filesystem and editing the /etc/fstab file.
 
 
 Overrides
-+++++++++
+~~~~~~~~~
 
 Override: Yes, pre and post
 
