@@ -7,4 +7,5 @@ authenticated calls against enStratus from existing applications or third-party 
 
 To learn more about the enStratus API, please download the API Specifications document.
 
-If you have any questions about our API, please feel free to contact us.
+If you have any questions about our API, please feel free to `contact us. <http://www.enstratus.com/page/1/contact-us.jsp>`_
+
