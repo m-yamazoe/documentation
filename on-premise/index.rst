@@ -24,6 +24,6 @@ more about managing an enStratus on-premise installation.
 
    introduction/introduction
    installation/installation
-   services/services
+   administration/administration
    troubleshooting/troubleshooting
    advanced/advanced

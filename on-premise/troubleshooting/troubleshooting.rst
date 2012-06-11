@@ -7,6 +7,8 @@ Troubleshooting
    :maxdepth: 1
    :hidden:
 
+   registration
+   cloud_credentials
    cloud
    costs
    url
