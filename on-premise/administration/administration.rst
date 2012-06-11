@@ -1,7 +1,7 @@
-.. _services:
+.. _administration:
 
-Services
---------
+enStratus Administration
+========================
 
 .. toctree::
    :maxdepth: 1
@@ -10,12 +10,9 @@ Services
    init
    km
    dispatcher
-   monitor_worker
+   monitors
+   workers
    console
    api
-
-
-One the installation is completed, it's time to start the services. The purpose of this
-section is to demonstrate how to start the enStratus management services and determine if
-the the services are running. This section will also cover how to stop the enStratus
-management services.
+   mysql
+   active_directory
