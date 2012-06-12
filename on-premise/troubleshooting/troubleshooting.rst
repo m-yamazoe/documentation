@@ -9,6 +9,7 @@ Troubleshooting
 
    registration
    cloud_credentials
+   jobs
    cloud
    costs
    url
