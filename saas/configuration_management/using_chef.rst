@@ -185,5 +185,5 @@ client.rb
 
 .. literalinclude:: ./files/client.rb
    :language: ruby
-   :emphasize-lines: 8,22
+   :emphasize-lines: 7,21
    :linenos:
