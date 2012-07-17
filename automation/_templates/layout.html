@@ -3,11 +3,13 @@
     {{ super() }}
     <h3>{{ _('Automation Contents') }}</h3>
     {{ toctree() }}
-    <h3 style="margin-top: 1.5em;">{{ _('Downloads') }}</h3>
-      <div class="links"><a href="http://es-content.s3.amazonaws.com/enstratus-api-latest.pdf">API Document (PDF)</a></div>
+    <h3 style="margin-top: 1.5em;">{{ _('Documents') }}</h3>
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Security WP.pdf">Security Whitepaper</a></div>
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Identity & Access Controls WP.pdf">Identify & Access Controls</a></div>
       <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Enterprise Cloud Mgmt WP.pdf">Understanding Cloud Management</a></div>
+    <h4 style="margin-top: 1.5em;">{{ _('API') }}</h4>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/enStratus_API_2012-06-15">API - June 2012</a></div>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/enStratus_API_2012-04-12">API - April 2012</a></div>
     {%- endblock %}
 
 {% block footer %}
