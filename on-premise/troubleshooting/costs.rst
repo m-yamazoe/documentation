@@ -88,6 +88,8 @@ a match to the "product size".
 
 We can now begin to create entries in the server_product table. Using the first value shown in the CloudStack offerings above:
 
+* NOTE: for Eucalyptus, set server_product.provider_region_id = 'eucalyptus'
+
 .. code-block:: none
 
   +---------------------------+---------------------------------------+------+
