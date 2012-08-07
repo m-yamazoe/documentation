@@ -23,6 +23,7 @@ more about managing an enStratus on-premise installation.
    :glob:
 
    introduction/introduction
+   architecture/architecture
    installation/installation
    administration/administration
    troubleshooting/troubleshooting

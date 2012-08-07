@@ -1,17 +1,17 @@
 .. _installation:
 
 Installation
-============
+------------
 
+enStratus engineers are working hard to simplify the enStratus cloud management software
+process for proof-of-concept environments.
+
+Here is reference material for installing enStratus in a 1, 2, and 4 server model.
 
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :maxdepth: 2
 
-   prerequisites
-   km
-   dispatcher
-   monitor_worker
-   console
-   api
-   config_files
+   single_node/single_node
+   single_node/post_install
+..   two_node/two_node
+..   four_node/four_node
