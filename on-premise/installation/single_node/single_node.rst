@@ -3,6 +3,8 @@
 Single Node
 -----------
 
+.. warning:: These instructions should be used for POC/testing only.
+
 .. note:: These installation instructions have only been tested on the Linux operating
    system, Ubuntu 10.04/12.04 LTS x86_64 release. 
 
