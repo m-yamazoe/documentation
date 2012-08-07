@@ -102,8 +102,8 @@ Extract it. You will see something like this.
 
 .. code-block:: bash
 
-   [root@localhost es-onpremise-chef-solo]# ls classes  cookbooks  enstratus-utilities.jar  frontend.json
-   onpremiseInstall.tar.gz  README.md  roles  single_node.json  solo.rb
+   [root@localhost es-onpremise-chef-solo]# ls 
+   classes  cookbooks  enstratus-utilities.jar README.md  roles  single_node.json  solo.rb
 
 Download and Prepare the JDK and JCE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
