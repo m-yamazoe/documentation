@@ -91,7 +91,7 @@ To install the chef client, use the following steps:
 
 1. apt-get update && apt-get -y upgrade
 2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
-3. apt-get -y install libmysqlclient16-dev 
+3. apt-get -y install libmysqlclient-dev 
 4. /opt/chef/embedded/bin/gem install mysql
 
    Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
