@@ -55,7 +55,7 @@ Storage: 60 Gb
 
 Architecture: 64-bit
 
-Again, an m1.xlarge will fill these requirements quite well. You can probably get by with
+An m1.xlarge will fill these requirements quite well. However, you can probably get by with
 an m1.large to save on costs.
 
 .. note:: This installation requires external Internet connectivity.
@@ -77,6 +77,8 @@ The installation procedure will move through the following steps:
 
 #. Download and prepare the JDK and JCE
 
+#. Generate keys 
+
 #. Edit installation attributes
 
 #. Install enStratus
@@ -96,7 +98,7 @@ To install the chef client, use the following steps:
 3. apt-get -y install libmysqlclient-dev build-essential
 4. /opt/chef/embedded/bin/gem install mysql
 
-   Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
+Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
 
 **Cent OS/Red Hat**
 
@@ -153,37 +155,14 @@ Move the jce directory: cookbooks/enstratus/files/default/jce
 
     mv jce cookbooks/enstratus/files/default/
 
-
-Edit Installation Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Edit the file:
-
-`cookbooks/enstratus/files/default/.bashrc and cookbooks/enstratus/attributes/default.rb`
-
-    Change console_url to what you want. This will be the url you use to access the
-    enStratus console. Example: cloud.mycompany.com
-
-.. note:: In most cases, you'll have to make a hosts file entry for this url.
-
-Change console_ip to what you want.
-
-This value must be accessible to the console user. If you're installing in EC2, you most
-probably want to use the publicly addressable IP address. 
-
-.. note:: You'll need to open the firewall (security group) on port 443 to access the
-   console.
-
-Change source_cidr to what you want. The source_cidr attribute should usually be set to
-the public IP address of the server. 
+Key Generation
+^^^^^^^^^^^^^^
 
 As part of the installation process, you will have received a directory called `classes`
 and a file called `enstratus-utilities.jar`.
 
-.. note:: This command will only run well on a system with java installed. So we have a
-   chicken-and-egg problem here. The chef-solo will help install java, but the installer
-   needs this information to proceed. Luckily, this command can be run on any machine with
-   Java and JCE installed.
+.. note:: This command will only run well on a system with java installed. Run this
+   command from your local machine or any machine with with Java installed.
 
 Run the command:
 
@@ -202,30 +181,65 @@ You will get output like:
     consoleEncryptionKey=w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY(
     secondEncryptedAccessKey=890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6
 
-Or, you can use the ones right here, but it's best to generate your own, since anyone with
+You could use the ones right here, but it's best to generate your own, since anyone with
 these keys could potentially access your customer data.
 
-Use these values to fill in the attributes in cookbooks/enstratus/attributes/default.rb:
+You will use these values to fill in the attributes in the next step.
+
+Edit Installation Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Edit the file:
+
+`cookbooks/enstratus/attributes/default.rb`
+
+    Change console_url to what you want it to be. This will be the url you use to access the
+    enStratus console. Example: cloud.mycompany.com
 
 .. code-block:: bash
 
-    default[:enstratus][:dispatcherEncryptionKey] = ''
-    default[:enstratus][:accessKey] = ''
-    default[:enstratus][:encryptedManagementKey] = ''
-    default[:enstratus][:firstEncryptedAccessKey] = ''
-    default[:enstratus][:consoleEncryptionKey] = ''
-    default[:enstratus][:secondEncryptedAccessKey] = ''
+   default[:enstratus][:console_url] = ''
 
-.. note:: The mysql root user password is set in the server attributes of the mysql
-   cookbook cookbooks/mysql/attributes/server.rb:
+.. note:: In most cases, you'll have to make a hosts file entry for this url.
 
-default['mysql']['server_root_password']
+Change console_ip to an appropriate value.
 
-The value in cookbooks/enstratus/files/default/.bashrc and cookbooks/enstratus/attributes/default.rb must also match.
+.. code-block:: bash
 
-**Attributes Summary**
+   default[:enstratus][:console_ip] = ''
 
-Before initiating the installation, make sure you have the following attributes set:
+This value must be accessible to the console user. If you're installing in EC2, you most
+probably want to use the publicly addressable IP address. 
+
+.. note:: You'll need to open the firewall (security group) on port 443 to access the
+   console.
+
+Change source_cidr to the publicly addressable IP address of the installation host. If no
+publicly routable IP address is available, use the primary IP address of the host.
+
+.. code-block:: bash
+
+   default[:enstratus][:source_cidr] = ''
+
+The following values come from running:
+
+.. code-block:: bash
+
+   java -cp enstratus-utilities.jar:./classes/ net.enstratus.deploy.GenerateKeys
+
+in the previous step.
+
+.. code-block:: bash
+
+   default[:enstratus][:dispatcherEncryptionKey] = ''
+   default[:enstratus][:accessKey] = ''
+   default[:enstratus][:encryptedManagementKey] = ''
+   default[:enstratus][:firstEncryptedAccessKey] = ''
+   default[:enstratus][:consoleEncryptionKey] = ''
+   default[:enstratus][:secondEncryptedAccessKey] = ''
+
+
+An enStratus engineer will provide these attributes along with the license key:
 
 .. code-block:: bash
 
@@ -241,46 +255,36 @@ Before initiating the installation, make sure you have the following attributes 
    default[:enstratus][:download][:provisioning_schema] = ''
    default[:enstratus][:download][:worker_service] = ''
 
-An enStratus engineer will provide these attributes along with the license key.
+Example default.rb
+^^^^^^^^^^^^^^^^^^
 
-Choose sensible values here that are appropriate for your environment.
+.. code-block:: ruby
 
-.. code-block:: bash
-
-   default[:enstratus][:license_key] = ''
+   #  These values are provided by an enStratus engineer. 
+   default[:enstratus][:download][:analytics_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/analytics_schema.sql'
+   default[:enstratus][:download][:console_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/consoleService.tar.gz'
+   default[:enstratus][:download][:api_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/apiService.tar.gz'
+   default[:enstratus][:download][:console_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/console.sql'
+   default[:enstratus][:download][:credentials_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/credentials.sql'
+   default[:enstratus][:download][:dispatcher_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/dispatcherService.tar.gz'
+   default[:enstratus][:download][:enstratus_console] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/enstratus_console.sql'
+   default[:enstratus][:download][:km_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/kmService.tar.gz'
+   default[:enstratus][:download][:monitor_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/monitorService.tar.gz'
+   default[:enstratus][:download][:provisioning_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/provisioning.sql'
+   default[:enstratus][:download][:worker_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/workerService.tar.gz'
    
+   # Edit these parameters.
+   default[:enstratus][:license_key] = 'asdfasdfasdfasdfsdfasdfasdfasdfasdfasdfasdasdfasdfasd'
    default[:enstratus][:console_url] = 'cloud.mycompany.com'
-   default[:enstratus][:console_ip] = ''
-   default[:enstratus][:source_cidr] = ''
-
-These following values come from running:
-
-.. code-block:: bash
-
-   java -cp enstratus-utilities.jar:./classes/ net.enstratus.deploy.GenerateKeys
-
-   default[:enstratus][:dispatcherEncryptionKey] = ''
-   default[:enstratus][:accessKey] = ''
-   default[:enstratus][:encryptedManagementKey] = ''
-   default[:enstratus][:firstEncryptedAccessKey] = ''
-   default[:enstratus][:consoleEncryptionKey] = ''
-   default[:enstratus][:secondEncryptedAccessKey] = ''
-
-Edit these only if you know what you're doing.
-
-.. code-block:: bash
-
-   default[:enstratus][:mysql_admin] = 'root'
-   default[:enstratus][:mysql_password] = 'ooYGsdrDOTk814HsXFMgQw'
-   default[:enstratus][:riak_host] = 'localhost'
-   default[:enstratus][:riak_port] = '8098'
-   default[:enstratus][:mq_user] = 'qsmq'
-   default[:enstratus][:mq_password] = 'enstratus'
-   default[:enstratus][:mq_host] = 'localhost'
-   default[:enstratus][:mq_port] = '5672'
-   default[:enstratus][:dispatcher_hostname] = 'dispatcher'
-   default[:enstratus][:km_hostname] = 'km'
-   default[:enstratus][:java_home] = '/usr/local/jdk'
+   default[:enstratus][:console_ip] = '999.999.999.999'
+   default[:enstratus][:source_cidr] = '999.999.999.999'
+   
+   default[:enstratus][:dispatcherEncryptionKey] = 'b%2MKnlmqVGIlGA6e%3T#QdYvxR&A0PeIC'
+   default[:enstratus][:accessKey] = 'lk*zJgL&BJTAm$7j!TVb#AL6Hbhq5$'
+   default[:enstratus][:encryptedManagementKey] = 'bd75e62e61c158f4df10a5d6448978d800067ab5dd1ade8d63528f53ea3b15e770ebb25331430114a1bb72663a6b03c5d55dc911c328d7f435270bcef52936f7'
+   default[:enstratus][:firstEncryptedAccessKey] = '3f7c501c59879aaa4631927bd164ffc64dc34b75bfe5f7f0a202f91533cc4495'
+   default[:enstratus][:consoleEncryptionKey] = 'w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY('
+   default[:enstratus][:secondEncryptedAccessKey] = '890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6'
 
 Install enStratus
 ^^^^^^^^^^^^^^^^^
