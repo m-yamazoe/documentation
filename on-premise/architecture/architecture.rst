@@ -12,8 +12,7 @@ Architecture
 
    enStratus High-Availability Architecture
 
-enStratus Deployments
-~~~~~~~~~~~~~~~~~~~~~
+**enStratus Deployments**
 
 enStratus has a very flexible deployment model. In a high-availability environment,
 enStratus can be deployed on a very scalable and resilient architecture, as shown above.

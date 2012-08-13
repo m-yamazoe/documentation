@@ -89,12 +89,25 @@ Install Chef client
 
 To install the chef client, use the following steps:
 
+**Ubuntu/Debian**
+
 1. apt-get update && apt-get -y upgrade
 2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
-3. apt-get -y install libmysqlclient-dev 
+3. apt-get -y install libmysqlclient-dev build-essential
 4. /opt/chef/embedded/bin/gem install mysql
 
    Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
+
+**Cent OS/Red Hat**
+
+.. warning:: Before you go further, disable selinux and reboot. The MySQL process will not
+   start properly without disabling selinux. In the future, selinux will be configured to do
+   so.
+
+1. yum -y update && yum -y upgrade
+2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
+3. yum -y install mysql-devel.x86_64
+4. /opt/chef/embedded/bin/gem install mysql
 
 Extract chef-solo package
 ^^^^^^^^^^^^^^^^^^^^^^^^^
