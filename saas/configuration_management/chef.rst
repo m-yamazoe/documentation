@@ -6,7 +6,7 @@ Chef is a configuration management tool created by Opscode. enStratus supports b
 hosted and private versions of Chef.
 
 Object Store is a simple script-based Configuration Management System that allows you to
-upload custom scripts into a cloud storage account, groups scripts into personalities, and
+upload custom scripts into a cloud storage account, group scripts into personalities, and
 automatically download and run the scripts when a new server is launched in your cloud
 account.
 
