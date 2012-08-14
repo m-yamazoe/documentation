@@ -16,6 +16,7 @@ Wordpress Demo
    create_tiers
    add_services
    configure_ports
+   add_credentials
    configure_datasource
    dependencies
    launch_configuration
