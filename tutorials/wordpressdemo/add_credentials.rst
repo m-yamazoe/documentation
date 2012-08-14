@@ -5,8 +5,8 @@ The credentials option in the actions menu is to allow credentials or other priv
 
 .. figure:: ./images/credentials0.jpg
    :height: 289px
-   :width: 1389 px
-   :scale: 75 %
+   :width: 1300 px
+   :scale: 55 %
    :alt: MySQL, Credentials
    :align: center
 
