@@ -53,9 +53,9 @@ password changes, notification preferences [LINK HERE TOO - this isn't currently
 3. Account & Region
 ~~~~~~~~~~~~~~~~~~~
 
-.. figure:: ./images/multipleAccounts.png
-   :height: 187 px
-   :width: 373 px
+.. figure:: ./images/acctdropdown.png
+   :height: 240 px
+   :width: 471 px
    :scale: 100 %
    :alt: Account
    :align: center
