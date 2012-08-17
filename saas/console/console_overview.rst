@@ -47,8 +47,8 @@ This logo can be customized for your enStratus installation.
 .. (it turns out that I don't like captions, at least when they repeat the subject heading)   User Profile
 
 Clicking on the name of the person logged in to the enStratus console
-provides functionality for editing user profile information (:doc:`including setting notification targets <notifications>`),
-password changes, notification preferences [LINK HERE TOO - this isn't currently a page, but should be on its own soon], and API key management.
+provides functionality for editing user profile information (:doc:`including setting notification targets <notification_targets>`),
+password changes, :doc:`notification preferences <user_notifications>`, and API key management.
 
 3. Account & Region
 ~~~~~~~~~~~~~~~~~~~
