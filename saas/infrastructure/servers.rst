@@ -2,7 +2,7 @@
 
 Servers
 -------
-enStratus monitors all servers in your account. Use the green actions link to access
+enStratus monitors all servers in your account. Select actions from the right-hand column to access
 server options. If the enStratus agent is not installed on the server, the options available
 are limited to getting information, rebooting, pausing/starting, or terminating the
 server. If the enStratus agent is installed on a running server, additional functionality
@@ -110,6 +110,8 @@ RDP password set in the enStratus profile.
   remote servers are not notified of the change. To ensure the new credentials are used, the
   user must first be removed and re-added to remote access so the changes can propagate to
   their account. 
+
+Administrator access can also be set through this option.
 
 Reboot
 ~~~~~~

@@ -3,6 +3,14 @@
 Machine Images
 --------------
 
+.. figure:: ./images/machineImages.png
+   :width: 1232 px
+   :height: 698 px
+   :scale: 70 %
+   :alt: Machine Images
+   :align: center
+
+
 Overview
 ~~~~~~~~
 
@@ -27,46 +35,89 @@ provider. Some cloud providers allow access to a public database of images from 
 private servers can be started. enStratus allows searching and starting of any publicly
 available machine images.
 
-Renaming
-~~~~~~~~
-To rename a machine image, click on the image name indicated by a brown dashed line. A
-text window will appear. Enter the desired name and select OK.
+Renaming and Re-labeling
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To rename a machine image, click on the image name. 
+The text will become editable.
+
+.. figure:: ./images/imageRename.png
+   :width: 265 px
+   :height: 101 px
+   :scale: 85 %
+   :alt: renaming an image
+   :align: center
+
 
 To change the label color of a machine image, click on the label color and choose the
-desired color from the resulting choices.
+desired label from the resulting choices.
+
+.. figure:: ./images/imageRelabel.png
+   :width: 197 px
+   :height: 478 px
+   :scale: 85 %
+   :alt: relabeling an image
+   :align: center
+
+Machine Image Actions
+~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ./images/imagesActions.png
+   :width: 165 px
+   :height: 186 px
+   :alt: actions 
+   :align: center
+
+Selecting actions from the column in the far right will bring up an interface for manipulating 
+that machine image. 
+
+.. note:: Not all options will appear for all images.
 
 Starting
 ~~~~~~~~
-To start a server from a machine image, click on the green action button and select
-launch. A dialog box will appear allowing for customization of launch options.
+To start a server from a machine image, select actions > launch.
+A dialog box will appear.
 
-Some of the launch parameters are governed by the functionality provided for by the
-underlying cloud provider. Most cloud providers allow for customization of the amount of
-hardware (CPU, Memory, storage) provisioned for the server.
+.. figure:: ./images/launchGeneral.png
+   :width: 882 px
+   :height: 686 px
+   :scale: 65%
+   :alt: actions > launch 
+   :align: center
 
-Security Group
-~~~~~~~~~~~~~~
-Security parameters in the form of firewall or security group are also chosen at the time
-of server launch.
 
-enStratus layers additional functionality in the form of groups and billing codes into
-server launch for all cloud providers.
+.. note:: Some of the launch parameters are governed by the functionality provided for by the underlying cloud provider. Most cloud providers allow for customization of the amount of hardware (CPU, Memory, storage) provisioned for the server.
 
-Key Pair
-~~~~~~~~
+**General** 
+
+Security parameters in the form of firewall (also referred to as security group) can be chosen at the time
+of server launch or specified later.
+
+enStratus layers additional functionality in the form of groups and budget codes into
+server launch for all cloud providers; these are also selected on the General tab.
+
+**Key Pair**
+
 Some cloud providers allow servers to be started with a root keypair. enStratus provides
 for this functionality by allowing the user to choose from a set of existing keypairs or
 to create a new keypair at launch.
 
-Volumes
-~~~~~~~
+**Volumes**
+
 Additionally, through some cloud providers it is possible to specify a volume group to be
 attached, formatted, put into a RAID configuration, and optionally encrypted at launch
 time.
 
+**Configuration Management**
+
+.. figure:: ./images/launchConfigMgmt.png
+   :width: 875 px
+   :height: 652 px
+   :scale: 70 %
+   :alt: Configuration Management
+   :align: center
+
+|
+
 Once the server is launched, it will usually take less than 20 minutes for the server to
 be ready for use.
-
-To do:
-#. Launch process
-#. Screenshots
