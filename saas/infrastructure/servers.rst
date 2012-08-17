@@ -2,31 +2,101 @@
 
 Servers
 -------
-enStratus monitors all servers in your account. Use the green actions button to access
-your server. If the enStratus agent is not installed on the server, the options available
+enStratus monitors all servers in your account. Use the green actions link to access
+server options. If the enStratus agent is not installed on the server, the options available
 are limited to getting information, rebooting, pausing/starting, or terminating the
 server. If the enStratus agent is installed on a running server, additional functionality
 is included in the actions menu.  
 
-Expanded information 
-~~~~~~~~~~~~~~~~~~~~
-* **Info**: Expanded information regarding server attributes. Including comprehensive hardware information such as logical volumes attached, filesystems used, encryption, and memory.
-* **Analytics**: A graphical representation of CPU Load (in %) over the last hour.
-* **Console**: Hypervisor information.
-* **Agent**: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages. 
+This section describes the options available in the actions menu; options for which the agent
+must be installed are indicated with an asterisk(*).
+
+.. figure:: ./images/actMenuWOagent.png
+   :alt: Actions Menu without Agent
+   :align: center
+   :scale: 90 %
+
+   Actions Menu without Agent, Paused
+
+.. figure:: ./images/actMenuWagent.png
+   :alt: Actions Menu without Agent
+   :align: center
+   :scale: 90 %
+
+   Actions Menu with Agent, Running
+
+Info
+~~~~
+
+.. figure:: ./images/actInfoPane.png
+   :alt: Info Pane
+   :align: center
+   :width: 676 px
+   :height: 577 px
+   :scale: 65 % 
+
+|
+
+Expanded information regarding server attributes, including agent version (under Guest tab). 
+
+.. note:: The Performance and Guest tabs are only visible with the enStratus agent installed.
+
+.. **Analytics**: A graphical representation of CPU Load (in %) over the last hour.
+.. * **Console**: Hypervisor information.
+.. * **Agent**: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages. 
+
+Logs
+~~~~
+
+.. figure:: ./images/actMenuLogs.png
+   :alt: Logs
+   :align: center
+   :width: 812 px
+   :height: 580 px
+   :scale: 65 % 
+
+|
+
+The Agent tab contains logging information for events such as adding/removing users, 
+Host Intrusion Detection System alerts, and customizable information messages. 
+The Console tab provides hypervisor information. 
+
+Monitoring
+~~~~~~~~~~
+
+[couldn't get monitoring to run on the few servers I tried.... come back to this later]
 
 Make Image
 ~~~~~~~~~~
-Making a machine image means making a saved copy of the server state for future use.
-Machine images will show up in the tab. Machine images should be made whenever changes are
-made to the operating system such as patches or updates. 
 
-Make Snapshot
-~~~~~~~~~~~~~
-Making a snapshot means creating a differential backup of any attached volumes. 
+Making a machine image creates a saved copy of the server state for future use.
+Newly made images will appear in Compute > Machine Images.
 
-Shell/Remote Access
-~~~~~~~~~~~~~~~~~~~
+Machine images should be made whenever changes are
+made to the operating system (e.g. patches or updates). 
+
+.. warning:: Running instances must be stopped or rebooted in order to successfully make a new image.
+
+See :doc:`Machine Images <machine_images>` for more information about using machine images effectively.
+
+Make Snapshot*
+~~~~~~~~~~~~~~
+
+.. figure:: ./images/actMenuMakeSnap.png
+   :alt: Make Snapshot
+   :align: center
+   :width: 496 px
+   :height: 216 px
+   :scale: 65 % 
+
+
+Making a snapshot creates a differential backup of any attached volumes. 
+These snapshots can then be used to create new volumes.
+
+See :doc:`Snapshots <snapshots>` for more information about snapshots and their uses.
+
+Shell/Remote Access*
+~~~~~~~~~~~~~~~~~~~~
 
 Shell (Linux) and remote (Windows) access refers to creating user accounts on running
 servers. Each user in enStratus is assigned a user code of the form p123. When remote
@@ -36,7 +106,7 @@ Windows, a home account is created and the user can access the running server us
 RDP password set in the enStratus profile.
 
 .. note:: Before granting shell/remote access to a server, the user must define their
-  public SSH key and RDP password in their user profile. If the credentials change, the
+  public SSH key and/or RDP password in their user profile. If the credentials change, the
   remote servers are not notified of the change. To ensure the new credentials are used, the
   user must first be removed and re-added to remote access so the changes can propagate to
   their account. 
@@ -45,17 +115,37 @@ Reboot
 ~~~~~~
 Reboot the running server. Rebooting does not change the IP address of the server. 
 
-Pause
-~~~~~
-Pause the running server. enStratus still monitors the server. IP address will change upon starting. 
+Pause/Start
+~~~~~~~~~~~
+Pause or start the running server. enStratus still monitors the server while it is paused. 
+
+.. warning:: The server's IP address will change upon starting after a pause. 
 
 Terminate
 ~~~~~~~~~
 Terminate the instance. No data on the instance will be saved. 
 
-To rename a running server, click on the server name indicated by a brown dashed line. A
-text window will appear. Enter the desired name and select OK. The hostname of the server
+Firewall Rules
+~~~~~~~~~~~~~~
+
+.. figure:: ./images/actMenuFirewall.png
+   :alt: Firewall
+   :align: center
+   :width: 1169 px
+   :height: 635 px
+   :scale: 65 % 
+
+
+
+Rename
+~~~~~~
+
+To rename a running server, click on the server name. 
+The text will become editable. The hostname of the server
 will be changed.
 
-To change the label color of a running server, click on the label color and choose the
-desired color from the resulting choices.
+Label
+~~~~~
+
+To change the label of a running server, click on the existing label and choose the
+desired new label from the resulting choices.
