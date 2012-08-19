@@ -211,3 +211,6 @@ monitors.cfg
 Path:
 
   /services/monitor/etc/monitors.cfg
+
+The is file is used to specify which of the enStratus monitors are started during the
+start process. This file is read by the assign process.

@@ -90,12 +90,13 @@ install.credentials
   /services/monitor/classes/enstratus-km-client.cfg
   /services/monitor/classes/enstratus-provisioning.cfg
   /services/monitor/classes/mq.cfg
+  /services/monitor/etc/dasein-persistence.properties
   /services/monitor/etc/cloud.properties
   /services/monitor/etc/monitors.cfg
 
   [ Monitor Logging Files ]
 
-  /services/monitor/log/*.log
+  /services/monitor/log/<service>.log
 
   [ Workers Configuration Files ]
 
