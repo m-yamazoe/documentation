@@ -18,7 +18,7 @@ more about managing an enStratus on-premise installation.
    :align: left
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :glob:
 
