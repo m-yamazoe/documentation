@@ -3,7 +3,14 @@
 Network
 =======
 
-[needs description]
+.. figure:: ./images/network.png
+   :width: 343 px
+   :height: 212 px
+   :scale: 90 %
+   :alt: Network
+   :align: center
+
+[summary]
 
 .. toctree::
    :maxdepth: 1
@@ -14,3 +21,4 @@ Network
    firewalls
    load_balancers
    ip_addresses
+

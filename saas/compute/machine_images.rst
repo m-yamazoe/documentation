@@ -90,8 +90,9 @@ A dialog box will appear.
 
 **General** 
 
-Security parameters in the form of firewall (also referred to as security group) can be chosen at the time
-of server launch or specified later.
+Security parameters in the form of a firewall can be chosen at the time
+of server launch or specified later. (See :doc:`Firewalls <../network/firewalls>` 
+for more about using firewalls in enStratus).
 
 enStratus layers additional functionality in the form of groups and budget codes into
 server launch for all cloud providers; these are also selected on the General tab.

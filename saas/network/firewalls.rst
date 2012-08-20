@@ -2,155 +2,150 @@
 
 Firewalls
 ---------
-Firewalls, or security groups, in enStratus control accessibility to running servers. Each
-account has a firewall called 'default' that is the default firewall into which all
-servers are launched.
 
-.. note:: The terms firewall and security group are interchangeable in enStratus.
-
-Security groups are applied to servers. Servers are part of security groups. A server is
-added to a security group at the time of server start. It is not currently possible to
-change the security group of a server post-launch. This is far less of a limitation than
-it sounds because the individual rules that comprise a security group can be changed at
-any time.
-
-.. figure:: ./images/securityGroups.png
-   :height: 300px
-   :width: 500 px
-   :scale: 95 %
-   :alt: Security Groups
+.. figure:: ./images/firewalls.png
+   :width: 1162 px
+   :height: 526 px
+   :scale: 65 %
+   :alt: Firewalls
    :align: center
 
-   Security Groups
 
-Generally, the process for managing firewalls is to first create the security group and
-then choose a security group into which servers will be launched at start.
+Firewalls in enStratus control access to running servers. Each
+account has a firewall called 'default' that is the default firewall into which all
+servers are launched. This default configuration includes rules that allow the enStratus monitoring service to 
+connect to running servers.
 
-To access firewalls in the enStratus console, navigate to Infrastructure > Firewalls. A
-listing of the active firewalls will be shown. To add a new firewall, click on the
-+create_firewall. Only two pieces of information are required to create a firewall: A
-name, billing code, and an optional group.
+.. note:: Some cloud providers use the term "security group" to describe this kind of firewall.
+
+Generally, the process for managing firewalls is to first create the firewall and
+then choose a firewall for new servers to use at launch.
+
+To access firewalls in the enStratus console, navigate to Network > Firewalls. A
+listing of the active firewalls will be shown. To add a new firewall, click on
++Create Firewall. Only two pieces of information are required to create a firewall: 
+Name and Budget Code; Network, Label Color, and User Group are all optional fields.
 
 .. figure:: ./images/createFirewall.png
-   :height: 250px
-   :width: 500 px
-   :scale: 75 %
-   :alt: Create Security Group
+   :width: 422 px
+   :height: 249 px
+   :scale: 85 %
+   :alt: Create New Firewall
    :align: center
 
-   Create Security Group
-
-Once the firewall has been saved, it will be added to the list of active firewalls. Once
+Once the firewall has been saved, it will be added to the list of active firewalls. As soon as
 the firewall is active, it will be provided as an option when launching new servers.
 
 Editing Firewalls
 ~~~~~~~~~~~~~~~~~
-To edit an existing firewall, select the green action button that corresponds to the
-firewall targeted for editing. A dialog box will appear showing the rules that comprise
-the firewall.
 
-The six columns that make up the firewall are:
+.. figure:: ./images/firewallsEditRules.png
+   :width: 1151 px
+   :height: 337 px
+   :scale: 65 %
+   :alt: Edit Firewall Rules
+   :align: center
 
-1. Source - A common name for the firewall rule. Standard networks naming conventions apply
-to this column. If a standard network is used, the CIDR column will be automatically
-populated with the information defined by that standard network.
 
-2. CIDR - CIDR means Classless Inter-Domain Routing. Practically, this means / or "slash"
+To edit an existing firewall, select actions > Edit Rules for the 
+firewall targeted for editing. A new pane will appear showing the rules that comprise
+the firewall. From this screen, existing rules can be deleted and new rules can be added.
+
+The columns that make up the firewall are:
+
+**ID**
+
+**Source** - A common name for the firewall rule. Standard networks naming conventions apply
+to this column. If a previously defined network address is used, the CIDR column will be automatically
+populated with the information defined by that network address.
+
+**CIDR** - CIDR means Classless Inter-Domain Routing. Practically, this means / or "slash"
 notation is required. For example, to apply a rule to only one IP address, the rule takes
 the form: 1.2.3.4/32. This is practical for creating a rule for your home IP address. This
 type of notation allows for firewall rules that encompass ranges of IP addresses. For
 example, to apply a rule to a range of 256 IP addresses, this represents a rule of the
 form: 1.2.3.0/24. This is a very powerful feature of firewall rule creation.
 
-3. Method - Refers to the program being used, and provides a common name for the program. For
-example, MySQL or SSH. Standard ports can be used to modify this part of the ruleset.
-Protocol, From Port and To Port are automatically populated with the information provided
-by that standard port.
+**Method** - Refers to the program being used, and provides a common name for the program (e.g.
+MySQL or SSH). Service ports can be used to modify this part of the ruleset.
 
-4. Protocol - Indicates the type of protocol that will apply, TCP, UDP, or ICMP.
+.. note:: Protocol, From Port and To Port are automatically populated with the information provided by the selected service port.
 
-5. From Port - The starting port for the rule.
+**Protocol** - Indicates the type of protocol that will apply, TCP, UDP, or ICMP.
 
-6. To Port - The ending port for the rule.
+**From Port** - The starting port for the rule.
 
-Standard Networks and Ports
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-enStratus introduces the concept of a standard network to firewalls. A standard network is
-a user-defined commonly used network that can be quickly added to a firewall using a
-common name that maps to the IP address specified. This functionality creates the
-advantage of being able to easily identify, add, and remove specific firewall rules among
+**To Port** - The ending port for the rule.
+
+Adding New Firewall Rules
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To add a new rule to an existing firewall, go to actions > Edit Rules for the firewall. Select +Add New Rule from the upper right.
+The following dialogue will appear:
+
+.. figure:: ./images/firewallsAddrule.png
+   :width: 594 px
+   :height: 331 px
+   :scale: 65 %
+   :alt: Add New Firewall Rule
+   :align: center
+
+.. note:: The Source drop-down is populated from Company Settings > Network Addresses. Likewise, the Method drop-down is populated from Company Settings > Service Ports. See next section for details. 
+
+Network Addresses
+~~~~~~~~~~~~~~~~~
+In enStratus, a Network Address is a user-defined, commonly used network that can be quickly added to a firewall using a
+common name that maps to the IP address specified. This functionality 
+makes it easy to identify, add, and remove specific firewall rules among
 what may be a long list of rules.
 
-For example, if a user typically conncects from a particular office IP address, this
-address should be added as a standard network and named appropriately for ease of
+For example, if a user typically connects from a particular office IP address, this
+address can be added as a network address and named appropriately for ease of
 identification.
 
-Similarly, standard ports are user-defined commonly used ports that typically map to a
+Similarly, service ports are user-defined, commonly used ports that typically map to a
 specific application. For example, if an application is required to allow connections on
-port 5555, a standard port can be defined to identify that application by a common name
+port 5555, a service port can be defined to identify that application by a common name
 and add it to the firewall.
 
-Standard networks are defined in Company Settings > Standard Networks. Every enStratus
-account has some default rules defined in a default firewall to allow for the enStratus
-monitoring service to connect to running servers. To define a new standard network, select
-+add_new_standard_network and complete the resulting dialog box.
+To define a new network address, navigate to Company Settings > Network Address. Select +Add New Network Address 
+from the upper right and  
+complete the resulting dialog box.
 
-.. figure:: ./images/addStandardNetwork.png
-   :height: 300px
-   :width: 400 px
+.. figure:: ./images/addNetworkAddress.png
+   :height: 322 px
+   :width: 429 px
    :scale: 95 %
    :alt: Standard Network
    :align: center
 
-   Standard Network
+Once the network address is saved, it will be added to the list of selectable networks.
 
-Once the standard network is saved, it will be added to the list of standard networks.
+To define a Service Port, navigate to
+Company Settings > Service Ports. To add a new Service Port, select
++Add A New Service Port and complete the resulting dialog box.
 
-Before we return to editing the firewalls, let's define a standard port. Navigate to
-Company Settings > Standard Ports. To add a new standard port, select
-+add_new_standard_port and complete the resulting dialog box.
-
-.. figure:: ./images/addStandardPort.png
-   :height: 300px
-   :width: 400 px
+.. figure:: ./images/addServicePort.png
+   :height: 337 px
+   :width: 433 px
    :scale: 95 %
-   :alt: Standard Port
+   :alt: Service Port
    :align: center
 
-   Standard Port
+Once the Service Port is saved, it will be added to the list of available service ports.
 
-Once the standard port is saved, it will be added to the list of standard ports.
-
-Returning again to editing firewalls, the new standard network called Office IP and the
-standard port called Custom Application can be quickly added to any of the existing
-firewalls.
-
-.. figure:: ./images/editFirewall.png
-   :height: 160px
-   :width: 900 px
-   :scale: 75 %
-   :alt: Edit Firewall Using Standard Port
-   :align: center
-
-   Edit Firewall Using Standard Port
-
-.. note:: If a standard network or port is deleted, the rule will still be applied to the
-  firewalls, it will only lose the customized name that was given and revert to a Custom
+.. note:: If a Network Address or Service Port is deleted, the rule will still be applied to the
+  firewalls, but it will lose its customized name and revert to a Custom
   rule.
 
-Starting a Server in Security Group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The final step in utilizing firewalls in the cloud is to apply a firewall group when
-starting a new server. To start a new server, navigate to Infrastructure > Machine Images.
-Select an image to launch and in the resulting dialog box, choose the security group to be
-applied to the resulting server. All of the rules comprising the security group will be
+Starting a Server in a Firewall
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The final step in utilizing firewalls in the cloud is to apply a firewall when
+starting a new server. To start a new server, navigate to Compute > Machine Images.
+Select an image to launch and in the resulting dialog box, choose the firewall to be
+applied to the resulting server. All of the rules comprising the firewall will be
 applied to the server.
 
-.. figure:: ./images/startServerinFirewall.png
-   :height: 400px
-   :width: 500 px
-   :scale: 85 %
-   :alt: Start Server in Firewall
-   :align: center
+See :doc:`Machine Images <../compute/machine_images>` 
+for more about starting images in enStratus).
 
-   Start Server in Firewall
