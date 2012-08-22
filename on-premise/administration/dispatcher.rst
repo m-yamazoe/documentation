@@ -5,6 +5,16 @@ Dispatcher
 
 The enStratus Dispatcher service is a tomcat service installed to /services/dispatcher.
 
+.. figure:: ./images/dispatcher.png
+   :height: 300 px
+   :width: 550 px
+   :scale: 70 %
+   :alt: Dispatcher Service
+   :align: center
+
+   Dispatcher Service Connections
+
+
 Dispatcher Overview
 -------------------
 The dispatcher service is the heart of the enStratus provisioning operations. It is responsible for executing

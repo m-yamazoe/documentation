@@ -3,8 +3,18 @@
 Workers
 =======
 
+.. figure:: ./images/monitorWorker.png
+   :height: 300 px
+   :width: 450 px
+   :scale: 70 %
+   :alt: Monitors/Workers Service
+   :align: center
+
+   Monitors/Workers Service Connections
+
 Worker Overview
 ----------------
+
 The enStratus worker service consists of two components, a publisher and a subscriber. At a very high level,
 these components:
 
@@ -18,6 +28,7 @@ these components:
 
 Starting Worker
 ---------------
+
 To start the worker service:
 
 .. code-block:: bash
@@ -26,6 +37,7 @@ To start the worker service:
 
 Worker Start Process
 ~~~~~~~~~~~~~~~~~~~~~
+
 The worker init script performs the following actions:
 
 #. Executes /services/worker/bin/publisher, passing it the argument: start. This starts the publisher process.
@@ -33,6 +45,7 @@ The worker init script performs the following actions:
 
 Stopping Worker
 ---------------
+
 To stop the worker service:
 
 .. code-block:: bash

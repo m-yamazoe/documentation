@@ -3,6 +3,16 @@ API
 
 The enStratus console is a tomcat service installed to /services/api.
 
+.. figure:: ./images/api.png
+   :height: 250 px
+   :width: 450 px
+   :scale: 70 %
+   :alt: API Service
+   :align: center
+
+   API Service Connections
+
+
 Starting API
 ------------
 

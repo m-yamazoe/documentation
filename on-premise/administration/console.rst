@@ -3,12 +3,23 @@ Console
 
 The enStratus console is a tomcat service installed to /services/console.
 
+.. figure:: ./images/console.png
+   :height: 250 px
+   :width: 450 px
+   :scale: 70 %
+   :alt: Console Service
+   :align: center
+
+   Console Service Connections
+
 Console Overview
 ----------------
+
 The enStratus console service is a tomcat service that provides the web front-end, or enStratus user console.
 
 Starting Console
 ----------------
+
 To start the console service:
 
 .. code-block:: bash
@@ -17,12 +28,14 @@ To start the console service:
 
 Console Start Process
 ~~~~~~~~~~~~~~~~~~~~~
+
 The console init script performs the following action:
 
 #. Executes /services/console/bin/tomcat, passing it the argument: start. This starts the console process.
 
 Stopping Console
 ----------------
+
 To stop the console service:
 
 .. code-block:: bash
@@ -31,6 +44,7 @@ To stop the console service:
 
 Console Stop Process
 ~~~~~~~~~~~~~~~~~~~~
+
 The console init script performs the following action:
 
 #. Executes /services/console/bin/tomcat, passing it the argument: stop. This stops the console process.

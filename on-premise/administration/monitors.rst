@@ -6,6 +6,15 @@ Monitors
 The enStratus monitor service is a java service installed to /services/monitor. It is
 composed of two components: assign and control.
 
+.. figure:: ./images/monitorWorker.png
+   :height: 300 px
+   :width: 450 px
+   :scale: 70 %
+   :alt: Monitors/Workers Service
+   :align: center
+
+   Monitors/Workers Service Connections
+
 Monitor Overview
 ----------------
 

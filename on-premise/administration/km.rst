@@ -7,14 +7,25 @@ The enStratus Key/Credentials Management service is a tomcat service installed t
 The enStratus KM service is very stable and will run for very long periods of time
 without requiring attention.
 
-Overview
---------
+.. figure:: ./images/km.png
+   :height: 250 px
+   :width: 450 px
+   :scale: 70 %
+   :alt: KM Service
+   :align: center
+
+   KM Service Connections
+
+KM Overview
+-----------
+
 The enStratus Key/Credentials management system is responsible for the secure handling of cloud credentials
 and any other sensitive information provided via the enStratus console or API. Information is stored in an
 encrypted, de-identified database and is not accessible to users.
 
 Starting KM
 -----------
+
 To start the Key Management service:
 
 .. code-block:: bash
@@ -23,6 +34,7 @@ To start the Key Management service:
 
 KM Start Process
 ~~~~~~~~~~~~~~~~
+
 The init script passes the start argument to /services/km/bin/tomcat, which starts the km service.
 
 .. code-block:: bash
