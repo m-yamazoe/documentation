@@ -16,23 +16,22 @@ in the form of the Zeus load balancer.
 
 Elastic Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~
-Elastic load balancers are an offering from Amazon Web Services that are well supported in
+Elastic load balancers (ELB) are an offering from Amazon Web Services that are well supported in
 enStratus. ELB are advantagous because they can be cheaper to operate than server based
 solutions. The configuration requirements for ELB is often simpler than using server-based
 load balancing.
 
-To provision a new elastic load balancer using enStratus, navigate to Infrastructure, Load
-Balancers. Select + create_load_balancer. A single dialog box will present the required
+To provision a new elastic load balancer using enStratus, navigate to Network > Load
+Balancers. Select +Create Load Balancer. A single dialog box will present the 
 configuration options for the load balancer.
 
-.. figure:: ./images/createELB.png
-   :height: 300px
-   :width: 400 px
+.. figure:: ./images/createLB.png
+   :width: 644 px
+   :height: 428 px
    :scale: 95 %
-   :alt: Create ELB
+   :alt: Create LB
    :align: center
 
-   Create ELB
 
 ELB Discussion
 ~~~~~~~~~~~~~~
