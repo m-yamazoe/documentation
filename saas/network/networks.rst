@@ -42,8 +42,10 @@ To access expanded information regarding network attributes, select actions > In
 
 Edit Subnets
 ~~~~~~~~~~~~
+
 Selecting actions > Edit Subnets will open a new pane similar to the main Networks display. 
 
 Delete
 ~~~~~~
+
 Selecting actions > Delete will prompt for confirmation and then delete the selected subnet.

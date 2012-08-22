@@ -94,6 +94,7 @@ The following dialogue will appear:
 
 Network Addresses
 ~~~~~~~~~~~~~~~~~
+
 In enStratus, a Network Address is a user-defined, commonly used network that can be quickly added to a firewall using a
 common name that maps to the IP address specified. This functionality 
 makes it easy to identify, add, and remove specific firewall rules among
@@ -140,6 +141,7 @@ Once the Service Port is saved, it will be added to the list of available servic
 
 Starting a Server in a Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The final step in utilizing firewalls in the cloud is to apply a firewall when
 starting a new server. To start a new server, navigate to Compute > Machine Images.
 Select an image to launch and in the resulting dialog box, choose the firewall to be

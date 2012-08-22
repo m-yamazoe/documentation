@@ -10,12 +10,14 @@
 
 Load Balancers
 --------------
+
 Successful application load balancing involves dynamically adding and removing application
 nodes from the load balanced pool. This discussion is limited to addressing the activity
 that takes place on the load balancer.
 
 Overview
 ~~~~~~~~
+
 enStratus supports a wide range of load balancers. In the Amazon Cloud, Elastic Load
 Balancers are available for provisioning and use from within enStratus. Server-based load
 balancers can be started for use or an existing server can be purposed as a load balancer
@@ -24,6 +26,7 @@ in the form of the Zeus load balancer.
 
 Elastic Load Balancer
 ~~~~~~~~~~~~~~~~~~~~~
+
 Elastic load balancers (ELB) are an offering from Amazon Web Services that are well supported in
 enStratus. ELB are advantagous because they can be cheaper to operate than server based
 solutions. Additionally, the configuration requirements for ELB are often simpler than using server-based
@@ -104,6 +107,7 @@ the ELB.
 
 ELB and CNAME
 ~~~~~~~~~~~~~
+
 One more item of interest with respect to ELB is the way domain names are resolved. Each
 ELB has a host name of the form: CompanyName-LB-1234567890.us-east-1.elb.amazonaws.com.
 
@@ -180,6 +184,7 @@ HA-Proxy Agent Scripts
 
 Zeus 
 ~~~~
+
 The final method of application load balancing for this discussion is the Zeus Load Balancer.
 
 Zeus is a very powerful solution for high-availability and high-performance load
@@ -212,5 +217,3 @@ machine image have the supporting binaries imaged onto it.
 * Costs for running a virtual machine are generally higher than using an ELB.  
 
 * Increased configuration complexity
-
-
