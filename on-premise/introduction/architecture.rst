@@ -2,13 +2,13 @@ Architecture Requirements
 -------------------------
 
 .. figure:: images/enstratusArchitecture.png
-   :height: 550px
+   :height: 650px
    :width: 900 px
    :scale: 75 %
    :alt: 4-server Architecture
    :align: center
 
-   4-server Architecture
+   Example Architecture
 
 #. Communications from the Monitor/Workers processes to the guest VM agent on port 2003
    for the purpose of collecting logs.
