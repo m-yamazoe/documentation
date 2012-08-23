@@ -15,9 +15,10 @@ Users
    :hidden:
 
    intro
-   iam
    user_profile
-   roles
+   iam
+   groups
    access_rights
    example_roles
+   example_access_rights
 

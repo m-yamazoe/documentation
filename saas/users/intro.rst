@@ -4,8 +4,8 @@ Introduction
 ------------
 
 User management in enStratus is tightly integrated with enStratus accounts, groups,
-roles, and budget codes. Let's define a few terms that will help provide useful
-context for understanding how users work.
+roles, and budget codes. Let's define those terms to provide context for understanding 
+how users work.
 
 #. A **company** is a logical entity in enStratus that contains one or more accounts.
    When the first account is created, a company name is required.
@@ -15,9 +15,14 @@ context for understanding how users work.
    group can have 0 or 1 role applied to it.
 #. A **role** is also visible company-wide. Roles are the mechanism through which access
    rights are managed. A role of the same name may have different access rights applied on
-   the account level.
+   the account level. (I.e. roles' access rights are controlled at the account level, so 
+   for companies with more than one account, roles may have different access rights 
+   depending on account.)
 #. **Budget codes** are also visible company-wide and costs are aggregated across all
    accounts.
+
+So, **users** have both groups and budget codes assigned to them; they inherit access
+rights from the role (or roles) associated with their group (or groups).
 
 .. figure:: ./images/companies.png
    :width: 888 px

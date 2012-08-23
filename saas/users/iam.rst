@@ -1,7 +1,7 @@
 IAM
 ---
 
-enStratus supports the IAM feature for Amazon and Eucalyptus cloud environments.
+enStratus supports the Identity & Access Management (IAM) feature for Amazon and Eucalyptus cloud environments.
 enStratus acts as a nexus through which authoritative user management is coordinated with
 the cloud provider. The integrated IAM feature in enStratus allows an administrator user
 of an account to securely control access to cloud console and api services and resources
@@ -20,25 +20,11 @@ There are two kinds of cloud console access an admin enStratus user can grant to
    Access when the user is created. In order to provide access, an admin user must manually
    grant access to the user from the user list page. 
 
-Users actions
-~~~~~~~~~~~~~
-
-.. figure:: ./images/image05.png
-   :width: 412 px
-   :height: 214 px
-   :scale: 95 %
-   :alt: Users > actions
-   :align: center
-
-|
-
-The admin user can edit a user by selecting the actions link for that user.
-
 Edit Cloud Access
 ~~~~~~~~~~~~~~~~~
 
-Selecting the ‘Edit Cloud Access’ option from the drop down list will prompt the user with
-the following options:
+Selecting actions > Edit Cloud Access prompt the user with
+the following dialogue:
 
 .. figure:: ./images/image09.png
    :width: 440 px
@@ -55,11 +41,12 @@ user’s access to the cloud provider’s console.
 
 .. note:: Please wait about 2-3 minutes between adding and revoking accesses. Modifying the same user’s cloud access rapidly can result in a delay synchronizing with the cloud provider.
 
+Cloud Console Access
+~~~~~~~~~~~~~~~~~~~~
+
 When only Cloud Console Access is checked and the user is saved, enStratus will generate a
 login password which can be used by that user to login to the cloud provider (e.g. AWS)
 console. 
-
-|
 
 .. figure:: ./images/editCloudAccess.png
    :width: 562 px
@@ -94,14 +81,21 @@ The user will have the option to show or hide the console password.
 |
 
 The account administrator should also provide the user with the url shown during the Edit Cloud Access dialogue.
-(The url will take the following form: https://<12-digit-number>.signin.aws.amazon.com/console/ec2 where the 12-digit AWS
-Account Number can be found in the enStratus console at Account Settings > Amazon Web Services Provider Settings.)
+(The url will take the following form:
+ 
+https://<12-digit-number>.signin.aws.amazon.com/console/ec2 
+where the 12-digit AWS Account Number can be found in the enStratus console at Account Settings > Amazon Web Services Provider Settings.)
 
-For more AWS-specific information, see: http://aws.amazon.com/iam/faqs/#How_do_i_know_what_the_link_is
+For more AWS-specific information, see: 
+
+http://aws.amazon.com/iam/faqs/#How_do_i_know_what_the_link_is
 
 Then the enStratus user will have to provide the proper username,  which is the User ID
 from the User List table in the enStratus console, and the Cloud Console Password, which
 is displayed in the ‘Edit My Profile’ page of the enStratus Console. 
+
+API Console Access
+~~~~~~~~~~~~~~~~~~
 
 Similarly when only the API Console Access is checked and the user is saved, enStratus
 will generate API keys with the underlying cloud provider. 
@@ -140,6 +134,9 @@ Profile’ page.
    cloud provider’s console **but does not attach a user policy to the user**. The user will not
    have any set of permissions associated with it which prevents the user from performing any
    actions in the cloud provider’s console. 
+
+Adding User Policies
+~~~~~~~~~~~~~~~~~~~~
 
 In order to provide an IAM user with proper access rights, the admin enStratus user must
 log into the cloud provider’s console and manually attach the proper user policy to the
@@ -186,19 +183,4 @@ selected by an administrator.
 After the user has been attached to an appropriate user policy, the user will be able to
 log in to the AWS console and perform permissible actions and/or make permissible API
 calls.
-
-Users actions
-~~~~~~~~~~~~~
-
-.. figure:: ./images/image05.png
-   :width: 412 px
-   :height: 214 px
-   :scale: 95 %
-   :alt: Users > actions
-   :align: center
-
-|
-
-The admin user can edit a user by selecting the actions link for that user.
-
 
