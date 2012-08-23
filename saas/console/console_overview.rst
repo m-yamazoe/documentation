@@ -12,25 +12,6 @@ This section covers the individual components of the enStratus console at a high
    :alt: UI Overview
    :align: center
 
-.. not sure this caption adds much, so commenting it out   UI Overview
-
-.. code-block:: none
-.. commenting out this table b/c it's not needed with the new layout
-..  +-------+--------------------------+
-..  | Field | Meaning                  |
-..  +-------+--------------------------+
-..  | 1     | Customer Brand           |
-..  | 2     | User/Profile             |
-..  | 3     | Account                  |
-..  | 4     | Region                   |
-..  | 5     | Cloud                    |
-..  | 6     | Navigation Menu          |
-..  | 7     | Content Pane             |
-..  | 8     | Filter                   |
-..  | 9     | Action Menu              |
-..  | 10    | Staus/Alert/Support Menu |
-..  +----------------------------------+
-
 1. Custom Logo
 ~~~~~~~~~~~~~~
 This logo can be customized for your enStratus installation.
@@ -43,8 +24,6 @@ This logo can be customized for your enStratus installation.
    :scale: 100 %
    :alt: User Profile
    :align: center
-
-.. (it turns out that I don't like captions, at least when they repeat the subject heading)   User Profile
 
 Clicking on the name of the person logged in to the enStratus console
 provides functionality for editing user profile information (:doc:`including setting notification targets <notifications>`),
@@ -59,8 +38,6 @@ password changes, notification preferences [LINK HERE TOO - this isn't currently
    :scale: 100 %
    :alt: Account
    :align: center
-
-..   Account
 
 
 enStratus can access many accounts in one cloud provider or accounts in separate clouds
