@@ -10,6 +10,7 @@ Here is reference material for installing enStratus in a 1, 2, and 4 server mode
 
 .. toctree::
    :maxdepth: 2
+   :hidden:
 
    single_node/single_node
    single_node/post_install

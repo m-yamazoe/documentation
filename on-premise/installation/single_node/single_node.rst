@@ -98,6 +98,13 @@ To install the chef client, use the following steps:
 3. apt-get -y install libmysqlclient-dev build-essential
 4. /opt/chef/embedded/bin/gem install mysql
 
+Here's a "one-liner"
+
+.. code-block:: bash
+
+   apt-get update && apt-get -y upgrade && curl -L http://www.opscode.com/chef/install.sh | sudo bash && apt-get -y install libmysqlclient-dev build-essential && /opt/chef/embedded/bin/gem install mysql
+
+
 Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
 
 **Cent OS/Red Hat**
@@ -110,6 +117,12 @@ Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
 2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
 3. yum -y install mysql-devel.x86_64
 4. /opt/chef/embedded/bin/gem install mysql
+
+Here's a "one-liner"
+
+.. code-block:: bash
+
+   yum -y update && yum -y upgrade && yum install curl && curl -L http://www.opscode.com/chef/install.sh | sudo bash && yum -y install mysql-devel.x86_64 && /opt/chef/embedded/bin/gem install mysql
 
 Extract chef-solo package
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -239,21 +252,12 @@ in the previous step.
    default[:enstratus][:secondEncryptedAccessKey] = ''
 
 
-An enStratus engineer will provide these attributes along with the license key:
+An enStratus engineer will provide this attribute along with the license key:
 
 .. code-block:: bash
 
-   default[:enstratus][:download][:analytics_schema] = ''
-   default[:enstratus][:download][:console_service] = ''
-   default[:enstratus][:download][:api_service] = ''
-   default[:enstratus][:download][:console_schema] = ''
-   default[:enstratus][:download][:credentials_schema] = ''
-   default[:enstratus][:download][:dispatcher_service] = ''
-   default[:enstratus][:download][:enstratus_console] = ''
-   default[:enstratus][:download][:km_service] = ''
-   default[:enstratus][:download][:monitor_service] = ''
-   default[:enstratus][:download][:provisioning_schema] = ''
-   default[:enstratus][:download][:worker_service] = ''
+   default[:enstratus][:download][:password] = 'REPLACE_ME'
+
 
 Example default.rb
 ^^^^^^^^^^^^^^^^^^
@@ -261,17 +265,7 @@ Example default.rb
 .. code-block:: ruby
 
    #  These values are provided by an enStratus engineer. 
-   default[:enstratus][:download][:analytics_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/analytics_schema.sql'
-   default[:enstratus][:download][:console_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/consoleService.tar.gz'
-   default[:enstratus][:download][:api_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/apiService.tar.gz'
-   default[:enstratus][:download][:console_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/console.sql'
-   default[:enstratus][:download][:credentials_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/credentials.sql'
-   default[:enstratus][:download][:dispatcher_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/dispatcherService.tar.gz'
-   default[:enstratus][:download][:enstratus_console] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/enstratus_console.sql'
-   default[:enstratus][:download][:km_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/kmService.tar.gz'
-   default[:enstratus][:download][:monitor_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/monitorService.tar.gz'
-   default[:enstratus][:download][:provisioning_schema] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/provisioning.sql'
-   default[:enstratus][:download][:worker_service] = 'https://onpremise:somepasswordhere@some.url.here/newprod3/workerService.tar.gz'
+   default[:enstratus][:download][:password] = 'asdfasdfasdfasdfasdfasdfasdfasdf'
    
    # Edit these parameters.
    default[:enstratus][:license_key] = 'asdfasdfasdfasdfsdfasdfasdfasdfasdfasdfasdasdfasdfasd'
