@@ -22,6 +22,7 @@ This section describes the enStratus web front end, referred to as the enStratus
    :hidden:
 
    console_overview
+   edit_profile
    notifications
    Notification Targets <notification_targets>
    Account Alerts <acct_notifications> 
