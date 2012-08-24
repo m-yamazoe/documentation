@@ -28,4 +28,5 @@ This section describes the enStratus web front end, referred to as the enStratus
    Account Alerts <acct_notifications> 
    User Alerts <user_notifications>
    examples 
+   reports
 
