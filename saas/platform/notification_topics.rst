@@ -3,6 +3,15 @@
 Notification Topics
 -------------------
 
+.. figure:: ./images/notificationTopics.png
+   :width: 1173 px
+   :height: 237 px
+   :scale: 70 %
+   :alt: Notification Topics
+   :align: center
+
+|
+
 enStratus supports management of cloud based notification topic web services through the
 enStratus console. Notification topics are often applied to an application and can be used
 to automatically send messages to subscribers or other applications.
@@ -11,20 +20,27 @@ Overview
 ~~~~~~~~
 
 enStratus currently supports the creation and management of Amazon Simple Notification
-Service (Amazon SNS). See Amazon SNS for more information and current pricing.
+Service (Amazon SNS). See `Amazon SNS <http://aws.amazon.com/sns>`_ for more information and current pricing.
 
-Notification topics makes it easy for the developer to send out important messages to
-applications or users. This allows for the developer to effectively communicate
+
+Notification topics make it easy for developers to send out important messages to
+applications or users. This allows developers to effectively communicate
 time-sensitive information in the form of a message.
 
-Creating Notification Topics:
+Creating Notification Topics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Screenshot
 
 To create a new Notification Topic click on Platform > Notification Topics, then click on
-+ add Topic.
++Add Topic.
 
-Screenshot
+.. figure:: ./images/addTopic.png
+   :width: 539 px
+   :height: 297 px
+   :scale: 90 %
+   :alt: Add New Topic
+   :align: center
 
 The **Name** field is for a custom name to associate with your topic.
 
@@ -32,21 +48,25 @@ The **Description** field can be a custom description for your topic.
 
 The **Label** field helps you organize your topics by providing a unique color label.
 
-**Billing Code** and **User Group** are the billing code and user group attributes that enStratus
+**Budget Code** and **User Group** are the budget code and user group attributes that enStratus
 will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.
+budget code offerings of enStratus.
 
 Upon save your topic will be created and will appear shortly.
 
 Subscribing To Notification Topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Screenshot
-
 After the topic has been created you can add subscribers to the topic by clicking on
-actions > subscriptions.
+actions > subscribe.
 
-Screenshot
+.. figure:: ./images/alertsSubscribe.png
+   :width: 531 px
+   :height: 191 px
+   :scale: 90 %
+   :alt: Add Subscribers
+   :align: center
+
 
 **End point** is where you can enter the end point as an email address, web services URL, or
 the Amazon Resource Name string on a SQS (Simple Queue Service) queue.
@@ -60,11 +80,9 @@ Publishing To Notification Topics
 
 To publish a message to your subscribers click on actions > publish.
 
-Screenshot
+The **Subject** field can be any custom subject for your message.
 
-The Subject field can be any custom subject for your message.
-
-The Message field will be where you provide your custom message.
+The **Message** field will be where you provide your custom message.
 
 Deleting Notification Topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
