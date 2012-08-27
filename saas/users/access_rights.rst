@@ -1,24 +1,77 @@
 .. _saas_access_rights:
 
+Roles
+-----
+
+.. figure:: ./images/roleList.png
+   :width: 1168 px
+   :height: 570 px
+   :scale: 70 %
+   :alt: Roles
+   :align: center
+
+How Roles Affect Users
+~~~~~~~~~~~~~~~~~~~~~~
+
+We've been saying that a user 'inherits' access rights from the role(s) assigned
+to their group(s). Roles have very granular access control definitions
+which are useful when defining the type and level of access users in a group should have.
+
+Each role contains a customizable collection of access rights. Each access right provides 
+some level of access to a certain element of the enStratus console.
+
+The enforcement of these access controls is done through the enStratus console. A user may see a
+limited set of options when clicking on the actions link for a cloud resource.
+
+In the SaaS version of enStratus this is the method by which enStratus enforces access
+controls.
+
+In an on-premise deployment, customers may choose the option to completely hide cloud
+resources to which a user has no access. Again, this enforcement is done through the 
+enStratus console, except in this case if a user has no access to a cloud resource, the 
+resource is not presented to the user.
+
+Adding and Editing Roles
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ./images/addRole.png
+   :width: 449 px
+   :height: 266 px
+   :scale: 90 %
+   :alt: Adding a New Role
+   :align: center
+
+Creating a new role in enStratus is straight-forward: select the +Add Role link in the upper-right
+of the Role List pane; add a logical name and description.
+
+Editing roles is also simple: select actions > Edit and you can change the role's name and
+description.
+
 Access Rights
--------------
+~~~~~~~~~~~~~
 
-**The real power of the enStratus user security approach is unlocked when working with
-Roles.**
+The real power of the enStratus user security approach is unlocked when working with
+Roles' Access Rights.
 
-Roles control user access to the enStratus console. Roles are assigned to Groups in a
-one-to-one relationship. Each role contains a customizable collection of access rights.
-Each access right provides access to a certain element of the enStratus console.
+Select actions > Access Rights to add or edit the access rights for a role:
 
-Terms
-~~~~~
+.. figure:: ./images/accessRights.png
+   :width: 699 px
+   :height: 341 px
+   :scale: 90 %
+   :alt: Access Rights
+   :align: center
+
+|
+
+Definitions of terms used in the enStratus Access Rights dialogue:
 
 **RESOURCE:** 
 
 Every page, link and action in the enStratus console is controlled by at
 least one resource. In most cases, resources correspond to pages. For example, access to
-the actions available on the Machine Images page is controlled by the IMAGE resource and
-access to the actions available on the Servers page is controlled by the SERVER resource.
+the actions available on the Compute > Machine Images page is controlled by the IMAGE resource and
+access to the actions available on the Compute > Servers page is controlled by the SERVER resource.
 Read access and account administration is controlled by the CONSOLE resource.
 
 **ACTION:** 
@@ -26,9 +79,9 @@ Read access and account administration is controlled by the CONSOLE resource.
 Resources are divided into actions. If you want access to all actions within a
 resource use the ANY action. If you want the role to have more granular permissions select
 the specific actions you want users to be able to perform. For example, if you want users
-with your role to be able to start deployments and services add the Deployment-Launch action.
+with your role to be able to start deployments and services, add the Deployment-Launch action.
 Some console actions require multiple resource-action pairs. These are documented in the
-Important Combinations sections for each resource.
+Important Combinations sections for each resource.[LINK]
 
 **QUALIFIER:** 
 
@@ -41,11 +94,9 @@ belong to the group you chose, the chosen billing code, or the user who launched
 server.
 
 If you want users in your role to have access to all servers you can use the ANY
-qualifier. For some resources, such as console and firewall, the group, this group,
-billing, and mine qualifiers have no meaning because there is no ownership associated with
+qualifier. For some resources, such as console and firewall, the GROUP, THIS GROUP,
+BILLING, and MINE qualifiers have no meaning because there is no ownership associated with
 the resource. In these cases you should always use ANY when adding access rights.
-
-Note: Ownership of some resources are still under development.
 
 Roles Example
 ~~~~~~~~~~~~~
@@ -78,7 +129,7 @@ QA users can image Server 1, Server 2, and Server 3.
 
 **GROUP**   
 
-QA users can image Server 1. They can image Server 2 and Server 3 if they are
+QA users can image Server 1. They can image Server 2 and Server 3 only if they are
 also members of the Dev group.
 
 **THIS_GROUP**  

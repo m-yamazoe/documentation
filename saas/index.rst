@@ -39,7 +39,8 @@ New Content
    console/console
    configuration_management/configuration_management
    automation/automation
-   infrastructure/infrastructure 
+   compute/compute
+   network/network
    platform/platform
    users/users
    budget/budget

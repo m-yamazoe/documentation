@@ -3,26 +3,31 @@
 Introduction
 ------------
 
-User management with enStratus is tightly integrated with enStratus accounts, groups,
-roles, and budget codes. Let's define a few terms that will help provide useful
-context for understanding how users work.
+User management in enStratus is tightly integrated with enStratus accounts, groups,
+roles, and budget codes. Let's define those terms to provide context for understanding 
+how users work.
 
-#. Company. A company is a logical entity in enStratus that contains one or more accounts.
+#. A **company** is a logical entity in enStratus that contains one or more accounts.
    When the first account is created, a company name is required.
-#. Account. A account has a one to one relationship with a set of cloud credentials tied
+#. An **account** has a one-to-one relationship with a set of cloud credentials tied
    to a cloud provider.
-#. Group. A group is visible company-wide. Users can be assigned one or more groups. Each
+#. A **group** is visible company-wide. Users can be assigned one or more groups. Each
    group can have 0 or 1 role applied to it.
-#. Role. A role is also visible company-wide. Roles are the mechanism through which access
+#. A **role** is also visible company-wide. Roles are the mechanism through which access
    rights are managed. A role of the same name may have different access rights applied on
-   the account level.
-#. Budget Code. Budget codes are visible company-wide and costs are aggregated across all
+   the account level. (I.e. roles' access rights are controlled at the account level, so 
+   for companies with more than one account, roles may have different access rights 
+   depending on account.)
+#. **Budget codes** are also visible company-wide and costs are aggregated across all
    accounts.
 
+So, **users** have both groups and budget codes assigned to them; they inherit access
+rights from the role (or roles) associated with their group (or groups).
+
 .. figure:: ./images/companies.png
-   :height: 800px
-   :width: 1000 px
-   :scale: 50 %
+   :width: 888 px
+   :height: 662 px
+   :scale: 70 %
    :alt: Companies and Accounts
    :align: center
 
@@ -33,15 +38,15 @@ or more cloud accounts. Let's take a closer look at each company.
 
 
 .. figure:: ./images/companyOne.png
-   :height: 800px
-   :width: 1000 px
-   :scale: 50 %
+   :width: 793 px
+   :height: 638 px
+   :scale: 70 %
    :alt: Company One
    :align: center
 
    Company One
 
-The first company example is a simple example showing one company and one account. Here
+The first company example is fairly simple, with just one company and one account. Here
 there are only two users, each having potentially differing levels of access to the
 underlying cloud depending on how their respective roles are configured. Group one is
 assigned role one and group two is assigned role 2.
@@ -54,9 +59,9 @@ User 1 has only one budget code against which to charge, in this case the code c
 User 2 has access to both the DEV and PRD budget codes.
 
 .. figure:: ./images/companyTwo.png
-   :height: 800px
-   :width: 1000 px
-   :scale: 50 %
+   :width: 876 px
+   :height: 658 px
+   :scale: 70 %
    :alt: Company Two
    :align: center
 
