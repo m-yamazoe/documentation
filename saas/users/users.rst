@@ -18,7 +18,7 @@ Users
    user_profile
    iam
    groups
-   access_rights
+   roles
    example_roles
    example_access_rights
 
