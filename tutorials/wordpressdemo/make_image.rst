@@ -60,18 +60,14 @@ Save the key and chmod it
 
 5. Install the chef client and execute the chef-solo run:
 
-.. note:: When prompted for the Chef Server URL, just hit enter. 
-   This tutorial does not rely on a chef-server.
+.. note:: If prompted for the Chef Server URL, just hit enter.  This tutorial does not rely on a chef-server.
 
 .. code-block:: bash
 
-   echo "deb http://apt.opscode.com/ `lsb_release -cs`-0.10 main" | sudo tee /etc/apt/sources.list.d/opscode.list
-   sudo mkdir -p /etc/apt/trusted.gpg.d
-   gpg --keyserver keys.gnupg.net --recv-keys 83EF826A
-   gpg --export packages@opscode.com | sudo tee /etc/apt/trusted.gpg.d/opscode-keyring.gpg > /dev/null
-   sudo apt-get update
-   sudo apt-get -y upgrade
-   sudo apt-get -y install chef
+   apt-get update && apt-get -y upgrade 
+   curl -L http://www.opscode.com/chef/install.sh | sudo bash 
+   apt-get -y install libmysqlclient-dev build-essential 
+   /opt/chef/embedded/bin/gem install mysql
 
    tar -zxf wordpress-demo-prep.tar.gz > /dev/null 2>&1
    chef-solo -j node.json -c solo.rb 
