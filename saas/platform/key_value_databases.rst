@@ -18,6 +18,7 @@ data because it is automatically indexed for you.
 
 Overview
 ~~~~~~~~
+
 enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
 `Amazon SimpleDB <http://aws.amazon.com/simpledb>`_ for more information and current pricing.
 

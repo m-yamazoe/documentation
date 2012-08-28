@@ -86,4 +86,5 @@ The **Message** field will be where you provide your custom message.
 
 Deleting Notification Topics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 To delete a notification topic click actions > delete in the Notification Topics table.

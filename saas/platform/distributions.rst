@@ -29,7 +29,7 @@ To create a new distribution in enStratus click on Platform > Distributions then
 
 
 .. note:: To create a new distribution you must have a pre-existing directory in Platform >
- Files. See :doc:`next section <files>` for more information on files in enStratus.
+ Files. See :ref:`next section <files>` for more information on files in enStratus.
 
 .. figure:: ./images/createDistribution.png
    :width: 374 px
