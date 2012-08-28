@@ -3,6 +3,13 @@
 Key Value Databases
 -------------------
 
+.. figure:: ./images/kvDB.png
+   :width: 1178 px
+   :height: 290 px
+   :scale: 70 %
+   :alt: KV Databases
+   :align: center
+
 enStratus Key/Value Databases (KV Databases or KVDB) are a simple solution for storing
 your data for high availability and scalability. With a KV database you get only what you
 need. You can simply query your data and return the results without having to manage
@@ -11,25 +18,26 @@ data because it is automatically indexed for you.
 
 Overview
 ~~~~~~~~
+
 enStratus currently supports the creation and termination of Amazon SimpleDB domains. See
-Amazon SimpleDB for more information and current pricing.
+`Amazon SimpleDB <http://aws.amazon.com/simpledb>`_ for more information and current pricing.
 
 KV databases are large collections of data organized into separate domains. The data is
-stored in hash tables that contain key to value pairs. The key to value pairs are
+stored in hash tables that contain key-to-value pairs. These pairs are
 attributes that can be searched in lexicographical queries.
 
 Creating a Key/Value Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To launch a new KV database in the enStratus console click on Platform > Key/Value
-Databases. Then click  +add key/value database.
+To launch a new KV database in the enStratus console select Platform > Key/Value
+Databases. Then click  +Add Key/Value Database.
 
-Screenshot 1
-
-In the Create Key/Value Database form you will see the different fields for creating the
-KVDB.
-
-Screenshot 2
+.. figure:: ./images/addKVDB.png
+   :width: 536 px
+   :height: 285 px
+   :scale: 90 %
+   :alt: Adding KV Databases
+   :align: center
 
 The **Name** field is for a custom name to associate with your database.
 
@@ -37,9 +45,9 @@ The **Description** field can be a custom description for your database.
 
 The **Label** field helps you organize your KVDB instances by providing a unique color label.
 
-**Billing Code** and **User Group** are the billing code and user group attributes that enStratus
+**Budget Code** and **User Group** are the budget code and user group attributes that enStratus
 will use to track billing charges and access rights tied to the user management and
-billing code offerings of enStratus.
+budget code offerings of enStratus.
 
 Upon save the KV database is launched. It can take up to 15 minutes to appear in the
 enStratus console.
@@ -47,6 +55,4 @@ enStratus console.
 Terminating Key/Value Databases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To terminate a KVDB click actions > terminate in the Key/Value Databases table.
-
-Screenshot 3.
+To terminate a KVDB click actions > Terminate in the Key/Value Databases table.
