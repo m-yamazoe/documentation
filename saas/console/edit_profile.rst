@@ -39,5 +39,5 @@ multi-factor authentication, if enabled.
 Users can also add RDP password and SSH key details from within their profiles. 
 
 Once the credentials have been entered and the profile is saved, the user can then access
-remote servers as outlined in :doc:`Compute > Servers <../compute/servers>` through Shell/Remote
+remote servers as outlined in :ref:`Compute > Servers <saas_servers>` through Shell/Remote
 access provided they have the appropriate access rights to take this action.
