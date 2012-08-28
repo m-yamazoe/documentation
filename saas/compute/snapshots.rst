@@ -2,6 +2,7 @@
 
 Snapshots
 ---------
+
 Snapshots are the reciprocal of volumes. When a snapshot of a volume is created, a
 differential backup of the devices is created and stored in S3. From this snapshot, a
 clone of the original volume can be created. enStratus leverages this property of
@@ -40,6 +41,7 @@ attachment to servers.
 
 Sharing Snapshots
 ~~~~~~~~~~~~~~~~~
+
 Sometimes it is advantageous to share snapshots to another account for ease of data
 transfer. Sharing snapshots in enStratus is accomplished by selecting the snapshot to
 share and clicking on the action button choosing sharing.
@@ -57,6 +59,7 @@ enStratus groups and roles.
 
 Snapshot Strategies
 ~~~~~~~~~~~~~~~~~~~
+
 Because snapshots are differential backups, the time snapshots take to create varies based
 on the amount of changed information since the last snapshot was taken. Frequent snapshots
 will generally be created more quickly than infrequent ones.

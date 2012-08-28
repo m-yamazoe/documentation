@@ -2,6 +2,7 @@
 
 Servers
 -------
+
 enStratus monitors all servers in your account. Select actions from the right-hand column to access
 server options. If the enStratus agent is not installed on the server, the options available
 are limited to getting information, rebooting, pausing/starting, or terminating the
@@ -41,10 +42,6 @@ Expanded information regarding server attributes, including agent version (under
 
 .. note:: The Performance and Guest tabs are only visible with the enStratus agent installed.
 
-.. **Analytics**: A graphical representation of CPU Load (in %) over the last hour.
-.. * **Console**: Hypervisor information.
-.. * **Agent**: Agent logging capturing events such as adding/removing users, Host Intrusion Detection System alerts, and customizable information messages. 
-
 Logs
 ~~~~
 
@@ -64,7 +61,7 @@ The Console tab provides hypervisor information.
 Monitoring
 ~~~~~~~~~~
 
-[couldn't get monitoring to run on the few servers I tried.... come back to this later]
+Allows you to turn monitoring on or off for the server.
 
 Make Image
 ~~~~~~~~~~
@@ -77,7 +74,7 @@ made to the operating system (e.g. patches or updates).
 
 .. warning:: Running instances must be stopped or rebooted in order to successfully make a new image.
 
-See :doc:`Machine Images <machine_images>` for more information about using machine images effectively.
+See :ref:`Machine Images <saas_machine_images>` for more information about using machine images effectively.
 
 Make Snapshot*
 ~~~~~~~~~~~~~~
@@ -93,7 +90,7 @@ Make Snapshot*
 Making a snapshot creates a differential backup of any attached volumes. 
 These snapshots can then be used to create new volumes.
 
-See :doc:`Snapshots <snapshots>` for more information about snapshots and their uses.
+See :ref:`Snapshots <saas_snapshots>` for more information about snapshots and their uses.
 
 Shell/Remote Access*
 ~~~~~~~~~~~~~~~~~~~~
@@ -115,16 +112,19 @@ Administrator access can also be set through this option.
 
 Reboot
 ~~~~~~
+
 Reboot the running server. Rebooting does not change the IP address of the server. 
 
 Pause/Start
 ~~~~~~~~~~~
+
 Pause or start the running server. enStratus still monitors the server while it is paused. 
 
 .. warning:: The server's IP address will change upon starting after a pause. 
 
 Terminate
 ~~~~~~~~~
+
 Terminate the instance. No data on the instance will be saved. 
 
 Firewall Rules

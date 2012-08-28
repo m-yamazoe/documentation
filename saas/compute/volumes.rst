@@ -5,10 +5,12 @@ Volumes
 
 Overview
 ~~~~~~~~
+
 Volumes represent block storage. Conceptually, storage devices can be used to store data in a persistent manner in the cloud.
 
 Creating Volumes
 ~~~~~~~~~~~~~~~~
+
 To create a new volume, navigate to Compute > Volumes. If volumes have been
 previously created either within enStratus or via the cloud provider, they will be listed
 in the volumes table. Select +Create Volue and the following dialogue appears:
@@ -44,6 +46,7 @@ the Device and Current Server columns will be blank.
 
 Attaching Volumes
 ~~~~~~~~~~~~~~~~~
+
 Volumes and servers must share an availability zone for volume attachment to succeed.
 Volumes are attached as block storage devices and are neither partitioned nor formatted
 when attached. enStratus allows for automated attachment, formatting, and mounting of new
@@ -85,11 +88,13 @@ partitioning, formatting, and mounting.
 
 Detaching Volumes
 ~~~~~~~~~~~~~~~~~
+
 To detach a volume from a server, select actions > Detach in the far-right column of the volume
 you'd like to detach. A dialog box will prompt you to confirm the action.
 
 Creating Snapshots
 ~~~~~~~~~~~~~~~~~~
+
 Snapshots are created from volumes and volumes are created from snapshots.
 
 A snapshot of a volume represents a differential backup of the data contained on the
@@ -100,10 +105,11 @@ name for the snapshot.
 
 Once the snapshot is saved, the snapshot will appear at Compute > Snapshots.
 
-See :doc:`Snapshots <snapshots>` for more in-depth information about snapshots and their uses.
+See :ref:`Snapshots <saas_snapshots>` for more in-depth information about snapshots and their uses.
 
 Deleting Volumes
 ~~~~~~~~~~~~~~~~
+
 To delete a volume, select actions > Delete in the far-right column of the volume you'd like to delete.
 A dialog box will prompt you to confirm the action and the volume will be removed
 from the volumes list.

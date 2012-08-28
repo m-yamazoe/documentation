@@ -10,7 +10,6 @@ Network
    :alt: Network
    :align: center
 
-[summary]
 
 .. toctree::
    :maxdepth: 1
