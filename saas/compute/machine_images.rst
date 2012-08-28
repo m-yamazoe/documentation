@@ -75,6 +75,7 @@ that machine image.
 
 Launch
 ~~~~~~
+
 To start a server from a machine image, select actions > launch.
 A dialog box will appear.
 
@@ -91,7 +92,7 @@ A dialog box will appear.
 **General** 
 
 Security parameters in the form of a firewall can be chosen at the time
-of server launch or specified later. (See :doc:`Firewalls <../network/firewalls>` 
+of server launch or specified later. (See :rel:`Firewalls <../network/firewalls>` 
 for more about using firewalls in enStratus).
 
 enStratus layers additional functionality in the form of groups and budget codes into
