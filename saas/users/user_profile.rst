@@ -24,7 +24,7 @@ access to a virtual machine, they must have first created Linux (SSH) or Windows
 (RDP Password) credentials in enStratus. You can then select the virtual machine to which they
 should be granted access and then grant them access to the virtual machine. When you grant
 that access, a new user account is created on the virtual machine with that user's
-authentication credentials (see :doc:`Compute > Servers <../compute/servers>` for details). 
+authentication credentials (see :ref:`Compute > Servers <../compute/servers>` for details). 
 
 Add a User
 ~~~~~~~~~~
@@ -62,7 +62,7 @@ running servers in the cloud. To gain access to a running Windows server, the us
 specify an RDP password. To access a Linux server, a user must specify a public SSH key.
 
 Users can add these credentials for themselves by editing their profile in the enStratus
-console (see :doc:`Console > Edit Profile <../console/edit_profile>` for details), but administrators can also add them to the
+console (see :ref:`Console > Edit Profile <../console/edit_profile>` for details), but administrators can also add them to the
 user's account.
 
 To add credentials or edit other account details after a user is created, select
@@ -84,7 +84,7 @@ Add credentials or change the user's profile details as needed.
 Editing Cloud Access
 ~~~~~~~~~~~~~~~~~~~~
 
-For details on managing cloud access for users, see :doc:`IAM <iam>`.
+For details on managing cloud access for users, see :ref:`IAM <iam>`.
 
 Reset Password
 ~~~~~~~~~~~~~~
