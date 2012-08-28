@@ -74,7 +74,7 @@ made to the operating system (e.g. patches or updates).
 
 .. warning:: Running instances must be stopped or rebooted in order to successfully make a new image.
 
-See :ref:`Machine Images <machine_images>` for more information about using machine images effectively.
+See :ref:`Machine Images <saas_machine_images>` for more information about using machine images effectively.
 
 Make Snapshot*
 ~~~~~~~~~~~~~~
@@ -90,7 +90,7 @@ Make Snapshot*
 Making a snapshot creates a differential backup of any attached volumes. 
 These snapshots can then be used to create new volumes.
 
-See :ref:`Snapshots <snapshots>` for more information about snapshots and their uses.
+See :ref:`Snapshots <saas_snapshots>` for more information about snapshots and their uses.
 
 Shell/Remote Access*
 ~~~~~~~~~~~~~~~~~~~~

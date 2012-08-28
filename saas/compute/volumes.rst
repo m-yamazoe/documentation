@@ -105,7 +105,7 @@ name for the snapshot.
 
 Once the snapshot is saved, the snapshot will appear at Compute > Snapshots.
 
-See :rel:`Snapshots <snapshots>` for more in-depth information about snapshots and their uses.
+See :ref:`Snapshots <saas_snapshots>` for more in-depth information about snapshots and their uses.
 
 Deleting Volumes
 ~~~~~~~~~~~~~~~~

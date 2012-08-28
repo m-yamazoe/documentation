@@ -148,6 +148,6 @@ Select an image to launch and in the resulting dialog box, choose the firewall t
 applied to the resulting server. All of the rules comprising the firewall will be
 applied to the server.
 
-See :ref:`Machine Images <../compute/machine_images>` 
+See :ref:`Machine Images <saas_machine_images>` 
 for more about starting images in enStratus).
 
