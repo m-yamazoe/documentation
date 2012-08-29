@@ -1,5 +1,8 @@
 .. _saas_load_balancers:
 
+Load Balancers
+--------------
+
 .. figure:: ./images/loadbalancers.png
    :width: 1372 px
    :height: 530 px
@@ -7,9 +10,6 @@
    :alt: Load Balancers
    :align: center
 
-
-Load Balancers
---------------
 
 Successful application load balancing involves dynamically adding and removing application
 nodes from the load balanced pool. This discussion is limited to addressing the activity

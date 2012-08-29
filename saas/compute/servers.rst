@@ -3,6 +3,14 @@
 Servers
 -------
 
+.. figure:: ./images/servers.png
+   :alt: Servers
+   :align: center
+   :width: 1147 px
+   :height: 393 px
+   :scale: 70 % 
+
+
 enStratus monitors all servers in your account. Select actions from the right-hand column to access
 server options. If the enStratus agent is not installed on the server, the options available
 are limited to getting information, rebooting, pausing/starting, or terminating the

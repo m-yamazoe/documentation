@@ -3,6 +3,14 @@
 Snapshots
 ---------
 
+.. figure:: ./images/snapshots.png
+   :width: 1171 px
+   :height: 577 px
+   :scale: 70 %
+   :alt: Snapshots
+   :align: center
+
+
 Snapshots are the reciprocal of volumes. When a snapshot of a volume is created, a
 differential backup of the devices is created and stored in S3. From this snapshot, a
 clone of the original volume can be created. enStratus leverages this property of

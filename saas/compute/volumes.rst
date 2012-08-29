@@ -3,6 +3,14 @@
 Volumes
 -------
 
+.. figure:: ./images/volumes.png
+   :width: 1293 px
+   :height: 572 px
+   :scale: 65 %
+   :alt: Volumes
+   :align: center
+
+
 Overview
 ~~~~~~~~
 
