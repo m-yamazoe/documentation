@@ -312,10 +312,8 @@ has a link for exporting the stats as csv so scraping work is minimal.
 Monitoring
 ----------
 
-Monitoring of MySQL can be done via various methods and can integrate into many enterprise
-monitoring systems such as nagios. Production enStratus environments will benefit from
-utilizing some nagios plugins to monitor connections, slow queries, slave operation,
-master operation, and basic health checks.
+Monitoring of Riak can be done via various methods and can integrate into many enterprise
+monitoring systems such as nagios. 
 
 Backups
 -------
