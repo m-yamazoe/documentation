@@ -1,5 +1,8 @@
 .. _saas_ipaddresses:
 
+IP Addresses
+------------
+
 .. figure:: ./images/ipAddresses.png
    :width: 1160 px
    :height: 583 px
@@ -7,8 +10,6 @@
    :alt: All Addresses
    :align: center
 
-IP Addresses
-------------
 
 Overview
 ~~~~~~~~
