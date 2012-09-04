@@ -175,7 +175,7 @@ Path:
 The worker file controls the start of a new worker process. 
 
 pinger
-~~~~~
+~~~~~~
 
 Path:
 

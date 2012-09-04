@@ -337,8 +337,7 @@ configuration:
 
 .. code-block:: bash
 
-   tar -czf /mnt/riak_backups/riak_data_`date +%Y%m%d_%H%M`.tar.gz \
-   /var/lib/riak/leveldb /var/lib/riak/ring /etc/riak
+   tar -czf /mnt/riak_backups/riak_data_`date +%Y%m%d_%H%M`.tar.gz /var/lib/riak/leveldb /var/lib/riak/ring /etc/riak
 
 Restoring a Node
 ~~~~~~~~~~~~~~~~
