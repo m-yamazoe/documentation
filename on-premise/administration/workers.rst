@@ -120,6 +120,9 @@ enStratus worker logging is customer-specific. This makes tracking information a
 state of each worker process very accessible to an administrator. Logs are located in
 /services/worker/log.
 
+Monitoring
+----------
+
 Backups
 -------
 

@@ -13,6 +13,18 @@ The enStratus console is a tomcat service installed to /services/api.
    API Service Connections
 
 
+Overview
+--------
+
+Installation
+------------
+
+Incoming Connections
+--------------------
+
+Outgoing Connections
+--------------------
+
 Starting API
 ------------
 
@@ -34,6 +46,15 @@ Stopping API
 .. code-block:: bash
 
 	/etc/init.d/enstratus-api stop
+
+Logging
+-------
+
+Monitoring
+----------
+
+Backups
+-------
 
 Configuration Files
 -------------------

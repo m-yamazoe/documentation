@@ -126,6 +126,9 @@ Logging for the enStratus console service is done to
 /services/console/tomcat/logs/catalina.out and is controlled by
 /services/console/tomcat/webapps/ROOT/WEB-INF/classes/log4j.{xml,properties}
 
+Monitoring
+----------
+
 Backups
 -------
 
