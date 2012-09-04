@@ -36,3 +36,10 @@ systems an overview of the installed components and how to manage them.
    workers
    console
    api
+   cwrkr
+   mysql
+   riak
+   JDK
+   JSVC
+   rabbit_mq
+   certificates
