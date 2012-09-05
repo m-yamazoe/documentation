@@ -1,33 +1,32 @@
 .. _saas_chef:
 
 Chef
-----
-Chef is a configuration management tool created by Opscode. enStratus supports both the
-hosted and private versions of Chef.
+=====
+Chef is a configuration management tool created by Opscode. enStratus supports the three current types of Chef servers:
 
-Object Store is a simple script-based Configuration Management System that allows you to
-upload custom scripts into a cloud storage account, group scripts into personalities, and
-automatically download and run the scripts when a new server is launched in your cloud
-account.
+* Hosted Chef (OHC)
+* Open Source Chef (OSC)
+* Private Chef (OPC)
 
-Services
-~~~~~~~~
+Currently enStratus works with version 0.10.x of these.
+   
 
-To implement configuration management, you must first configure a service under
-Configuration Management > Services. If you choose Chef, you must supply an endpoint for
-the service. If you choose Object Store, you must choose a region and then a directory in
-which to store your scripts.
+Pre-requisites
+---------------
+There are a few prerequisites required for end-to-end automation using Chef with enStratus:
 
-Accounts
-~~~~~~~~
+* A working Chef server or Opscode Hosted Chef account (This step is up to you)
+* A valid set of credentials to the Chef server
+* A registered image in the cloud with enStratus agent v17 or higher
 
-Once your service has been configured, you will need to create an account associated with
-that service under Configuration Management > Accounts. When you set up an account for a
-Chef service, you associate a set of credentials with that account. Credentials are not
-necessary for Object Store services.
+The following steps will walk you through getting enStratus connected to your Chef server:
 
-Multiple accounts may be attached to the same Chef service with different sets of
-credentials, but an Object Store service can be associated with only one configuration
-management account at a time.
+.. toctree::
+   :maxdepth: 1
 
-test
+   Step 1 - Generating credentials <chef_credentials>
+   Step 2 - Adding to enStratus <chef_account>
+   Step 3 - Checking discovery <chef_discovery>
+   Step 4 - Images and Agents <chef_agent>
+   Step 5 - Launching an Instance <chef_launch>
+

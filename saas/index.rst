@@ -33,7 +33,7 @@ New Content
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :hidden:
     
    console/console
