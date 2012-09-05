@@ -278,9 +278,9 @@ The application of the frontend run list is described by the frontend role, loca
    }
 
 Since the backend server in this architectural configuration makes no outbound connections
-to any of the services installed on the console server, the only necessary change is to
-alter the run list to direct the installation of the backend services, highlighted in line
-3.
+to any of the services installed on the console server, the only modification to the
+original single_node.json file is to alter the run list to direct the installation of the
+backend services, highlighted in line 3.
 
 Install enStratus
 ^^^^^^^^^^^^^^^^^
