@@ -14,5 +14,6 @@ Here is reference material for installing enStratus in a 1, 2, and 4 server mode
 
    single_node/single_node
    two_node/two_node
+   n_node/n_node
    single_node/post_install
 ..   four_node/four_node
