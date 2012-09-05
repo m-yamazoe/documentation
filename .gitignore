@@ -4,7 +4,6 @@ syncAll
 openAllCSS
 openAllLayouts
 makeAgent
-on-premise/installation/two_node/
 on-premise/installation/four_node/
 sync
 _build/
