@@ -1,5 +1,5 @@
-Single-Node Post Install
-------------------------
+Post Install
+------------
 
 Once the installation successfully completes, it's time to start the enStratus software.
 Do this in the following order:

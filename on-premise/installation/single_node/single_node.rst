@@ -174,7 +174,7 @@ Key Generation
 As part of the installation process, you will have received a directory called `classes`
 and a file called `enstratus-utilities.jar`.
 
-.. note:: This command will only run well on a system with java installed. Run this
+.. note:: This command will only run on a system with java installed. Run this
    command from your local machine or any machine with with Java installed.
 
 Run the command:
@@ -204,14 +204,14 @@ Edit Installation Attributes
 
 Edit the file:
 
-`cookbooks/enstratus/attributes/default.rb`
+`single_node.json`
 
     Change console_url to what you want it to be. This will be the url you use to access the
     enStratus console. Example: cloud.mycompany.com
 
 .. code-block:: bash
 
-   default[:enstratus][:console_url] = ''
+   "console_url" = ""
 
 .. note:: In most cases, you'll have to make a hosts file entry for this url.
 
@@ -219,7 +219,7 @@ Change console_ip to an appropriate value.
 
 .. code-block:: bash
 
-   default[:enstratus][:console_ip] = ''
+   "console_ip" = ""
 
 This value must be accessible to the console user. If you're installing in EC2, you most
 probably want to use the publicly addressable IP address. 
@@ -232,7 +232,7 @@ publicly routable IP address is available, use the primary IP address of the hos
 
 .. code-block:: bash
 
-   default[:enstratus][:source_cidr] = ''
+   "source_cidr" = ""
 
 The following values come from running:
 
@@ -244,44 +244,74 @@ in the previous step.
 
 .. code-block:: bash
 
-   default[:enstratus][:dispatcherEncryptionKey] = ''
-   default[:enstratus][:accessKey] = ''
-   default[:enstratus][:encryptedManagementKey] = ''
-   default[:enstratus][:firstEncryptedAccessKey] = ''
-   default[:enstratus][:consoleEncryptionKey] = ''
-   default[:enstratus][:secondEncryptedAccessKey] = ''
+   "dispatcherEncryptionKey" = ""
+   "accessKey" = ""
+   "encryptedManagementKey" = ""
+   "firstEncryptedAccessKey" = ""
+   "consoleEncryptionKey" = ""
+   "secondEncryptedAccessKey" = ""
 
 
 An enStratus engineer will provide this attribute along with the license key:
 
 .. code-block:: bash
 
-   default[:enstratus][:download][:password] = 'REPLACE_ME'
+    "download":{"password":"REPLACE_ME"}
 
+Example single_node.json
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example default.rb
-^^^^^^^^^^^^^^^^^^
+.. code-block:: json
 
-.. code-block:: ruby
-
-   #  These values are provided by an enStratus engineer. 
-   default[:enstratus][:download][:password] = 'asdfasdfasdfasdfasdfasdfasdfasdf'
-   
-   # Edit these parameters.
-   default[:enstratus][:license_key] = 'asdfasdfasdfasdfsdfasdfasdfasdfasdfasdfasdasdfasdfasd'
-   default[:enstratus][:console_url] = 'cloud.mycompany.com'
-   default[:enstratus][:console_ip] = '999.999.999.999'
-   default[:enstratus][:source_cidr] = '999.999.999.999'
-   
-   default[:enstratus][:dispatcherEncryptionKey] = 'b%2MKnlmqVGIlGA6e%3T#QdYvxR&A0PeIC'
-   default[:enstratus][:accessKey] = 'lk*zJgL&BJTAm$7j!TVb#AL6Hbhq5$'
-   default[:enstratus][:encryptedManagementKey] = 'bd75e62e61c158f4df10a5d6448978d800067ab5dd1ade8d63528f53ea3b15e770ebb25331430114a1bb72663a6b03c5d55dc911c328d7f435270bcef52936f7'
-   default[:enstratus][:firstEncryptedAccessKey] = '3f7c501c59879aaa4631927bd164ffc64dc34b75bfe5f7f0a202f91533cc4495'
-   default[:enstratus][:consoleEncryptionKey] = 'w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY('
-   default[:enstratus][:secondEncryptedAccessKey] = '890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6'
+   {
+     "run_list": [ 
+       "role[single_node]"
+     ],
+     "enstratus":{
+       "console_url":"solo.enstratus.com",
+       "license_key":"asdfasdfasdf123123123123",
+       "console_ip":"204.236.184.191",
+       "source_cidr":"204.236.184.191",
+       "dispatcherEncryptionKey":"b%2MKnlmqVGIlGA6e%3T#QdYvxR&A0PeIC",
+       "accessKey":"lk*zJgL&BJTAm$7j!TVb#AL6Hbhq5$",
+       "encryptedManagementKey":"bd75e62e61c158f4df10a5d6448978d800067ab5dd1ade8d63528f53ea3b15e770ebb25331430114a1bb72663a6b03c5d55dc911c328d7f435270bcef52936f7",
+       "firstEncryptedAccessKey":"3f7c501c59879aaa4631927bd164ffc64dc34b75bfe5f7f0a202f91533cc4495",
+       "consoleEncryptionKey":"w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY(",
+       "secondEncryptedAccessKey":"890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6",
+       "download":{"password":"asdfasdfasdfasdfa"},
+       "database":{
+                   "credentials_password":"somepassword",
+                   "provisioning_password":"somepassword",
+                   "analytics_password":"somepassword",
+                   "console_password":"somepassword",
+                   "enstratus_console_password":"somepassword"
+                  },
+       "km":{
+             "xms":"512M",
+             "xmx":"1024M",
+             "init":"/services/km/bin",
+             "port":"2013",
+             "keystore":".keystore"
+            },
+       "dispatcher":{
+                     "port":"3302",
+                     "xms":"1024M",
+                     "xmx":"2048M"
+                    }
+     },
+     "MySQL":{
+       "bind_address":"0.0.0.0"
+     },
+     "rabbitmq":{
+       "version":"2.7.9"
+     },
+     "build_essential":{
+       "compiletime":true
+     }
+   }
 
 Install enStratus
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 Finally, it's time to install the enStratus software. As root:
 

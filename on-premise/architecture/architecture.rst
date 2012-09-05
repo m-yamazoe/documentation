@@ -27,3 +27,4 @@ proof-of-concept environment.
 
    ha
    single_node
+   two_node

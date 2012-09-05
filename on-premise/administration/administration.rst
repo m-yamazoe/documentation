@@ -39,7 +39,8 @@ systems an overview of the installed components and how to manage them.
    cwrkr
    mysql
    riak
-   JDK
-   JSVC
+   jdk
+   jsvc
    rabbit_mq
    certificates
+   init

@@ -1,2 +1,2 @@
-Console Worker (CWRKR)
-======================
+Console Worker
+==============

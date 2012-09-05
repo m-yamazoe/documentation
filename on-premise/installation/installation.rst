@@ -13,6 +13,6 @@ Here is reference material for installing enStratus in a 1, 2, and 4 server mode
    :hidden:
 
    single_node/single_node
+   two_node/two_node
    single_node/post_install
-..   two_node/two_node
 ..   four_node/four_node

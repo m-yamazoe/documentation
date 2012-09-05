@@ -87,109 +87,109 @@ code. A text editor with Erlang syntax highlighting would be valuable here.
 .. code-block:: erlang
    :emphasize-lines: 39,41,65-67,77,82
 
-  [
-      {eleveldb, [
-    {data_root, "/var/lib/riak/leveldb"}
-      ]},
-      {kernel, [
-    {inet_dist_listen_max, 7999},
-    {inet_dist_listen_min, 6000}
-      ]},
-      {lager, [
-    {crash_log, "/var/log/riak/crash.log"},
-    {crash_log_count, 5},
-    {crash_log_date, "$D0"},
-    {crash_log_msg_size, 65536},
-    {crash_log_size, 10485760},
-    {error_logger_redirect, true},
-    {handlers, [
-        {lager_console_backend, info},
-        {lager_file_backend, [
-      {"/var/log/riak/console.log", info, 10485760, "$D0", 5},
-      {"/var/log/riak/error.log", error, 10485760, "$D0", 5}
-        ]}
-    ]}
-      ]},
-      {merge_index, [
-    {buffer_rollover_size, 1048576},
-    {data_root, "/var/lib/riak/merge_index"},
-    {data_root_2i, "/var/lib/riak/merge_index_2i"},
-    {max_compact_segments, 20}
-      ]},
-      {riak_control, [
-    {admin, true},
-    {auth, userlist},
-    {enabled, false},
-    {userlist, [
-        {"user", "pass"}
-    ]}
-      ]},
-      {riak_core, [
-    {cluster_name, "prov_production"},
-    {handoff_port, 8099},
-    {http, [{"127.0.0.1", 8098}, {"10.1.1.45", 8098}]},
-    {platform_bin_dir, "/usr/sbin"},
-    {platform_data_dir, "/var/lib/riak"},
-    {platform_etc_dir, "/etc/riak"},
-    {platform_lib_dir, "/usr/lib/riak"},
-    {ring_state_dir, "/var/lib/riak/ring"}
-      ]},
-      {riak_err, [
-    {fmt_max_bytes, 65536},
-    {term_max_size, 65536}
-      ]},
-      {riak_kv, [
-    {hook_js_vm_count, 2},
-    {http_url_encoding, "on"},
-    {js_max_vm_mem, 8},
-    {js_thread_stack, 16},
-    {legacy_keylisting, false},
-    {legacy_stats, true},
-    {map_js_vm_count, 8},
-    {mapred_2i_pipe, true},
-    {mapred_name, "mapred"},
-    {mapred_queue_dir, "/var/lib/riak/mr_queue"},
-    {mapred_system, pipe},
-    {multi_backend, [
-        {be_default, riak_kv_eleveldb_backend, [
-      {data_root, "/var/lib/riak/leveldb"},
-      {max_open_files, 50}
-        ]},
-        {be_blocks, riak_kv_bitcask_backend, [
-      {data_root, "/var/lib/riak/bitcask"}
-        ]}
-    ]},
-    {multi_backend_default, be_default},
-    {multi_backend_prefix_list, [
-        {<<"0b:">>, be_blocks}
-    ]},
-    {pb_ip, "10.1.1.45"},
-    {pb_port, 8087},
-    {raw_name, "riak"},
-    {reduce_js_vm_count, 6},
-    {riak_kv_stat, true},
-    {storage_backend, riak_kv_eleveldb_backend},
-    {vnode_vclocks, true}
-      ]},
-      {riak_search, [
-    {enabled, false}
-      ]},
-      {riak_sysmon, [
-    {busy_dist_port, true},
-    {busy_port, true},
-    {gc_ms_limit, 100},
-    {heap_word_limit, 40111000},
-    {port_limit, 2},
-    {process_limit, 30}
-      ]},
-      {sasl, [
-    {errlog_type, error},
-    {error_logger_mf_dir, "/var/log/riak/sasl"},
-    {error_logger_mf_maxbytes, 10485760},
-    {error_logger_mf_maxfiles, 5},
-    {sasl_error_logger, false}
-      ]}
-  ].
+   [
+       {eleveldb, [
+     {data_root, "/var/lib/riak/leveldb"}
+       ]},
+       {kernel, [
+     {inet_dist_listen_max, 7999},
+     {inet_dist_listen_min, 6000}
+       ]},
+       {lager, [
+     {crash_log, "/var/log/riak/crash.log"},
+     {crash_log_count, 5},
+     {crash_log_date, "$D0"},
+     {crash_log_msg_size, 65536},
+     {crash_log_size, 10485760},
+     {error_logger_redirect, true},
+     {handlers, [
+         {lager_console_backend, info},
+         {lager_file_backend, [
+       {"/var/log/riak/console.log", info, 10485760, "$D0", 5},
+       {"/var/log/riak/error.log", error, 10485760, "$D0", 5}
+         ]}
+     ]}
+       ]},
+       {merge_index, [
+     {buffer_rollover_size, 1048576},
+     {data_root, "/var/lib/riak/merge_index"},
+     {data_root_2i, "/var/lib/riak/merge_index_2i"},
+     {max_compact_segments, 20}
+       ]},
+       {riak_control, [
+     {admin, true},
+     {auth, userlist},
+     {enabled, false},
+     {userlist, [
+         {"user", "pass"}
+     ]}
+       ]},
+       {riak_core, [
+     {cluster_name, "prov_production"},
+     {handoff_port, 8099},
+     {http, [{"127.0.0.1", 8098}, {"10.1.1.45", 8098}]},
+     {platform_bin_dir, "/usr/sbin"},
+     {platform_data_dir, "/var/lib/riak"},
+     {platform_etc_dir, "/etc/riak"},
+     {platform_lib_dir, "/usr/lib/riak"},
+     {ring_state_dir, "/var/lib/riak/ring"}
+       ]},
+       {riak_err, [
+     {fmt_max_bytes, 65536},
+     {term_max_size, 65536}
+       ]},
+       {riak_kv, [
+     {hook_js_vm_count, 2},
+     {http_url_encoding, "on"},
+     {js_max_vm_mem, 8},
+     {js_thread_stack, 16},
+     {legacy_keylisting, false},
+     {legacy_stats, true},
+     {map_js_vm_count, 8},
+     {mapred_2i_pipe, true},
+     {mapred_name, "mapred"},
+     {mapred_queue_dir, "/var/lib/riak/mr_queue"},
+     {mapred_system, pipe},
+     {multi_backend, [
+         {be_default, riak_kv_eleveldb_backend, [
+       {data_root, "/var/lib/riak/leveldb"},
+       {max_open_files, 50}
+         ]},
+         {be_blocks, riak_kv_bitcask_backend, [
+       {data_root, "/var/lib/riak/bitcask"}
+         ]}
+     ]},
+     {multi_backend_default, be_default},
+     {multi_backend_prefix_list, [
+         {<<"0b:">>, be_blocks}
+     ]},
+     {pb_ip, "10.1.1.45"},
+     {pb_port, 8087},
+     {raw_name, "riak"},
+     {reduce_js_vm_count, 6},
+     {riak_kv_stat, true},
+     {storage_backend, riak_kv_eleveldb_backend},
+     {vnode_vclocks, true}
+       ]},
+       {riak_search, [
+     {enabled, false}
+       ]},
+       {riak_sysmon, [
+     {busy_dist_port, true},
+     {busy_port, true},
+     {gc_ms_limit, 100},
+     {heap_word_limit, 40111000},
+     {port_limit, 2},
+     {process_limit, 30}
+       ]},
+       {sasl, [
+     {errlog_type, error},
+     {error_logger_mf_dir, "/var/log/riak/sasl"},
+     {error_logger_mf_maxbytes, 10485760},
+     {error_logger_mf_maxfiles, 5},
+     {sasl_error_logger, false}
+       ]}
+   ].
 
 .. warning::
 
@@ -213,15 +213,15 @@ It's best just to the example here and replace the appropriate parts:
 .. code-block:: bash
    :emphasize-lines: 8
 
-  +A 64
-  -setcookie riak
-  -env ERL_CRASH_DUMP /var/log/riak/erl_crash.dump
-  -env ERL_FULLSWEEP_AFTER 0
-  -env ERL_MAX_PORTS 4096
-  +W w
-  +K true
-  -name riak@10.1.1.45
-  -smp enable
+   +A 64
+   -setcookie riak
+   -env ERL_CRASH_DUMP /var/log/riak/erl_crash.dump
+   -env ERL_FULLSWEEP_AFTER 0
+   -env ERL_MAX_PORTS 4096
+   +W w
+   +K true
+   -name riak@10.1.1.45
+   -smp enable
 
 The only thing you need to change here is the ip address. This should be the non-localhost
 IP address of the system that it can communicate with other nodes in the cluster on.
@@ -252,56 +252,56 @@ Regardless of which way you go, the following haproxy config is what we use prod
 .. code-block:: bash
    :emphasize-lines: 40,44-46
 
-  global
-    log 127.0.0.1   local1 info
-    maxconn 100000
-    user haproxy
-    group haproxy
-    #nbproc 2
-    #ulimit-n 160000
-    stats socket /var/tmp/haproxy_stats level admin user haproxy
-    spread-checks 5
-
-  defaults
-    log     global
-    mode    http
-    option  dontlognull
-    balance leastconn
-    retries 5
-    timeout connect 120s
-    backlog 10000
-    #timeout client 60000
-    #timeout server 60000
-    timeout queue 30s
-    
-    option httplog
-    option httpchk GET /ping
-    option contstats
-    option redispatch
-    option logasap
-    
-  frontend riak-fe
-    bind *:8098
-    mode http
-    option httplog
-    option contstats
-    option redispatch
-    option logasap
-    default_backend riak-be
-    timeout client 120s
-
-  backend riak-be
-    balance leastconn
-    mode http
-    timeout server 120s
-    option redispatch
-    server provisioning-riak-b 10.1.1.1:8098 weight 1 maxconn 4096 check inter 1m
-    server provisioning-riak-c 10.1.1.2:8098 weight 1 maxconn 4096 check inter 1m
-    server provisioning-riak-a 10.1.1.3:8098 weight 1 maxconn 4096 check inter 1m
-
-  listen admin 0.0.0.0:22002
-    mode http
-    stats uri /
+   global
+     log 127.0.0.1   local1 info
+     maxconn 100000
+     user haproxy
+     group haproxy
+     #nbproc 2
+     #ulimit-n 160000
+     stats socket /var/tmp/haproxy_stats level admin user haproxy
+     spread-checks 5
+ 
+   defaults
+     log     global
+     mode    http
+     option  dontlognull
+     balance leastconn
+     retries 5
+     timeout connect 120s
+     backlog 10000
+     #timeout client 60000
+     #timeout server 60000
+     timeout queue 30s
+     
+     option httplog
+     option httpchk GET /ping
+     option contstats
+     option redispatch
+     option logasap
+     
+   frontend riak-fe
+     bind *:8098
+     mode http
+     option httplog
+     option contstats
+     option redispatch
+     option logasap
+     default_backend riak-be
+     timeout client 120s
+ 
+   backend riak-be
+     balance leastconn
+     mode http
+     timeout server 120s
+     option redispatch
+     server provisioning-riak-b 10.1.1.1:8098 weight 1 maxconn 4096 check inter 1m
+     server provisioning-riak-c 10.1.1.2:8098 weight 1 maxconn 4096 check inter 1m
+     server provisioning-riak-a 10.1.1.3:8098 weight 1 maxconn 4096 check inter 1m
+ 
+   listen admin 0.0.0.0:22002
+     mode http
+     stats uri /
 
 The critical lines are highlighted. In haproxy, you define a frontend, a backend and tell
 the frontend to use that backend. The other settings are somewhat irrelevant. The `listen

@@ -3,7 +3,7 @@
 Single Node
 -----------
 
-.. figure:: ./images/single_node_enstratus.png
+.. figure:: ./images/single_node.png
    :height: 400px
    :width: 500 px
    :scale: 95 %

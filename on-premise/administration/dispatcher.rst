@@ -194,7 +194,7 @@ The service port upon which the enStratus dispatcher service listens and the Jav
 to start the tomcat service can be modified.
 
 Service Port
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 The service port upon which the KM service operates is defined in:
 
@@ -204,7 +204,7 @@ This file also defines the Java Keystore location for loading certificates to th
 dispatcher tomcat service.
 
 JAVA_OPTS
-^^^^^^^^^
+~~~~~~~~~
 
 Modifying JAVA_OPTS can be done through the file:
 
@@ -247,6 +247,8 @@ monit or nagios.
 
 JMX
 ~~~
+
+JMX monitoring notes.
 
 Backups
 -------
