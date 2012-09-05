@@ -46,3 +46,4 @@ New Content
    budget/budget
    agent/agent
    api/api
+   acct_settings/acct_settings
