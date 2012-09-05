@@ -300,6 +300,7 @@ To accommodate this type of change, you will need to add the following
                   "riak_host":"ip_or_hostname_of_riak_server",
                   "riak_port":"port_upon_which_riak_runs"
                  }
+
 JDK
 ---
 

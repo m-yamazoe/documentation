@@ -146,7 +146,12 @@ node and the two node installation is that there will be two separate chef runs 
 that part wasn't a surprise) and two files that control them:
 
 #. frontend.json
+
+   Link: `frontend.json <http://es-download.s3.amazonaws.com/frontend.json>`_ 
+
 #. backend.json
+
+   Link: `backend.json <http://es-download.s3.amazonaws.com/backend.json>`_ 
 
 Edit each of these files to replace the appropriate variables to accommodate the
 connections that need to be made from the frontend services (console, API) to the backend

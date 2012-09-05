@@ -202,6 +202,10 @@ You will use these values to fill in the attributes in the next step.
 Edit Installation Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+You can use the included single_node.json file or download one from here:
+
+`single_node.json <http://es-download.s3.amazonaws.com/single_node.json>`_ 
+
 Edit the file:
 
 `single_node.json`
