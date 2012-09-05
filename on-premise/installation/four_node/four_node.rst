@@ -37,7 +37,7 @@ diagram below.
    
 #. Worker Node
 
-   The monitor node will only run the monitor and worker processes.
+   The worker node will only run the monitor and worker processes.
    
 Configuration Files
 -------------------
@@ -89,24 +89,75 @@ and their dependent databases.
 | enstratus_console | Console, API, Console Worker |
 +-------------------+------------------------------+
 
-.. note:: Automated granting of privileges has not been completed yet, sorry. Coming soon!
+.. note:: Automated granting of privileges in MySQL has not been completed yet, sorry.
+          
+          Coming soon!
+
+**Database Role**
+
+The role applied to the database node will be the four_node_database role, defined in
+roles/four_node_database.json.
+
+.. code-block:: json
+
+   {
+     "name": "four_node_database",
+     "default_attributes": { },
+     "override_attributes": { },
+     "json_class": "Chef::Role",
+     "description": "Four node role for the database node.",
+     "chef_type": "role",
+     "run_list": 
+      [ "recipe[enstratus::default]",
+         "recipe[enstratus::limits]",
+         "role[MySQL]",
+         "role[riak]",
+         "role[backendDB]",
+      ]   
+   }
+
 
 four_node_console
 ~~~~~~~~~~~~~~~~~
 
-The console server needs to know how to reach MySQL, Riak, and the dispatcher webservice,
+The console server needs to know how to reach MySQL, Riak, and the dispatcher web service,
 so we need to override the attributes to allow for this. In the four_node_console.json
 file, these values are found here:
 
 .. code-block:: json
 
     "riak_host":"DATABASE_IP",
-    "dispatcher_hostname":"DATABASE_IP",
     "mysql_hostname":"DATABASE_IP",
+    "dispatcher_hostname":"DISPATCHER_IP",
+
+**Console Role**
 
 The other critical item to change is the role applied to this node, in this case the role
 called four_node_console is specified, which directs the installation of the console, API,
 and console-worker (cwrkr) services.
+
+The role applied to the console node will be the four_node_console role, defined in
+roles/four_node_console.json.
+
+.. code-block:: json
+
+   {
+     "name": "four_node_console",
+     "default_attributes": { },
+     "override_attributes": { },
+     "json_class": "Chef::Role",
+     "description": "Four node role for the console node.",
+     "chef_type": "role",
+     "run_list": 
+       [   
+         "recipe[enstratus::default]",
+         "recipe[enstratus::limits]",
+         "role[sudo]",
+         "role[console]",
+         "role[api]",
+         "role[cwrkr]"
+       ]   
+   }
 
 four_node_dispatcher
 ~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +167,71 @@ service in this case is actually running on localhost from the perspective of th
 dispatcher service, so we don't need to override it. In the four_node_dispatcher.json, we
 override:
 
-    "riak_host":"BACKEND_IP",
-    "mysql_hostname":"BACKEND_IP"
+.. code-block:: json
+
+    "riak_host":"DATABASE_IP",
+    "mysql_hostname":"DATABASE_IP"
+
+
+**Dispatcher Role**
+
+The role applied to the dispatcher node will be the four_node_dispatcher role, defined in
+roles/four_node_dispatcher.json.
+
+.. code-block:: json
+
+   {
+     "name": "four_node_dispatcher",
+     "default_attributes": { },
+     "override_attributes": { },
+     "json_class": "Chef::Role",
+     "description": "Four node role for the dispatcher node.",
+     "chef_type": "role",
+     "run_list": 
+      [ "recipe[enstratus::default]",
+         "recipe[enstratus::limits]",
+         "role[sudo]",
+         "role[mq]",
+         "role[km]",
+         "role[dispatcher]",
+      ]   
+   }
+
+
+four_node_worker
+~~~~~~~~~~~~~~~~
+
+The worker server is running both the monitor and worker services, and needs to know how
+to reach the KM and Rabbit MQ services running on the dispatcher node, and also MySQL and
+Riak running on the database node. In the four_node_worker.json, we override:
+
+.. code-block:: json
+
+    "riak_host":"DATABASE_IP",
+    "mysql_hostname":"DATABASE_IP"
+    "dispatcher_hostname":"DISPATCHER_IP",
+    "km_hostname":"DISPATCHER_IP",
+
+**Worker Role**
+
+The role applied to the worker will be the four_node_worker role, defined in
+roles/four_node_worker.json.
+
+.. code-block:: json
+
+   {
+     "name": "four_node_worker",
+     "default_attributes": { },
+     "override_attributes": { },
+     "json_class": "Chef::Role",
+     "description": "Four node role for the worker node.",
+     "chef_type": "role",
+     "run_list":
+      [ "recipe[enstratus::default]",
+         "recipe[enstratus::limits]",
+         "role[sudo]",
+         "role[monitor]",
+         "role[worker]"
+      ]
+   }
 
