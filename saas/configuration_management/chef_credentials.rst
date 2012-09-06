@@ -57,7 +57,7 @@ To generate custom credentials for enStratus in OSC, you can use ``knife``:
 Make note of the client name and also the private key returned to you.
 
 .. note:: Note that we passed the ``-a`` option. This makes the enstratus account an administrator. This is optional but **HIGHLY** recommended.
-	If enStratus has permssions, it will clean up any node and client records for instances enStratus created. This is very
+	If enStratus has permissions, it will clean up any node and client records for instances enStratus created. This is very
 	valuable in cases where you are relying on search in your recipes as part of an enStratus deployment.
 	**Not only will enStratus never create any client or node records on its own but it will also NEVER delete any client or node records for anything OTHER than instances created from within enStratus**
 
@@ -66,8 +66,8 @@ OHC/OPC
 
 For OHC/OPC, the finer grained ACL system doesn't allow you to create clients that have the same permissions as OSC clients by default. For this you will have to do one of the following
 
-* Providate enStratus with the original validation cert and username or
-* create a custom client as described above and then grant it the apporpriate permissions
+* Provide enStratus with the original validation cert and user-name or
+* create a custom client as described above and then grant it the appropriate permissions
 
 For creating a custom client, after creating the client with knife, log into the OPC/OHC web ui and do the following:
 

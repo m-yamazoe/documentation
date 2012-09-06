@@ -2,7 +2,7 @@
 
 ESPM
 =====
-Before enStratus can be used with a Puppet Enterprise 2.5 server, it is neccessary to have a small agent running on the server.
+Before enStratus can be used with a Puppet Enterprise 2.5 server, it is necessary to have a small agent running on the server.
 
 Why an agent?
 ~~~~~~~~~~~~~~
@@ -132,7 +132,7 @@ will result in:
 
 Make note of the PSK and the certificate, you will need to provide these to enStratus. 
 
-.. warning:: ``espm`` will refuse to overwrite any existing settings or certificates. The generated PSK and certificate are unique to each run of ``espm_setup``. If you change these or regenerate them, enStratus will no longer be able to communicate with the agent. You will have to delete and readd the account in enStratus with the new values.
+.. warning:: ``espm`` will refuse to overwrite any existing settings or certificates. The generated PSK and certificate are unique to each run of ``espm_setup``. If you change these or regenerate them, enStratus will no longer be able to communicate with the agent. You will have to delete and read the account in enStratus with the new values.
 
 Starting up
 ~~~~~~~~~~~~

@@ -4,7 +4,7 @@ Adding to enStratus
 ~~~~~~~~~~~~~~~~~~~~
 Once you've created an account for enStratus to use and have the credentials, you can add that to the enStratus console:
 
-* Navigate to "Configuration Managemet" -> "Accounts"
+* Navigate to "Configuration Management" -> "Accounts"
 
 .. figure:: ./images/cm-menu.png
    :alt: Configuration Management Menu
@@ -18,7 +18,8 @@ Once you've created an account for enStratus to use and have the credentials, yo
 
 * Select "Chef" from the "Configuration Management System" drop-down menu
 * Fill in the fields as described.
-	Note that speficically to enStratus, the following fields are required:
+	Note that specifically to enStratus, the following fields are required:
+   
 	* Budget Codes
 	* Name
 	* Description
