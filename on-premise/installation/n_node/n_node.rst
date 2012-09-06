@@ -115,7 +115,7 @@ To accommodate this type of change, you will need to add the following
                   "source_cidr":"ip_of_new_monitor_server,ip_of_another_monitor_server"
                  }
 
-Since source_cidr values are a comma-separated list of all the IP addresses of all the
+For source_cidr, use a comma-separated list of all the IP addresses of all the
 worker, monitor, and dispatcher servers.
 
 MySQL
@@ -153,7 +153,7 @@ To accommodate this type of change, you will need to add the following
                   "source_cidr":"ip_of_new_worker_server,ip_of_another_worker_server"
                  }
 
-Since source_cidr values are a comma-separated list of all the IP addresses of all the
+For source_cidr, use a comma-separated list of all the IP addresses of all the
 worker, monitor, and dispatcher servers.
 
 MySQL

@@ -31,43 +31,12 @@ enStratus software can be installed on a single server, combining all software c
 8. API
 9. Console Worker
 
-Overview
-~~~~~~~~
+Installation Overview
+~~~~~~~~~~~~~~~~~~~~~
 
 For a single node installation, enStratus leverages the power of chef-solo to satisfy
 the software prerequisites. Once the prerequisite software is installed, installing
 enStratus software can proceed.
-
-System Requirements
-~~~~~~~~~~~~~~~~~~~
-
-Provision a server (can be virtual, we often test using an m1.large instance in EC2) for
-the installation.
-
-Recommended Operating Specifications
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-CPU: 4
-
-Memory: 15 Gb
-
-Storage: 60 Gb
-
-Architecture: 64-bit
-
-An m1.xlarge will fill these requirements quite well. However, you can probably get by with
-an m1.large to save on costs.
-
-.. note:: This installation requires external Internet connectivity.
-
-Recommended Images
-^^^^^^^^^^^^^^^^^^
-
-Start with a generic EC2 image from `Alestic <http://alestic.com/>`_ or the equivalent in
-your environment. 
-
-Installation Procedure
-~~~~~~~~~~~~~~~~~~~~~~
 
 The installation procedure will move through the following steps:
 
@@ -83,15 +52,38 @@ The installation procedure will move through the following steps:
 
 #. Install enStratus
 
-Installation Steps
-~~~~~~~~~~~~~~~~~~
 
-Install Chef client
-^^^^^^^^^^^^^^^^^^^
+System Requirements
+~~~~~~~~~~~~~~~~~~~
+
+Provision a server (can be virtual, we often test using an m1.large instance in EC2) for
+the installation.
+
+**Recommended Operating Specifications**
+
+CPU: 4
+
+Memory: 15 Gb
+
+Storage: 60 Gb
+
+Architecture: 64-bit
+
+An m1.xlarge will fill these requirements quite well. However, you can probably get by with
+an m1.large to save on costs.
+
+.. note:: This installation requires external Internet connectivity.
+
+**Recommended Images**
+
+Start with a generic EC2 image from `Alestic <http://alestic.com/>`_ or the equivalent in
+your environment. 
+
+Install Chef Client - Ubuntu/Debian
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To install the chef client, use the following steps:
 
-**Ubuntu/Debian**
 
 1. apt-get update && apt-get -y upgrade
 2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
@@ -107,11 +99,11 @@ Here's a "one-liner"
 
 Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
 
-**Cent OS/Red Hat**
+Install Chef Client - Cent OS/Red Hat
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning:: Before you go further, disable selinux and reboot. The MySQL process will not
-   start properly without disabling selinux. In the future, selinux will be configured to do
-   so.
+.. warning:: Before you go further, disable selinux and reboot. Currently, the MySQL process will not
+   start properly without disabling selinux. 
 
 1. yum -y update && yum -y upgrade
 2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
@@ -124,8 +116,8 @@ Here's a "one-liner"
 
    yum -y update && yum -y upgrade && yum install curl && curl -L http://www.opscode.com/chef/install.sh | sudo bash && yum -y install mysql-devel.x86_64 && /opt/chef/embedded/bin/gem install mysql
 
-Extract chef-solo package
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Extract Chef-Solo Package
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The installation chef-solo package will be provided to you by an enStratus engineer.
 Extract it. You will see something like this.
@@ -136,7 +128,7 @@ Extract it. You will see something like this.
    classes  cookbooks  enstratus-utilities.jar README.md  roles  single_node.json  solo.rb
 
 Download and Prepare the JDK and JCE
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 enStratus will not operate without the Java 6 JDK and the unlimited strength encryption
 provided for by the JCE library.
@@ -169,7 +161,7 @@ Move the jce directory: cookbooks/enstratus/files/default/jce
     mv jce cookbooks/enstratus/files/default/
 
 Key Generation
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 As part of the installation process, you will have received a directory called `classes`
 and a file called `enstratus-utilities.jar`.
@@ -200,7 +192,7 @@ these keys could potentially access your customer data.
 You will use these values to fill in the attributes in the next step.
 
 Edit Installation Attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use the included single_node.json file or download one from here:
 

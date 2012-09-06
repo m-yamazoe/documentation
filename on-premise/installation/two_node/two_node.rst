@@ -41,56 +41,14 @@ front end components.
 2. API
 3. Console Worker
 
-Overview
-~~~~~~~~
+Installation Overview
+~~~~~~~~~~~~~~~~~~~~~
 
 A chef-solo cookbook is provided to facilitate the installation of software prerequisites
 along with installing the enStratus software.
 
 The two-node enStratus installation leverages chef roles to separate the installation into
 the front and back end components.
-
-System Requirements
-~~~~~~~~~~~~~~~~~~~
-
-Provision two servers (can be virtual, we often test using m1.large instances in EC2) for
-the installation.
-
-Recommended  Specifications (Backend)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-CPU: 4
-
-Memory: 12 Gb
-
-Storage: 60 Gb
-
-Architecture: 64-bit
-
-Again, an m1.xlarge will fill these requirements quite well. You can probably get by with
-an m1.large to save on costs.
-
-Recommended Specifications (Frontend)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-CPU: 2
-
-Memory: 8 Gb
-
-Storage: 30 Gb
-
-Architecture: 64-bit
-
-An m1.large is sufficient to meet the frontend requirements.
-
-Recommended Images
-^^^^^^^^^^^^^^^^^^
-
-Start with a generic EC2 image from `Alestic <http://alestic.com/>`_ or the equivalent in
-your environment. 
-
-Installation Procedure
-~~~~~~~~~~~~~~~~~~~~~~
 
 The installation procedure will move through the following steps:
 
@@ -108,10 +66,47 @@ The installation procedure will move through the following steps:
 
 #. Install enStratus (frontend)
 
+
+System Requirements
+~~~~~~~~~~~~~~~~~~~
+
+Provision two servers (can be virtual, we often test using m1.large instances in EC2) for
+the installation.
+
+**Recommended  Specifications (Backend)**
+
+CPU: 4
+
+Memory: 12 Gb
+
+Storage: 60 Gb
+
+Architecture: 64-bit
+
+An m1.xlarge will fill these requirements quite well. You can probably get by with
+an m1.large to save on costs.
+
+**Recommended Specifications (Frontend)**
+
+CPU: 2
+
+Memory: 8 Gb
+
+Storage: 30 Gb
+
+Architecture: 64-bit
+
+An m1.large is sufficient to meet the frontend requirements.
+
+**Recommended Images**
+
+Start with a generic EC2 image from `Alestic <http://alestic.com/>`_ or the equivalent in
+your environment. 
+
 Installation Steps
 ~~~~~~~~~~~~~~~~~~
 
-Install Chef client
+Install Chef Client
 ^^^^^^^^^^^^^^^^^^^
 
 Follow the instructions given in the single node installation instructions for installing
@@ -224,6 +219,9 @@ server.
 The application of the frontend run list is described by the frontend role, located in
 ``roles/frontend.json``.
 
+As with a single-node installation, replace the CHANGE_ME strings with the appropriate values 
+for your environment (many are generated during the Key Generation step above).
+
 **backend.json**
 
 .. code-block:: json
@@ -281,6 +279,9 @@ Since the backend server in this architectural configuration makes no outbound c
 to any of the services installed on the console server, the only modification to the
 original single_node.json file is to alter the run list to direct the installation of the
 backend services, highlighted in line 3.
+
+You again will need to replace the CHANGE_ME strings with the appropriate values 
+for your environment (many are generated during the Key Generation step above).
 
 Install enStratus
 ^^^^^^^^^^^^^^^^^
