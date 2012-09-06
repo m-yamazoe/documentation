@@ -1,8 +1,10 @@
 .. _saas_chef_console_account:
 
 Adding to enStratus
-~~~~~~~~~~~~~~~~~~~~
-Once you've created an account for enStratus to use and have the credentials, you can add that to the enStratus console:
+-------------------
+
+Once you've created an account for enStratus to use and have the credentials, you can add
+that to the enStratus console:
 
 * Navigate to "Configuration Management" -> "Accounts"
 
@@ -30,4 +32,5 @@ Once you've created an account for enStratus to use and have the credentials, yo
 
 * Click "Save"
  
-At this point, enStratus will now begin discovery of your ``roles``, ``cookbooks`` and ``environments``.
+At this point, enStratus will now begin discovery of your ``roles``, ``cookbooks`` and
+``environments``.

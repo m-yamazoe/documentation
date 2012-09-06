@@ -1,10 +1,12 @@
 .. _saas_puppet_console_account:
 
 Adding to enStratus
-~~~~~~~~~~~~~~~~~~~~
-Once you've installed ``espm`` and generated the appropriate credentials, you can add that to the enStratus console:
+-------------------
 
-* Navigate to "Configuration Management" -> "Accounts"
+Once you've installed ``espm`` and generated the appropriate credentials, you can add that
+to the enStratus console:
+
+* Navigate to Configuration Management > Accounts
 
 .. figure:: ./images/cm-menu.png
    :alt: Configuration Management Menu
@@ -28,7 +30,9 @@ Once you've installed ``espm`` and generated the appropriate credentials, you ca
    :alt: Configuration Management Menu
    :align: center
 
-.. note:: The Puppet Master Agent URL field is the ip or hostname and port that you configured ``espm`` to listen on and **NOT** the port Puppet clients communicate to the Puppet master over.
+.. note:: The Puppet Master Agent URL field is the ip or hostname and port that you
+   configured ``espm`` to listen on and **NOT** the port Puppet clients communicate to the
+   Puppet master over.
 
 * Click "Save"
  
