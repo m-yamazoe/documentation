@@ -66,6 +66,7 @@ Regardless of which image you launch (public, enstratus or preexisting), the ima
 The image we'll be using for this document is ``ami-bd3c8ad4`` in AWS US-East and is called ``enStratus17-Ubuntu1004-64-2012090502``. It is an Ubuntu 10.04 64-bit image. It also has Chef 0.10 installed from the Opscode "omnibus" installer.
 
 * Launch the image
+
 Click on the "action" menu for the image and select "Launch"
 
 .. figure:: ./images/launch-image.png
@@ -83,6 +84,7 @@ You'll need to fill in the information as appropriate. For now, do NOT set anyth
 
 
 * Customize and make a new image
+
 Once the instance is fully online (``Running`` in the server list) 
 
 .. figure:: ./images/running-base.png
