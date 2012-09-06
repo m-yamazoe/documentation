@@ -6,9 +6,9 @@ To be able to launch an instance with Puppet (or any CM for that matter), you mu
 
 * Your image has v17 of the enStratus agent
 * Your image shows as "registered" in the enStratus Console under "Machine Images" (has the enStratus logo)
-* Your image has PE2.5 client preinstalled with the appropriate templated configuration files
+* Your image has PE2.5 client installed with the appropriate template configuration files
 
-Depending on your cloud provider and other factors (such as region), enStratus may have already made an image publicly available with the agent preinstalled.
+Depending on your cloud provider and other factors (such as region), enStratus may have already made an image publicly available with the agent installed.
 
 .. note::
 	There is an entire guide dedicated to the enStatus agent, however there are a few bits of information worth recapping here specifically as it relates to interaction with Puppet.
@@ -17,7 +17,7 @@ Differences from manual provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Simply put, enStratus does not use SSH to interact with servers. All communication (outside of the initial 'phone-home') is driven from enStratus to launched instances via the enStratus agent.
 
-The enStratus agent is a java application that is built around a series of extensible shell scripts. This has its benefits in that what the agent does, can be customized by the user.
+The enStratus agent is a Java application that is built around a series of extensible shell scripts. This has its benefits in that what the agent does, can be customized by the user.
 
 In the case of a freshly launched instance, once it has sent its "alive" packet back to enStratus provisioning, enStratus will, via the agent, run the following script:
 
@@ -56,7 +56,7 @@ It expects the puppet.conf file to look like so:
        graph = true
        pluginsync = true
 
-Technically the only critical values are the templated ones for ``ES_NODE_NAME`` and ``ES_PUPPET_MASTER``. Those will be replaced with the name assigned in the enStratus console and the host portion of the value you entered for the Puppet URL when adding the configuration account. If the host portion was an IP address, this will be set to ``puppet`` and, as mentioned previously, a hosts file entry will be created to support that.
+Technically the only critical values are the templates for ``ES_NODE_NAME`` and ``ES_PUPPET_MASTER``. Those will be replaced with the name assigned in the enStratus console and the host portion of the value you entered for the Puppet URL when adding the configuration account. If the host portion was an IP address, this will be set to ``puppet`` and, as mentioned previously, a hosts file entry will be created to support that.
 
 * The pregenerated client certificate and key will be copied into the appropriate directories.
 
@@ -68,7 +68,7 @@ Finally the puppet client will be run with the following invocation:
 
 .. note:: enStratus does not set up any cron jobs or run ``puppet agent`` in daemon mode. This is a site-specific setting and should be managed in your Puppet modules. enStratus is only concerned about the initial bootstrap at this point. enStratus will never initiate a puppet run outside of this initial bootstrap except when used in Deployments.
 
-It's worth noting here that enStratus has removed the certificate signing step entirely. Since we pregenerate and sign the certificates BEFORE we launch the instance, the initial run will not be blocked waiting on someone to sign the certificates nor will you have to turn on autosigning or use wildcards.
+It's worth noting here that enStratus has removed the certificate signing step entirely. Since we generate and sign the certificates BEFORE we launch the instance, the initial run will not be blocked waiting on someone to sign the certificates nor will you have to turn on auto-signing or use wildcards.
 
 When terminating a server in enStratus, it will also make a call back to the ``espm`` agent to delete the node from the ENC as well as revoke its certificates.
 
@@ -85,7 +85,7 @@ Launch any public or enStratus public machine image
 ````````````````````````````````````````````````````
 As stated, enStratus has been making updated images available with v17 of the agent installed. You are also free to install the agent yourself.
 
-Regardless of which image you launch (public, enstratus or preexisting), the image will be untrusted. To create a "registered" image, you must image a running server from within enStratus. Depending on the cloud provider and the type of imaging (i.e. EBS root vs. instance storage), enStratus will perform the imaging process on any running instance that it believes has the agent installed. Let's use the following screenshots as a guide:
+Regardless of which image you launch (public, enstratus or preexisting), the image will be untrusted. To create a "registered" image, you must image a running server from within enStratus. Depending on the cloud provider and the type of imaging (i.e. EBS root vs. instance storage), enStratus will perform the imaging process on any running instance that it believes has the agent installed. Let's use the following screen shots as a guide:
 
 * Navigate to "Compute" and "Machine Images" from the menu
 * Search for public images with ``enstratus17`` in the name
@@ -107,7 +107,7 @@ Click on the "action" menu for the image and select "Launch"
    :scale: 10 %
 
 
-You'll need to fill in the information as appropriate. For now, do NOT set anything in the "Configuration Management" tab. If you plan on customizing the instance at all before imaging, you'll want to launch it with an SSH keypair configured.
+You'll need to fill in the information as appropriate. For now, do NOT set anything in the "Configuration Management" tab. If you plan on customizing the instance at all before imaging, you'll want to launch it with an SSH key-pair configured.
 
 .. figure:: ./images/base-launch.png
    :alt: Launch Screen

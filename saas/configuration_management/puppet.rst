@@ -2,14 +2,14 @@
 
 Puppet
 =======
-Chef is a configuration management tool created by PuppetLabs. enStratus *currently* supports:
+Puppet is a configuration management tool created by PuppetLabs. enStratus *currently* supports:
 
 * Puppet Enterprise 2.5
 
 We are evaluating the best way to add support for non-PE2.5 Puppet masters.
    
 
-Pre-requisites
+Prerequisites
 ---------------
 There are a few prerequisites required for end-to-end automation using Puppet with enStratus:
 

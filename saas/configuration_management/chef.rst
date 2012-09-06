@@ -11,7 +11,7 @@ Chef is a configuration management tool created by Opscode. enStratus supports t
 Currently enStratus works with version 0.10.x of these.
    
 
-Pre-requisites
+Prerequisites
 ---------------
 There are a few prerequisites required for end-to-end automation using Chef with enStratus:
 

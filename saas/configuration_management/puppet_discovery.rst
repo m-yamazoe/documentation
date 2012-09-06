@@ -9,7 +9,7 @@ Once you've registered your account with enStratus, a background thread will und
 
 Currently there is no visible progress on this action for the user. To check the progress of discovery, do the following:
 
-* Navigate to "Configuration Managemet" -> "Components"
+* Navigate to "Configuration Management" -> "Components"
 
 .. figure:: ./images/cm-menu-components.png
    :alt: Configuration Management Menu
@@ -28,8 +28,8 @@ The page will redraw and display a list of any ``groups`` and ``classes`` discov
    :align: center
    :scale: 10 %
 
-A word on asynchrous discovery
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A word on asynchronous discovery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
    Because discovery is asynchronous, you might not see all the data you expect to see.

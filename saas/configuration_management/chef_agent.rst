@@ -6,9 +6,9 @@ To be able to launch an instance with Chef (or any CM for that matter), you must
 
 * Your image has v17 of the enStratus agent
 * Your image shows as "registered" in the enStratus Console under "Machine Images" (has the enStratus logo)
-* Your image has Chef 0.10.x preinstalled (optional)
+* Your image has Chef 0.10.x installed (optional)
 
-Depending on your cloud provider and other factors (such as region), enStratus may have already made an image publicly available with the agent preinstalled.
+Depending on your cloud provider and other factors (such as region), enStratus may have already made an image publicly available with the agent installed.
 
 .. note::
 	There is an entire guide dedicated to the enStatus agent, however there are a few bits of information worth recapping here specifically as it relates to interaction with Chef.
@@ -17,7 +17,7 @@ Differences from ``knife ec2`` or ``knife bootstrap``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Simply put, enStratus does not use SSH to interact with servers. All communication (outside of the initial 'phone-home') is driven from enStratus to launched instances via the enStratus agent.
 
-The enStratus agent is a java application that is built around a series of extensible shell scripts. This has its benefits in that what the agent does, can be customized by the user.
+The enStratus agent is a Java application that is built around a series of extensible shell scripts. This has its benefits in that what the agent does, can be customized by the user.
 
 In the case of a freshly launched instance, once it has sent its "alive" packet back to enStratus provisioning, enStratus will, via the agent, run the following script:
 
@@ -31,7 +31,7 @@ Once Chef is installed (or detected), the script will begin to configure the loc
 
 * Look for any existing Chef settings in ``/etc/chef`` and back them up
 * Build a new ``/etc/chef/client.rb``
-* Place the validation pem (or credentials you provided), into ``/etc/chef``
+* Place the validation PEM (or credentials you provided), into ``/etc/chef``
 * Write the ``first-boot.json`` file
 * run ``sudo chef-client -j/etc/chef/first-boot.json -E <environment> -L /mnt/tmp/enstratus-chefrun.log``
 * After the run, remove the validation pem/credentials from disk
@@ -53,7 +53,7 @@ Launch any public or enStratus public machine image
 ````````````````````````````````````````````````````
 As stated, enStratus has been making updated images available with v17 of the agent installed. You are also free to install the agent yourself.
 
-Regardless of which image you launch (public, enstratus or preexisting), the image will be untrusted. To create a "registered" image, you must image a running server from within enStratus. Depending on the cloud provider and the type of imaging (i.e. EBS root vs. instance storage), enStratus will perform the imaging process on any running instance that it believes has the agent installed. Let's use the following screenshots as a guide:
+Regardless of which image you launch (public, enStratus or preexisting), the image will be untrusted. To create a "registered" image, you must image a running server from within enStratus. Depending on the cloud provider and the type of imaging (i.e. EBS root vs. instance storage), enStratus will perform the imaging process on any running instance that it believes has the agent installed. Let's use the following screen shots as a guide:
 
 * Navigate to "Compute" and "Machine Images" from the menu
 * Search for public images with ``enstratus17`` in the name
@@ -75,7 +75,7 @@ Click on the "action" menu for the image and select "Launch"
    :scale: 10 %
 
 
-You'll need to fill in the information as appropriate. For now, do NOT set anything in the "Configuration Management" tab. If you plan on customizing the instance at all before imaging, you'll want to launch it with an SSH keypair configured.
+You'll need to fill in the information as appropriate. For now, do NOT set anything in the "Configuration Management" tab. If you plan on customizing the instance at all before imaging, you'll want to launch it with an SSH key-pair configured.
 
 .. figure:: ./images/base-launch.png
    :alt: Launch Screen
@@ -85,7 +85,7 @@ You'll need to fill in the information as appropriate. For now, do NOT set anyth
 
 * Customize and make a new image
 
-Once the instance is fully online (``Running`` in the server list) 
+Once the instance is fully on-line (``Running`` in the server list) 
 
 .. figure:: ./images/running-base.png
    :alt: Running Base Image
