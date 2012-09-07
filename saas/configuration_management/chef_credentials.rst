@@ -3,7 +3,7 @@
 Generating credentials
 ----------------------
 
-Before adding your Chef server to the enStratus console, you'll need to bits of information. This differs based on if you are running OSC vs. OHC/OPC.
+Before adding your Chef server to the enStratus console, you'll need two bits of information. This differs based on if you are running OSC vs. OHC/OPC.
 Regardless of which type of Chef server product you are using, enstratus will need to be able to communicate with the Chef server API endpoint.
 Additionally, enStratus will need an API client account and that account's PEM file. This single set of credentials will be used for the following tasks:
 

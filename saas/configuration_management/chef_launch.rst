@@ -25,8 +25,7 @@ Management" tab here:
    :align: center
    :scale: 10 %
 
-You can see from this screen that I'm assigning this server the ``demo`` environment. I've
-added a few things to the runlist:
+You can see from this screen that the server was assigned the ``demo`` environment and a few things have been added to the runlist:
 
 * role "demo-role-1"
 * recipe "git"
@@ -64,5 +63,5 @@ issues in bootstrap:
    :scale: 40%
 
 At this point the instance has launched and you should see it registered with the Chef
-server. In our case of the demo role, we're serving a static page populated from an ERB
+server. In the case of the demo role, it is serving a static page populated from an ERB
 template.

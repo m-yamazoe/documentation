@@ -43,10 +43,7 @@ Asynchronous Discovery
    reflected.  Currently there is no way to force a refresh of the discovery process.
 
 Note that the asynchronous nature ONLY affects the ability of enStratus to know what
-objects are available for assignment when launching a server.  enStratus does not store
-copies of the actual modules. If you make a change to an existing module that enStratus
-has discovered, it is not necessary that enStratus have discovered this change unless you
-are adding a new module that it has yet to discover.
+objects are available for assignment when launching a server.  enStratus discovers names of groups and classes but not the actual content. If you make a change to the content of an existing group or class that enStratus has discovered, you do not need to wait for enStratus to rediscover that group or class. However if you add a new group or class, it will not be immediately visible in enStratus. The same applies for deleting groups and roles from Puppet.
 
 This will become clearer when you launch a server the first time.
 

@@ -171,7 +171,7 @@ Make note of the PSK and the certificate, you will need to provide these to enSt
 .. warning:: ``espm`` will refuse to overwrite any existing settings or certificates. The
    generated PSK and certificate are unique to each run of ``espm_setup``. If you change
    these or regenerate them, enStratus will no longer be able to communicate with the agent.
-   You will have to delete and read the account in enStratus with the new values.
+   You will have to delete and recreate the account in enStratus with the new values.
 
 Starting up
 ~~~~~~~~~~~~
@@ -194,7 +194,7 @@ which starts ``espm`` in the foreground
 
 
 We do not provide any sort of init script and logging is done to STDOUT. You are free to
-wrap ``espm`` in the process monitor/init system of your choosing. We will be happy,
+wrap ``espm`` in the process monitor/init system of your choosing. enStratus will be happy,
 however, to work with you on getting it running with your init system.
 
 Security

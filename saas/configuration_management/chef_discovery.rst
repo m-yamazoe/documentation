@@ -42,11 +42,7 @@ Asynchronous Discovery
    you expect to see.  As the page says, changes on the Chef server may not be immediately
    reflected.  Currently there is no way to force a refresh of the discovery process.
 
-Note that the asynchronous nature ONLY affects the ability of enStratus to know what
-objects are available for assignment when launching a server.  enStratus does not store
-copies of the actual cookbooks. If you make a change to an existing cookbook or recipe
-that enStratus has discovered, it is not necessary that enStratus have discovered this
-change unless you are adding a new recipe that it has yet to discover.
+Note that the asynchronous nature ONLY affects the ability of enStratus to know what objects are available for assignment when launching a server. enStratus discovers names of cookbooks and the names of the recipes they contain, but does not discover the content. If you make a change to the content of an existing cookbook, recipe or role that enStratus has discovered, you do not need to wait for enStratus to rediscover that cookbook, role or recipe. However if you add a NEW recipe to a cookbook, it will not be immediately visible in enStratus. The same applies for deleting a recipe from a cookbook.
 
 This will become clearer when you launch a server the first time.
 
