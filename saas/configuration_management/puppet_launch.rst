@@ -6,7 +6,7 @@ Now that we have all the prerequisites in place, we're going to launch an instan
 
 Launching an image
 ~~~~~~~~~~~~~~~~~~~
-From the Machine Images screen, we're going to launch the image that we just registered with enStratus. The steps are similar to the previous launch except we're now going to set options on the "Configuration Management" tab.
+From the Machine Images screen, we're going to launch the image that we just registered with enStratus. The steps are similar to the previous launch except that now options are going to be set on the "Configuration Management" tab.
 
 .. warning:: Please ensure that the image you are launching contains the enStratus logo in the list. Configuration Management (and also advanced automation with Deployments) will **NOT** work without the enStratus agent installed.
 
@@ -17,7 +17,7 @@ You can set any options you'd like but we're going to focus on the "Configuratio
    :align: center
    :scale: 10 %
 
-You can see from this screen that I'm assigning a group (``compliance_only``). I've also added a few things to the run list:
+You can see from this screen that the server has been assigned the group (``compliance_only``) and a few things have been added to the run list:
 
 * the classes ``motd`` and ``wordpress``
 * some parameters to be used for the wordpress module
@@ -35,7 +35,7 @@ Once the server "phones home", enStratus will make a call back to the agent to b
 
 .. tip:: If enStratus gets a conflict on creation of the node, due to its name it will take the existing name you specified and append a millisecond timestamp to the name. It will then attempt the registration process again.
 
-If you switch over to your PE2.5 console, you can see that the node was already registered and we're just waiting for it to check in:
+If you switch over to your PE2.5 console, you can see that the node was already registered and Puppet is waiting for it to check in:
 
 .. figure:: ./images/pe-console-new-node.png
 	:alt: New PE node
@@ -48,7 +48,7 @@ You can track the progress of this via the "Logs" menu option:
    :align: center
    :scale: 10 %
 
-As you can see, we're populating the hosts file and copying some other things around that were passed down via the agent.
+As you can see, enStratus is populating the hosts file and copying some other things around that were passed down via the agent.
 
 This process will take some time depending on the length of your bootstraps. You can use the "Tail" option to watch the agent log.
 When the Puppet run is complete, it will send the full log of the run back to the agent. This is very helpful for debugging any issues in bootstrap:
@@ -58,7 +58,7 @@ When the Puppet run is complete, it will send the full log of the run back to th
    :align: center
    :scale: 10 %
 
-At this point your instance has launched and should be working as defined by your Puppet modules (assuming those work). You can see from the report in the PE2.5 Console that we have some work to do with our modules!
+At this point your instance has launched and should be working as defined by your Puppet modules (assuming those work). You can see from the report in the PE2.5 Console that there is some work to do with these modules.
 
 .. figure:: ./images/puppet-node-run-peconsole.png
 	:alt: PE Console Node Run

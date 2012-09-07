@@ -54,8 +54,8 @@ As you can see, enStratus is standing in for the ``knife bootstrap`` process.
 
 .. note:: enStratus does not set up any cron jobs or run ``chef-client`` in daemon mode.
    This is a site-specific setting and should be managed in your Chef cookbooks. enStratus is
-   only concerned about the initial bootstrap at this point. enStratus will never initiate a
-   client run outside of this initial bootstrap except when used in Deployments.
+   only concerned about the initial bootstrap at this point. enStratus does not currently initiate any
+   `chef-client` runs outside of this initial bootstrap except when used in Deployments.
    
 Customizing the bootstrap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -91,8 +91,8 @@ Finally the puppet client will be run with the following invocation:
 
 .. note:: enStratus does not set up any cron jobs or run ``puppet agent`` in daemon mode.
    This is a site-specific setting and should be managed in your Puppet modules. enStratus is
-   only concerned about the initial bootstrap at this point. enStratus will never initiate a
-   puppet run outside of this initial bootstrap except when used in Deployments.
+   only concerned about the initial bootstrap at this point. enStratus does not currently initiate any
+   puppet runs outside of this initial bootstrap except when used in Deployments.
 
 It's worth noting here that enStratus has removed the certificate signing step entirely.
 Since we generate and sign the certificates BEFORE we launch the instance, the initial run

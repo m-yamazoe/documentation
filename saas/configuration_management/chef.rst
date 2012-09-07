@@ -18,7 +18,7 @@ Prerequisites
 
 There are a few prerequisites required for end-to-end automation using Chef with enStratus:
 
-* A working Chef server or Opscode Hosted Chef account (This step is up to you)
+* A working Chef server or Opscode Hosted Chef account
 * A valid set of credentials to the Chef server
 * A registered image in the cloud with enStratus agent v17 or higher
 

@@ -16,7 +16,7 @@ Prerequisites
 There are a few prerequisites required for end-to-end automation using Puppet with
 enStratus:
 
-* A working PE2.5 Server (This step is up to you)
+* A working PE2.5 Server
 * The enStratus ``espm`` agent installed on the SAME server as PE2.5
 * Python 2.6 on the PE2.5 server (for ``espm``)
 * A registered image in the cloud with enStratus agent v17 or higher
