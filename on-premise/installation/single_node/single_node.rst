@@ -94,7 +94,7 @@ Here's a "one-liner"
 
 .. code-block:: bash
 
-   apt-get update && apt-get -y upgrade && curl -L http://www.opscode.com/chef/install.sh | sudo bash && apt-get -y install libmysqlclient-dev build-essential && /opt/chef/embedded/bin/gem install mysql
+   apt-get update && apt-get -y upgrade && curl -L http://www.opscode.com/chef/install.sh | sudo bash && apt-get -y install unzip libmysqlclient-dev build-essential && /opt/chef/embedded/bin/gem install mysql
 
 
 Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
