@@ -120,12 +120,7 @@ Extract Chef-Solo Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The installation chef-solo package will be provided to you by an enStratus engineer.
-Extract it. You will see something like this.
-
-.. code-block:: bash
-
-   [root@localhost es-onpremise-chef-solo]# ls 
-   classes  cookbooks  enstratus-utilities.jar README.md  roles  single_node.json  solo.rb
+Extract it.
 
 Download and Prepare the JDK and JCE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +140,7 @@ Extract the jdk, so you get some thing like jdk1.6.0_33 as a directory. Rename (
 
 .. code-block:: bash
 
-    mv jdk1.6.0_33 jdk
+    mv jdk1.6.0_34 jdk
 
 Tar that directory into cookbooks/enstratus/files/default/jdk.tar.gz
 

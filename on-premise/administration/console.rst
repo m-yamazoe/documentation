@@ -141,9 +141,22 @@ An example of a backup is shown here, excluding the log files in this case.
 
 .. code-block:: bash
 
-   cd /services/console/
-   tar -czf /consoleService.tar.gz --exclude='tomcat/logs/*' . > /dev/null 2>&1
-
+   #!/bin/bash
+   
+   TAR=/bin/tar
+   GZIP=/bin/gzip
+   
+   DIR=/var/enstratus/backups
+   BASE=console
+   DA=`date +%Y%m%d-%H%M%S`
+   
+   FILE=${DIR}/${BASE}-${DA}.tar.gz
+   
+   find ${DIR} -type f -iname "*.gz" -mtime +2 | xargs rm -f
+   
+   cd /services/${BASE}
+   $TAR -czf ${FILE}  --exclude='content/content/*' --exclude='content/page/*' --exclude='tomcat/temp/*' --exclude='tomcat/logs/*' . > /dev/null 2>&1
+   chmod 700 ${FILE}
 
 Databases
 ~~~~~~~~~

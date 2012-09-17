@@ -138,8 +138,24 @@ log directory.
 
 .. code-block:: bash
 
+   #!/bin/bash
+   
+   TAR=/bin/tar
+   GZIP=/bin/gzip
+   
+   DIR=/var/enstratus/backups
+   BASE=worker
+   DA=`date +%Y%m%d-%H%M%S`
+   
+   FILE=${DIR}/${BASE}-${DA}.tar.gz
+   
+   find ${DIR} -type f -iname "*.gz" -mtime +2 | xargs rm -f
+   
+   FILE=${DIR}/${BASE}-${DA}.tar.gz
+   
    cd /services/worker/
-   tar -czf workerService.tar.gz --exclude='log/*' . > /dev/null 2>&1
+   $TAR -czf ${FILE}  --exclude='log/*' . > /dev/null 2>&1
+   chmod 700 ${FILE}
 
 Databases
 ~~~~~~~~~
