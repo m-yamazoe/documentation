@@ -1,6 +1,92 @@
 Post Install
 ------------
 
+Helpful Aliases
+~~~~~~~~~~~~~~~
+
+If you have completed a single-node install of enStratus, we have included for you a
+helpful set of aliases for starting and stopping enStratus services as well as shortcuts
+for viewing logs.
+
+On a single-node install, all of these will work. On a multi-node installation, only the
+aliases that reference installed components will apply. 
+
+.. code-block:: bash
+
+   # KM Aliases
+   alias startKM='/etc/init.d/enstratus-km start'
+   alias stopKM='/etc/init.d/enstratus-km stop'
+   alias lessKM='less /services/km/tomcat/logs/catalina.out'
+   alias tailKM='tail -f /services/km/tomcat/logs/catalina.out'
+   
+   # Dispatcher Aliases
+   alias startDispatcher='/etc/init.d/enstratus-dispatcher start'
+   alias stopDispatcher='/etc/init.d/enstratus-dispatcher stop'
+   alias tailDispatcher='tail -f /services/dispatcher/tomcat/logs/catalina.out'
+   alias lessDispatcher='less /services/dispatcher/tomcat/logs/catalina.out'
+   
+   # Console Aliases
+   alias startConsole='/etc/init.d/enstratus-console start'
+   alias stopConsole='/etc/init.d/enstratus-console stop'
+   alias tailConsole='tail -f /services/console/tomcat/logs/catalina.out'
+   alias lessConsole='less /services/console/tomcat/logs/catalina.out'
+   
+   # API Aliases
+   alias startApi='/etc/init.d/enstratus-api start'
+   alias stopApi='/etc/init.d/enstratus-api stop'
+   alias tailApi='tail -f /services/api/tomcat/logs/catalina.out'
+   alias lessApi='less /services/api/tomcat/logs/catalina.out'
+   
+   # Monitor Aliases
+   alias startMonitors='/etc/init.d/enstratus-monitor start'
+   alias stopMonitors='/etc/init.d/enstratus-monitor stop'
+   
+   # Worker Aliases
+   alias startWorkers='/etc/init.d/enstratus-workers start'
+   alias stopWorkers='/etc/init.d/enstratus-workers stop'
+
+To access these aliases: issue the following command when you are the root user:
+
+.. code-block:: bash
+
+   # source ~/.bashrc
+
+or
+
+.. code-block:: bash
+
+   # . ~/.bashrc
+
+if you prefer
+
+Now, you can start and tail the dispatcher logs in one step by combining:
+
+.. code-block:: bash
+
+   # startDispatcher && tailDispatcher
+
+Take care to not run this command multiple times in that form, or else you will get
+multiple dispatcher processes running.
+
+If the dispatcher is already running, simply issue:
+
+.. code-block:: bash
+
+   # tailDispatcher
+
+to start tailing the log.
+
+If you just want to **view** the dispatcher log, issue the command:
+
+.. code-block:: bash
+
+   # lessDispatcher
+
+and the unix program called ``less`` will be used to open the dispatcher log.
+
+enStratus Services
+~~~~~~~~~~~~~~~~~~
+
 Once the installation successfully completes, it's time to start the enStratus services.
 Do this in the following order:
 
