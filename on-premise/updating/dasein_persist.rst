@@ -11,9 +11,11 @@ maintained by enStratus Chief Technology Officer George Reese. For more informat
 Dasein, please see the following:
 
 
-`Dasein Sourceforge <http://dasein-cloud.sourceforge.net/>`_
+`Dasein Persist <http://sourceforge.net/projects/dasein-persist/>`_
 
-`Dasein GitHub <https://github.com/greese/dasein-cloud>`_
+`Dasein on Sourceforge <http://dasein-cloud.sourceforge.net/>`_
+
+`Dasein on GitHub <https://github.com/greese/dasein-cloud>`_
 
 Updating
 ~~~~~~~~
