@@ -3,34 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+Welcome to the enStratus Software-as-a-Service (SaaS) documentation portal. Use the menu at left to learn more 
+about using our SaaS product.
 
-enStratus Documentation
-=======================
-
-Welcome to the enStratus documentation portal. Documentation is divided into four
-sections, also linked above. Each section has information accessible through the
-navigation menu at left.
-
-`On-Premise <http://on-premise.enstratus.com>`_ : Information for installing, configuring,
-customizing, and administering enStratus cloud governance software as part of an
-on-premise solution.
-
-`SaaS <http://docs.enstratus.com>`_ : enStratus SaaS operators manual. Information
-on how to use cloud.enstratus.com. 
-
-`Advanced Automation <http://automation.enstratus.com>`_ : Advanced automation topics. How
-to automate.
-
-`enStratus Agent <http://agent.enstratus.com>`_ : enStratus Agent information.
-Installation and operation.
-
-New Content
------------
-
-`Notifications <http://docs.enstratus.com/console/notifications.html>`_
-
-`Identify and Access Management <http://docs.enstratus.com/users/iam.html>`_
-
+.. figure:: ./images/serverActions.png
+   :width: 1275 px
+   :height: 824 px
+   :scale: 70 %
+   :align: center
 
 .. toctree::
    :maxdepth: 4
