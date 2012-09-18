@@ -1,6 +1,13 @@
 Post Install
 ------------
 
+MySQL
+~~~~~
+
+The root password for MySQL was generated at the time of installation. The password will
+be located in ``/etc/mysql/grants.sql`` on Debian derivatives and
+``/etc/mysql_grants.sql`` on RHEL and CentOS.
+
 Helpful Aliases
 ~~~~~~~~~~~~~~~
 
