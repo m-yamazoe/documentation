@@ -26,5 +26,6 @@ more about managing an enStratus on-premise installation.
    architecture/architecture
    installation/installation
    administration/administration
+   updating/updating
    troubleshooting/troubleshooting
    advanced/advanced
