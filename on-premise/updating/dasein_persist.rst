@@ -21,7 +21,7 @@ Updating
 ~~~~~~~~
 
 There are two primary jars that implement the dasein functionality in enStratus. They are
-reference in the form:
+referenced in the form:
 
 #. dasein-persist-year.month.version.jar
 #. dasein-util-year.month.version.jar
