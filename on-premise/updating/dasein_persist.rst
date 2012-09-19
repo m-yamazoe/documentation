@@ -90,6 +90,20 @@ jars with older version numbers:
    /services/monitor/lib/
    /services/worker/lib/
 
+.. warning:: Remember to chown enstratus:enstratus any files that are updated.
+
+   ``chown enstratus:enstratus /services/console/tomcat/webapps/ROOT/WEB-INF/lib/dasein-persist-2012.08.5.jar``
+
+   ``chown enstratus:enstratus /services/api/tomcat/webapps/ROOT/WEB-INF/lib/dasein-persist-2012.08.5.jar``
+
+   ``chown enstratus:enstratus /services/km/tomcat/webapps/ROOT/WEB-INF/lib/dasein-persist-2012.08.5.jar``
+
+   ``chown enstratus:enstratus /services/dispatcher/tomcat/webapps/ROOT/WEB-INF/lib/dasein-persist-2012.08.5.jar``
+
+   ``chown enstratus:enstratus /services/monitor/lib/dasein-persist-2012.08.5.jar``
+
+   ``chown enstratus:enstratus /services/worker/lib/dasein-persist-2012.08.5.jar``
+
 3. Edit the following files:
 
 .. code-block:: bash
