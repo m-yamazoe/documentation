@@ -6,6 +6,8 @@
 Welcome to the enStratus Software-as-a-Service (SaaS) documentation portal. Use the menu at left to learn more 
 about using our SaaS product.
 
+|
+
 .. figure:: ./images/serverActions.png
    :width: 1275 px
    :height: 824 px

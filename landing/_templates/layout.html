@@ -1,0 +1,37 @@
+{% extends "!layout.html" %}
+{% block sidebartoc %}
+    {{ super() }}
+    {{ toctree() }}
+
+    <h3 style="margin-top: 1.5em;">{{ _('Topics') }}</h3>
+      <div class="links"><a href="http://on-premise.enstratus.com/">On-Premise enStratus</a></div>
+      <div class="links"><a href="http://saas.enstratus.com">SaaS enStratus</a></div>
+      <div class="links"><a href="http://automation.enstratus.com/">Advanced Automation</a></div>
+      <div class="links"><a href="http://agent.enstratus.com/">enStratus Agent</a></div>
+      <div class="links"><a href="http://tutorials.enstratus.com/">Tutorials</a></div>
+    <h3 style="margin-top: 1.5em;">{{ _('Documents') }}</h3>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Security WP.pdf">Security Whitepaper</a></div>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Identity & Access Controls WP.pdf">Identify & Access Controls</a></div>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/Master Enterprise Cloud Mgmt WP.pdf">Understanding Cloud Management</a></div>
+    <h4 style="margin-top: 1.5em;">{{ _('API (PDF Downloads)') }}</h4>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/enStratus_API_2012-06-15">API - June 2012</a></div>
+      <div class="links"><a href="http://es-content.s3.amazonaws.com/enStratus_API_2012-04-12">API - April 2012</a></div>
+{%- endblock %}
+
+
+{% block footer %}
+  {{ super() }}
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30212947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+{% endblock %}
