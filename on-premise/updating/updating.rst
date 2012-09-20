@@ -15,3 +15,5 @@ to take effect.
    :hidden:
 
    dasein_persist
+   dasein_cloud
+
