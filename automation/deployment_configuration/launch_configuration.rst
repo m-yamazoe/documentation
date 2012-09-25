@@ -41,24 +41,23 @@ Manage Launch Configuration, General Information
    The second approach is to use parameters as shown in the figure above. The available
    parameters are:
    
-   * {tier} name of the tier this server is running in.
-   * {group} currently resolves to tier name, for backwards compatibility.
-   * {count} count of this server (sequential numbering from 1 for a tier.)
-   * {role} one of: CLUSTER NODE, INDEPENDENT NODE, MASTER, REPLICANT, STANDALONE (converted
-     to lowercase string)
-   * {type} one of: LOAD, SERVICE, CLUSTERED DATABASE, REPLICATED DATABASE, UNKNOWN
-     (converted to lowercase string)
-   * {zone} the provider zone ID where the server is running.
-   * {dc} resolves the same as zone above.
-   * {region} the provider region ID where the server is running.
-   * {ip} reserved address (public IP) of the server.
-   * {year} launch year of the server.
-   * {day} launch day of the server.
-   * {hour} launch hour of the server.
-   * {minute} launch minute of the server.
-   
-   This approach has the advantage of uniquely naming servers as they join/leave a tier in an
-   intelligent manner.
+    * {tier} name of the tier this server is running in.
+    * {group} currently resolves to tier name, for backwards compatibility.
+    * {count} count of this server (sequential numbering from 1 for a tier.)
+    * {role} one of: CLUSTER NODE, INDEPENDENT NODE, MASTER, REPLICANT, STANDALONE (converted to lowercase string)
+    * {type} one of: LOAD, SERVICE, CLUSTERED DATABASE, REPLICATED DATABASE, UNKNOWN (converted to lowercase string)
+    * {zone} the provider zone ID where the server is running.
+    * {dc} resolves the same as zone above.
+    * {region} the provider region ID where the server is running.
+    * {year} launch year of the server.
+    * {day} launch day of the server.
+    * {hour} launch hour of the server.
+    * {minute} launch minute of the server.
+    * {second} launch second of the server.
+    * {millisecond} launch millisecond of the server.
+    * {timestamp} luanch timestamp of the server in milliseconds.
+
+    This approach has the advantage of uniquely naming servers as they join/leave a tier in an intelligent manner.
 
 #. **Recovery Point**
 
