@@ -192,6 +192,12 @@ Create the download client:
 
 .. code-block:: powershell
 
+   $client = new-object System.Net.WebClient
+
+Then:
+
+.. code-block:: powershell
+
    $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/PSCX-1.2.msi',
    'C:\Users\Administrator\Desktop\PSCX-1.2.msi')
 
