@@ -10,8 +10,8 @@ In the enStratus console, go to Compute > Machine Images. Once you have located 
 you wish to launch, select Launch from the actions menu.
 
 .. figure:: ./images/2008_1.png
-   :height: 450px
-   :width: 1400 px
+   :height: 330px
+   :width: 1381 px
    :scale: 55 %
    :alt: Launch 2008 Instance
    :align: center
@@ -44,9 +44,9 @@ get password.
    get password appears in the actions menu.
 
 .. figure:: ./images/2008_3.png
-   :height: 250px
-   :width: 900 px
-   :scale: 95 %
+   :height: 433px
+   :width: 1414 px
+   :scale: 65 %
    :alt: Server Actions, Get Password
    :align: center
 
@@ -172,6 +172,25 @@ To modify the windows firewall:
 
    Modify Firewall Scope
 
+Install Oracle Java JDK
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The enStratus agent requires a Java JDK 7 installed. Oracle JDK installer must be obtained from the www.oracle.com, and its license accepted before starting the download
+
+ 1. Start IE
+
+ 2. Go to `Java downloads`_ area at oracle.com
+
+ .. _Java downloads: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+ 3. Go down to the Java SE Development Kit 7 section
+
+ 4. Click the checkbox to accept the License Agreement
+
+ 5. Click the correct JDK installer for the server architecture (32 or 64 bits). 
+
+ 6. From the Windows explorer double-click the installer file and proceed with the installation, default options are fine.
+
 Install the Agent
 ~~~~~~~~~~~~~~~~~
 
@@ -182,16 +201,19 @@ Install the Agent
 
 2. Run the following PowerShell commands to download the required files:
 
-Set the execution policy to unrestricted:
+   Set the execution policy to unrestricted:
 
-.. code-block:: powershell
+   .. code-block:: powershell
  
-   Set-ExecutionPolicy Unrestricted
+      Set-ExecutionPolicy Unrestricted
 
-Create the download client:
+   Create the download client:
 
-.. code-block:: powershell
+   .. code-block:: powershell
 
+      $client = New-Object System.Net.WebClient
+
+<<<<<<< HEAD
    $client = new-object System.Net.WebClient
 
 Then:
@@ -200,101 +222,109 @@ Then:
 
    $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/PSCX-1.2.msi',
    'C:\Users\Administrator\Desktop\PSCX-1.2.msi')
+=======
+   Download Powershell Community Extensions
+>>>>>>> 83408e01b5a13827f769526b898273bbe189eaba
 
-Download the Sun Java 7 JDK and install it.
+   .. code-block:: powershell
 
-Download the enStratus Agent:
+      $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/PSCX-1.2.msi', '.\PSCX-1.2.msi')
 
-.. code-block:: powershell
+   Download the enStratus Agent for the right server architecture:
 
-   $client.DownloadFile('http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip',
-   'C:\Users\Administrator\Desktop\enstratus-agent-windows-64bit-latest.zip')
+   **64bits**
 
-Download the MS C Runtime Library:
+   .. code-block:: powershell
 
-.. code-block:: powershell
+      $client.DownloadFile('http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip', '.\enstratus-agent-windows-64bit-latest.zip')
 
-   $client.DownloadFile('http://windows-agent-files.s3.amazonaws.com/msvcr71.zip',
-   'C:\Users\Administrator\Desktop\msvcr71.zip')
+   **32bits**
+
+   .. code-block:: powershell
+
+      $client.DownloadFile('http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip',  '.\enstratus-agent-windows-32bit-latest.zip')
+
 
 3. Install Powershell Extensions:
 
-   Double-click PSCX-1.2.msi to install the PowerShell Community Extensions, accepting all
+   From Windows Explorer, Double-click PSCX-1.2.msi to install the PowerShell Community Extensions, accepting all
    defaults during installation.
 
-4. Install Java: 
+4. Extract the enStratus Agent 
 
-   Double-click jdk-7-windows-x64.exe, accepting all defaults during installation.
-   Set the JAVA_HOME environment variable, by entering the following into
+   Right-click on enstratus-agent-windows-64bit-latest.zip (or enstratus-agent-windows-32it-latest.zip) and select "Extract All".
 
-.. code-block:: powershell
-
-   $env:JAVA_HOME = "C:\Program Files\Java\jdk1.7.0"
-
-5. Install the C runtime library:
-
-   Right-click on msvcr71.zip and select "Extract All". Use the default extract
-   location. From the folder which is created, copy the extracted msvcr71.dll file to
-   C:\Program Files\Java\jdk1.7.0\jre\bin\
-
-6. Extract the enStratus Agent 
-
-   Right-click on enstratus-agent-windows-64bit-latest.zip and select "Extract All".
-
-   Change the location to C:\Program Files\enstratus-agent-windows-64bit-latest, and
-   click Next.
 
    In PowerShell, change the location to the enStratus install directory:
 
-.. code-block:: powershell
+   .. code-block:: powershell
    
-   cd C:\Program Files\enstratus-agent-windows-64bit-latest
+      cd enstratus-agent-windows-*/enstratus
 
-7. Install the agent:
+5. In PowerShell set the JAVA_HOME environment variable 
+
+   The exact value of the JAVA_HOME depends on the version of the JDK and where the JDK was installed. At the time of writting the latest version is JDK 7u5
+
+   .. code-block:: powershell
+
+      $env:JAVA_HOME = "C:\Program Files\Java\jdk1.7.0_05"
+
+
+6. Install the agent:
 
    Install the enStratus Agent. To do so, you will need to enter the appropriate cloud
    provider and environment values, listed below, and run the command:
 
-.. code-block:: powershell
+   .. code-block:: powershell
 
-   /install.ps1 <CLOUD PROVIDER> <ENVIRONMENT>
+      /install.ps1 <CLOUD PROVIDER> <ENVIRONMENT>
 
-Where <CLOUD PROVIDER> is a cloud provider of the list below:
+   Where <CLOUD PROVIDER> is a cloud provider of the list below:
 
-.. hlist::
-   :columns: 3
+      .. hlist::
+         :columns: 3
 
-   * Amazon
-   * Atmos
-   * ATT
-   * Azure
-   * CloudCentral
-   * CloudSigma
-   * CloudStack
-   * Eucalyptus
-   * GoGrid
-   * Google
-   * Nimbula
-   * OpenStack
-   * Rackspace
-   * Savvis
-   * ServerExpress
-   * Terremark
-   * VMware
+         * Amazon
+         * Atmos
+         * ATT
+         * Azure
+         * CloudCentral
+         * CloudSigma
+         * CloudStack
+         * Eucalyptus
+         * GoGrid
+         * Google
+         * Nimbula
+         * OpenStack
+         * Rackspace
+         * Savvis
+         * ServerExpress
+         * Terremark
+         * VMware
 
-Where <ENVIRONMENT> is either:
+   Where <ENVIRONMENT> is either:
 
-1. **production** - should be used by SaaS (cloud.enstratus.com) customers
-2. **staging** - should be used by on-premise customers using self-signed_certificates
+      1. **production** - should be used by SaaS (cloud.enstratus.com) customers
+      2. **staging** - should be used by on-premise customers using self-signed_certificates
 
-An example installation command for the Amazon EC2 cloud with enStratus SaaS is:
+   An example installation command for the Amazon EC2 cloud with enStratus SaaS is:
 
 
-.. code-block:: powershell
+   .. code-block:: powershell
 
-  ./install.ps1 Amazon production
+     ./install.ps1 Amazon production
 
-.. note:: It will take a few minutes for the agent to show up in the enStratus console.
+
+   In on-premise installs a third parameter must be added with the IP:port of the dispatcher server for that environment
+
+
+   .. code-block:: powershell
+
+      ./install.ps1 Amazon production dispatcherIP:3302
+
+
+   .. note:: It will take a few minutes for the agent to show up in the enStratus console.
+
 
 Confirming the Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -312,7 +342,7 @@ You should now see the “remote access” option if the agent has installed pro
 
    Confirming Agent Installation
 
-Select your account and click “Save”. After a few seconds, the account will shop up at the top of the list.
+Select your account and click “Save”. After a few seconds, the account will show up at the top of the list.
 
 .. figure:: ./images/2008_13.png
    :height: 250px
