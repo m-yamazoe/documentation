@@ -5,6 +5,8 @@ Welcome to the enStratus tutorials page. The goal of this section is to bring to
 power of enStratus as a cloud management, automation, and orchestration platform by
 providing clear instructions on "how to do stuff". 
 
+First, get started by running through the QuickStart guide. Then procede to the Wordpress Tutorial.
+
 During demonstrations and client visits, we often present an automation demonstration
 using the Wordpress content management system.
 
