@@ -114,8 +114,6 @@ On-premise Logs:  /services/dispatcher/tomcat/logs/catalina.out
 
 The next place is to verify that an icon appears within the enStratus console that shows connectivity.  Then by clicking actions -> logs to verify that the LOGGER functionality is successfully being sent from the VM to the agent and then to the console.
 
-
-
 .. figure:: ./images/centos_agent2.png
    :width: 1854 px
    :height: 271 px

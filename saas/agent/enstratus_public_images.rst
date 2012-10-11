@@ -11,7 +11,7 @@ Using a public image in automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: Images must be "registered" with the enStratus cloud management platform before
-   they can be used for automation. A "registered" will show the enStratus logo in the
+   they can be used for automation. A registered image will show the enStratus logo in the
    Registered column on Compute > Machine Images.
 
    Registration of images is part of a safety mechanism to ensure the agent is installed
