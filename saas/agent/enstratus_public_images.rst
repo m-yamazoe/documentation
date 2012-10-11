@@ -10,7 +10,17 @@ Public images can be searched for within enStratus under the `Compute/Machine Im
 Using a public image in automation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: Due to a current limitation with enStratus, our public images are not IMMEDIATELY available for automation purposes. They must first be launched from the public image first. This behaviour will add the image to your private `Machine Images` list. Once this is done, you have the option of imaging the server WITHIN enStratus or contacting us to make it registered in your account.
+.. note:: Images must be "registered" with the enStratus cloud management platform before
+   they can be used for automation. A "registered" will show the enStratus logo in the
+   Registered column on Compute > Machine Images.
+
+   Registration of images is part of a safety mechanism to ensure the agent is installed
+   on images prior to their use in automation.
+
+   The server should first be launched from the public image first. This behavior will add
+   the image to your private `Machine Images` list. Once this is done, you have the option of
+   imaging the server WITHIN enStratus or contacting us to make it registered in your
+   account.
 
 If you would like us to add any of our public images to your account, please do the following:
 
