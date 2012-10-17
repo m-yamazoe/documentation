@@ -79,17 +79,6 @@ You only need to download the packages once. They will be cached the first run i
 Chef will reuse those packages if the checksums match the defined
 ones.
 
-Overview
-~~~~~~~~
-
-The installation procedure will move through the following steps:
-
-#. Extract chef-solo package
-
-#. Download and prepare the JDK and JCE
-
-#. Install enStratus
-
 Installation
 ~~~~~~~~~~~~
 
