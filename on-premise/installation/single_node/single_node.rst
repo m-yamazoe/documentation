@@ -3,10 +3,19 @@
 Single Node
 -----------
 
-.. warning:: These instructions should be used for POC/testing only.
+This is the enStratus on-premise install built using Opscode chef-solo
 
-.. note:: These installation instructions have only been tested on the Linux operating
-   system, Ubuntu 10.04/12.04 LTS x86_64 release. 
+.. warning:: 
+
+   By default, this repository will work **OUT OF THE BOX** to install a standalone server
+   hosting all the enStratus components.  This is by design as the initial and primary use
+   case is for testing and POC.
+
+   This installer **CAN** be used to install multi-node production installs but it
+   requires more manual configuration.
+
+Components
+~~~~~~~~~~
 
 enStratus software can be installed on a single server, combining all software components:
 
@@ -30,91 +39,62 @@ enStratus software can be installed on a single server, combining all software c
 
 8. API
 9. Console Worker
-
-Installation Overview
-~~~~~~~~~~~~~~~~~~~~~
-
-For a single node installation, enStratus leverages the power of chef-solo to satisfy
-the software prerequisites. Once the prerequisite software is installed, installing
-enStratus software can proceed.
-
-The installation procedure will move through the following steps:
-
-#. Install Chef client
-
-#. Extract chef-solo package
-
-#. Download and prepare the JDK and JCE
-
-#. Generate keys 
-
-#. Edit installation attributes
-
-#. Install enStratus
+10. LDAP
 
 
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
 Provision a server (can be virtual, we often test using an m1.large instance in EC2) for
-the installation.
+the installation. Installation can also be done using local virtualization. These specs
+are for a single node installation
 
-**Recommended Operating Specifications**
+Minimum Requirements
+~~~~~~~~~~~~~~~~~~~~
 
-CPU: 4
+The bare minimum for virtualized installation is:
 
-Memory: 15 Gb
+* 2 VCPU
+* 8GB of memory
+* 15GB of disk (1GB is needed for the caching of enStratus software during installation. Another 1GB is needed for the final install)
+* 64-bit Ubuntu 10.04, 12.04, CentOS 5
 
-Storage: 60 Gb
+Recommended Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Architecture: 64-bit
+* 4 VCPU
+* 15GB of memory
+* 60GB of storage (this is primarly logging and data)
+* 64-bit Ubuntu 12.04
 
-An m1.xlarge will fill these requirements quite well. However, you can probably get by with
-an m1.large to save on costs.
+External connectivity
+~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: This installation requires external Internet connectivity.
+**This installation requires external Internet connectivity.**
 
-**Recommended Images**
+The installer pulls all requirements from the internet, including vendor OS repositories.
+You only need to download the packages once. They will be cached the first run in the
+`cache` directory.  
 
-Start with a generic EC2 image from `Alestic <http://alestic.com/>`_ or the equivalent in
-your environment. 
+Chef will reuse those packages if the checksums match the defined
+ones.
 
-Install Chef Client - Ubuntu/Debian
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overview
+~~~~~~~~
 
-To install the chef client, use the following steps:
+The installation procedure will move through the following steps:
 
+#. Extract chef-solo package
 
-1. apt-get update && apt-get -y upgrade
-2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
-3. apt-get -y install libmysqlclient-dev build-essential
-4. /opt/chef/embedded/bin/gem install mysql
+#. Download and prepare the JDK and JCE
 
-Here's a "one-liner"
+#. Install enStratus
 
-.. code-block:: bash
+Installation
+~~~~~~~~~~~~
 
-   apt-get update && apt-get -y upgrade && curl -L http://www.opscode.com/chef/install.sh | sudo bash && apt-get -y install unzip libmysqlclient-dev build-essential && /opt/chef/embedded/bin/gem install mysql
-
-
-Be sure you're installing from home/ubuntu, or edit solo.rb accordingly.
-
-Install Chef Client - Cent OS/Red Hat
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. warning:: Before you go further, disable selinux and reboot. Currently, the MySQL process will not
-   start properly without disabling selinux. 
-
-1. yum -y update && yum -y upgrade
-2. curl -L http://www.opscode.com/chef/install.sh | sudo bash
-3. yum -y install mysql-devel.x86_64
-4. /opt/chef/embedded/bin/gem install mysql
-
-Here's a "one-liner"
-
-.. code-block:: bash
-
-   yum -y update && yum -y upgrade && yum install curl && curl -L http://www.opscode.com/chef/install.sh | sudo bash && yum -y install mysql-devel.x86_64 && /opt/chef/embedded/bin/gem install mysql
+The following assumes competence with Linux, and command line utilities like ssh. If you
+don't use these utilities on a near daily basis, this installer is probably not for you.
 
 Extract Chef-Solo Package
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,11 +102,33 @@ Extract Chef-Solo Package
 The installation chef-solo package will be provided to you by an enStratus engineer.
 Extract it.
 
-Download and Prepare the JDK and JCE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The contents of the directory will be similar to:
 
-enStratus will not operate without the Java 6 JDK and the unlimited strength encryption
-provided for by the JCE library.
+.. hlist::
+   :columns: 3
+
+   * README.md
+   * TODO.md
+   * backup
+   * cache
+   * checksums
+   * classes
+   * cookbooks
+   * docs
+   * enstratus-utilities.jar
+   * json_templates
+   * local_settings
+   * roles
+   * setup.sh
+   * solo.rb
+
+Prepare the JDK and the JCE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Unfortunately, there is NO way to automatically install the JDK and JCE legally. This
+means that it is necessary to do some preparation work.
+
+enStratus will not operate without the Java 6 JDK and the unlimited strength encryption provided for by the JCE library.
 
 You will need to download the java 6 JDK:
 
@@ -136,176 +138,123 @@ You will also need to get the JCE:
 
 `JCE Download Page <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_
 
-Extract the jdk, so you get some thing like jdk1.6.0_33 as a directory. Rename (read: `mv` ) it: 
+Extract the jdk, so you get something like jdk1.6.0_33 as a directory. Rename (read: `mv` ) it: 
 
 .. code-block:: bash
 
-    mv jdk1.6.0_34 jdk
+   mv jdk1.6.0_33 jdk
 
 Tar that directory into cookbooks/enstratus/files/default/jdk.tar.gz
 
 .. code-block:: bash
 
-    tar -czf jdk.tar.gz jdk
-    mv jdk.tar.gz cookbooks/enstratus/files/default/
+   tar -czf cookbooks/enstratus/files/default/jdk.tar.gz jdk
 
 Move the jce directory: cookbooks/enstratus/files/default/jce
 
 .. code-block:: bash
 
-    mv jce cookbooks/enstratus/files/default/
+   mv jce cookbooks/enstratus/files/default/
 
-Key Generation
-~~~~~~~~~~~~~~
-
-As part of the installation process, you will have received a directory called `classes`
-and a file called `enstratus-utilities.jar`.
-
-.. note:: This command will only run on a system with java installed. Run this
-   command from your local machine or any machine with with Java installed.
-
-Run the command:
-
-.. code-block:: bash
-
-    java -cp enstratus-utilities.jar:./classes/ net.enstratus.deploy.GenerateKeys
-
-You will get output like:
-
-.. code-block:: text
-
-    dispatcherEncryptionKey=b%2MKnlmqVGIlGA6e%3T#QdYvxR&A0PeIC
-    accessKey=lk*zJgL&BJTAm$7j!TVb#AL6Hbhq5$
-    encryptedManagementKey=bd75e62e61c158f4df10a5d6448978d800067ab5dd1ade8d63528f53ea3b15e770ebb25331430114a1bb72663a6b03c5d55dc911c328d7f435270bcef52936f7
-    firstEncryptedAccessKey=3f7c501c59879aaa4631927bd164ffc64dc34b75bfe5f7f0a202f91533cc4495
-    consoleEncryptionKey=w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY(
-    secondEncryptedAccessKey=890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6
-
-You could use the ones right here, but it's best to generate your own, since anyone with
-these keys could potentially access your customer data.
-
-You will use these values to fill in the attributes in the next step.
-
-Edit Installation Attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the included single_node.json file or download one from here:
-
-`single_node.json <http://es-download.s3.amazonaws.com/single_node.json>`_ 
-
-Edit the file:
-
-`single_node.json`
-
-    Change console_url to what you want it to be. This will be the url you use to access the
-    enStratus console. Example: cloud.mycompany.com
-
-.. code-block:: bash
-
-   "console_url" = ""
-
-.. note:: In most cases, you'll have to make a hosts file entry for this url.
-
-Change console_ip to an appropriate value.
-
-.. code-block:: bash
-
-   "console_ip" = ""
-
-This value must be accessible to the console user. If you're installing in EC2, you most
-probably want to use the publicly addressable IP address. 
-
-.. note:: You'll need to open the firewall (security group) on port 443 to access the
-   console.
-
-Change source_cidr to the publicly addressable IP address of the installation host. If no
-publicly routable IP address is available, use the primary IP address of the host.
-
-.. code-block:: bash
-
-   "source_cidr" = ""
-
-The following values come from running:
-
-.. code-block:: bash
-
-   java -cp enstratus-utilities.jar:./classes/ net.enstratus.deploy.GenerateKeys
-
-in the previous step.
-
-.. code-block:: bash
-
-   "dispatcherEncryptionKey" = ""
-   "accessKey" = ""
-   "encryptedManagementKey" = ""
-   "firstEncryptedAccessKey" = ""
-   "consoleEncryptionKey" = ""
-   "secondEncryptedAccessKey" = ""
-
-
-An enStratus engineer will provide this attribute along with the license key:
-
-.. code-block:: bash
-
-    "download":{"password":"REPLACE_ME"}
-
-Example single_node.json
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: json
-
-   {
-     "run_list": [ 
-       "role[single_node]"
-     ],
-     "enstratus":{
-       "console_url":"solo.enstratus.com",
-       "license_key":"asdfasdfasdf123123123123",
-       "console_ip":"204.236.184.191",
-       "source_cidr":"204.236.184.191",
-       "dispatcherEncryptionKey":"b%2MKnlmqVGIlGA6e%3T#QdYvxR&A0PeIC",
-       "accessKey":"lk*zJgL&BJTAm$7j!TVb#AL6Hbhq5$",
-       "encryptedManagementKey":"bd75e62e61c158f4df10a5d6448978d800067ab5dd1ade8d63528f53ea3b15e770ebb25331430114a1bb72663a6b03c5d55dc911c328d7f435270bcef52936f7",
-       "firstEncryptedAccessKey":"3f7c501c59879aaa4631927bd164ffc64dc34b75bfe5f7f0a202f91533cc4495",
-       "consoleEncryptionKey":"w!h!WTa^Qu85cwD&NE[xsv#&BuikwL6R2-N_bNSOpAIY(",
-       "secondEncryptedAccessKey":"890e1013971b6fa826d37c2e910e79d014e620004931cabf4a09e3d73e8c09c6",
-       "download":{"password":"asdfasdfasdfasdfa"},
-       "database":{
-                   "credentials_password":"somepassword",
-                   "provisioning_password":"somepassword",
-                   "analytics_password":"somepassword",
-                   "console_password":"somepassword",
-                   "enstratus_console_password":"somepassword"
-                  },
-       "km":{
-             "xms":"512M",
-             "xmx":"1024M",
-             "init":"/services/km/bin",
-             "port":"2013",
-             "keystore":".keystore"
-            },
-       "dispatcher":{
-                     "port":"3302",
-                     "xms":"1024M",
-                     "xmx":"2048M"
-                    }
-     },
-     "MySQL":{
-       "bind_address":"0.0.0.0"
-     },
-     "rabbitmq":{
-       "version":"2.7.9"
-     },
-     "build_essential":{
-       "compiletime":true
-     }
-   }
-
-Install enStratus
+Running the setup
 ~~~~~~~~~~~~~~~~~
 
-Finally, it's time to install the enStratus software. As root:
+The setup script is designed to work out of the box with the single-node
+installation. There is a `setup.sh` script provided that will do configuration for
+you. At a minimum, `setup.sh` needs two settings passed to it:
+
+#. Your license key 
+#. Download password for the enStratus software. 
+
+These should have been provided to you by enStratus.
+
+Optionally, you can specify a `savedir` where you would like to save your settings.
+
+Help output
+^^^^^^^^^^^
 
 .. code-block:: bash
 
-   chef-solo -j single_node.json -c solo.rb
+   Usage: setup.sh [-h] [-e] -p <download password> -l <license key> [-s savename] [-c <console hostname>] 
+   [-n <number of nodes>] [-m <mapping string>] [-a <optional sourceCidr string>]
+
+   -p: The password for downloading enStratus
+   -l: The license key for enStratus
+   
+   For most single node installations, specify the download password and license key.
+   
+   optional arguments
+   ------------------
+   -h: This text
+   -e: extended help
+   -c: Alternate hostname to use for the console. [e.g. cloud.mycompany.com] (default: fqdn
+   of console node)
+   -a: Alternate string to use for the sourceCidr entry. You know if you need this.
+   -s: A name to identify this installation
+   -n: Number of nodes in installation [1,2,4] (default: 1)
+   -m: Mapping string [e.g. frontend:192.168.1.1,backend:backend.mydomain.com]
+
+For a single node, most users should run something similar to
+
+.. code-block:: bash
+
+  ./setup -p <the_password_here> -l <license_key_here> -c cloud.mycompany.com
+
+
+Running without a savedir
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   root@host# ./setup.sh -l XXXX -p YYYYY
+   Savedir not specified. Using temporary directory
+   ## CHECKING JDK and JCE setup under /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default
+   ## EXTRACTING temporary JDK - from /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default/jdk.tar.gz to /tmp
+   ## COPYING JCE jars to temporary JDK
+   Generating Keys
+   Creating local_settings//tmp/tmp.KZ1vPP28lG/genkeys.txt file
+   Writing JSON files to 'local_settings//tmp/tmp.KZ1vPP28lG/'
+   #Ready to run :
+   #
+   chef-solo -j local_settings//tmp/tmp.KZ1vPP28lG/single_node.json -c solo.rb
+
+Running with a savedir
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   root@host# ./setup.sh -s my_local_install -l XXXX -p YYYYY
+   Savedir my_local_install not found. Assuming new run...
+   
+   ## CHECKING JDK and JCE setup under /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default
+   ## EXTRACTING temporary JDK - from /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default/jdk.tar.gz to /tmp
+   ## COPYING JCE jars to temporary JDK
+   Generating Keys
+   Creating local_settings/my_local_install/genkeys.txt file
+   Writing JSON files to 'local_settings/my_local_install/'
+   #Ready to run :
+   #
+   chef-solo -j local_settings/my_local_install/single_node.json -c solo.rb
+
+Running the install with a previous savedir
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   root@host# ./setup.sh -s my_local_install -l XXXX -p YYYYY
+   Savedir my_local_install found..
+   
+   Existing config in use. Skipping password generation
+   ## CHECKING JDK and JCE setup under /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default
+   ## EXTRACTING temporary JDK - from /tmp/es-onpremise-chef-solo/cookbooks/enstratus/files/default/jdk.tar.gz to /tmp
+   ## COPYING JCE jars to temporary JDK
+   Reading existing keys from ./local_settings/my_local_install/
+   Writing JSON files to 'local_settings/my_local_install/'
+   #Ready to run :
+   #
+   chef-solo -j local_settings/my_local_install/single_node.json -c solo.rb
+
+This is CRITICAL if you want to be able to rerun the installation on the same machine.
+The installer uses chef-solo. Chef-solo does not persist any state between invocations in
+the same way that chef with a Chef server does. The `setup.sh` script is designed to allow
+you to persist that state between runs.
