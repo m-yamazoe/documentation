@@ -3,8 +3,8 @@ How to use this documentation site
 
 1. Download the sphinx utility:
 	- http://sphinx.pocoo.org/
-	- Install python setup tools ( sudo port install py26-setuptools )
-	- easy_install -U Sphinx 
+	- Install python setup tools ( sudo port install py-setuptools )
+	- sudo easy_install -U Sphinx 
 
 1. Clone the repository
 2. cd documentation/
