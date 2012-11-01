@@ -1,5 +1,8 @@
+
+
 Cloud Credentials
------------------
+~~~~~~~~~~~~~~~~~
+
 When the user enters cloud credentials into the enStratus console, those
 credentials are passed to the dispatcher via a webservices call. The
 console authenticates this call to the dispatcher using the encryption
@@ -20,7 +23,8 @@ each customer account. No global key exists and no key is ever stored on
 any file system within our infrastructure.
 
 Using Those Credentials
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
+
 When a user attempts to provision a resource that requires the use of
 the cloud credentials, the following process takes place.
 
@@ -42,7 +46,7 @@ to create images (such as non-EBS root instances) the credentials are written
 to disk just long enough for the image to be created.
 
 Credentials enStratus Supports
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In addition to supporting traditional passwords and encryption keys, enStratus
 is also application aware. As such it can securely store configuration files

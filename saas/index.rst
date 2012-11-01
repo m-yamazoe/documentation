@@ -47,3 +47,4 @@ New Content
    agent/agent
    api/api
    acct_settings/acct_settings
+   security/security
