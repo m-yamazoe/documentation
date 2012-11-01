@@ -76,7 +76,7 @@ Now that you have an with the enStratus agent installed, you connect in your Che
 Next Steps
 ~~~~~~~~~~
 
-At this point, you should be ready to start using enStratus. Visit our `documentation <http://docs.enstratus.com/>`_ for more info, or complete the Adavance Automation `Tutorial <ihttp://tutorials.enstratus.com/wordpressdemo/wordpressdemo.html>`_ to learn more about the enStratus features.
+At this point, you should be ready to start using enStratus. Visit our `documentation <http://docs.enstratus.com/>`_ for more info, or complete the Adavance Automation `Tutorial <http://tutorials.enstratus.com/wordpressdemo/wordpressdemo.html>`_ to learn more about the enStratus features.
 
 
   
