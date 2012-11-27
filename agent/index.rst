@@ -4,7 +4,6 @@
    contain the root `toctree` directive.
 
 
-.. include:: downloads/downloads.rst
 
 .. toctree::
    :maxdepth: 2

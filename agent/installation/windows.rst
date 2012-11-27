@@ -12,7 +12,7 @@ you wish to launch, select Launch from the actions menu.
 .. figure:: ./images/2008_1.png
    :height: 330px
    :width: 1381 px
-   :scale: 55 %
+   :scale: 65 %
    :alt: Launch 2008 Instance
    :align: center
 
@@ -23,8 +23,8 @@ Specify appropriate properties for your server and click Launch Server.
 .. note:: If you are using the Amazon cloud, do not specify a key pair.
 
 .. figure:: ./images/2008_2.png
-   :height: 650px
-   :width: 700 px
+   :height: 717 px
+   :width: 668 px
    :scale: 65 %
    :alt: Launch 2008 Instance
    :align: center
@@ -57,9 +57,9 @@ If your firewall isn’t already configured for RDP access, you will need to do 
 connecting. The default port for RDP is 3389.
 
 .. figure:: ./images/2008_4.png
-   :height: 650px
-   :width: 600 px
-   :scale: 65 %
+   :height: 550px
+   :width: 488 px
+   :scale: 75 %
    :alt: RDP
    :align: center
 
@@ -76,9 +76,9 @@ Update Windows
 2. Open Windows Update
 
 .. figure:: ./images/2008_6.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 464px
+   :width: 618 px
+   :scale: 85 %
    :alt: Update Windows
    :align: center
 
@@ -87,9 +87,9 @@ Update Windows
 3. Download and install the latest updates
 
 .. figure:: ./images/2008_7.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 292px
+   :width: 618 px
+   :scale: 85 %
    :alt: Update Windows
    :align: center
 
@@ -105,9 +105,9 @@ To download the agent installer, you need to change the Internet Explorer Enhanc
 3. Turn off the security confiuration for Administrators.
 
 .. figure:: ./images/IEESC.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 588 px
+   :width: 793 px
+   :scale: 75 %
    :alt: Internet Explorer Enhanced Security Configuration
    :align: center
 
@@ -129,18 +129,18 @@ Install the Agent
 2. If you don't have JDK installed on a new server instance, the installer will show the Prerequisites Wizard to guide you to install JDK from Oracle website. The enStratus Agent for Windows is dependent on Oracle JDK 7. Please download the suitable version of JDK and install it.
 
 .. figure:: ./images/prerequisite_wizard.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 429 px
+   :width: 549 px
+   :scale: 85 %
    :alt: Prerequisites Wizard
    :align: center
 
    Prerequisites Wizard
 
 .. figure:: ./images/JDK_install.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 381 px
+   :width: 508 px
+   :scale: 85 %
    :alt: JDK installation
    :align: center
 
@@ -149,9 +149,9 @@ Install the Agent
 3. After installing JDK, you can proceed to the next step.
 
 .. figure:: ./images/install_start.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 617 px
+   :width: 1018 px
+   :scale: 85 %
    :alt: Welcome to installer.
    :align: center
 
@@ -160,9 +160,9 @@ Install the Agent
 4. Installer will show you interactive dialogues to generate a configuration file. Please select the proper options in accordance with the information of your cloud service proviers.
 
 .. figure:: ./images/configuration_options.png
-   :height: 650px
-   :width: 950 px
-   :scale: 55 %
+   :height: 386 px
+   :width: 500 px
+   :scale: 85 %
    :alt: Configuration Options Dialogue
    :align: center
 
@@ -190,9 +190,9 @@ Go to your enStratus web console, and open up the Compute > Servers page.
 You should now see the “remote access” option if the agent has installed properly. Click on it.
 
 .. figure:: ./images/2008_12.png
-   :height: 450px
-   :width: 300 px
-   :scale: 65 %
+   :height: 285 px
+   :width: 207 px
+   :scale: 85 %
    :alt: Confirming Agent Installation
    :align: center
 
@@ -201,8 +201,8 @@ You should now see the “remote access” option if the agent has installed pro
 Select your account and click “Save”. After a few seconds, the account will show up at the top of the list.
 
 .. figure:: ./images/2008_13.png
-   :height: 250px
-   :width: 900 px
+   :height: 160 px
+   :width: 666 px
    :scale: 95 %
    :alt: Launch 2008 Instance
    :align: center
