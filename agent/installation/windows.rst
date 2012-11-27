@@ -13,26 +13,23 @@ you wish to launch, select Launch from the actions menu.
    :height: 330px
    :width: 1381 px
    :scale: 65 %
-   :alt: Launch 2008 Instance
+   :alt: Launch Instance
    :align: center
-
-   Launch 2008 Instance
 
 Specify appropriate properties for your server and click Launch Server. 
 
-.. note:: If you are using the Amazon cloud, do not specify a key pair.
+.. warning:: If you are using the Amazon cloud, do not specify a key pair.
 
-.. figure:: ./images/2008_2.png
-   :height: 717 px
-   :width: 668 px
+.. figure:: ./images/launchServer.png
+   :height: 644 px
+   :width: 605 px
    :scale: 65 %
-   :alt: Launch 2008 Instance
+   :alt: Launch Instance
    :align: center
 
-   Launch 2008 Instance
 
-.. warning:: The screenshot shows the server being launched with a size: micro. Please use
-   at least a small size (or equivalent) product offering. (768Mb Memory)
+.. note:: For optimal performance, use at least a small size (or equivalent) 
+ product offering. (768Mb Memory)
 
 RDP to the Server
 ~~~~~~~~~~~~~~~~~
@@ -43,6 +40,7 @@ get password.
 .. note:: You may have to wait up to 20 minutes after creating the server before
    get password appears in the actions menu.
 
+
 .. figure:: ./images/2008_3.png
    :height: 433px
    :width: 1414 px
@@ -50,11 +48,12 @@ get password.
    :alt: Server Actions, Get Password
    :align: center
 
-   Server Actions, Get Password
 
-RDP to the instance as the Administrator user with the password you just retrieved. Note:
-If your firewall isn’t already configured for RDP access, you will need to do so before
-connecting. The default port for RDP is 3389.
+RDP to the instance as the Administrator user with the password you just retrieved. 
+
+.. note::
+ If your firewall isn’t already configured for RDP access, you will need to do so before
+ connecting. The default port for RDP is 3389.
 
 .. figure:: ./images/2008_4.png
    :height: 550px
@@ -63,9 +62,8 @@ connecting. The default port for RDP is 3389.
    :alt: RDP
    :align: center
 
-   RDP
 
-Make sure your internet connection is working
+Confirm that your internet connection is working:
 
 Open up Internet Explorer by going to Start > Internet Explorer.
 
@@ -82,7 +80,6 @@ Update Windows
    :alt: Update Windows
    :align: center
 
-   Update Windows
 
 3. Download and install the latest updates
 
@@ -93,7 +90,6 @@ Update Windows
    :alt: Update Windows
    :align: center
 
-   Update Windows
 
 Change the Security Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,9 +107,8 @@ To download the agent installer, you need to change the Internet Explorer Enhanc
    :alt: Internet Explorer Enhanced Security Configuration
    :align: center
 
-   Internet Explorer Enhanced Security Configuration
 
-.. note:: If you concern the server's security, you need to turn on the option again after finishing the download.
+.. note:: Depending on your organization's security policies, you may want to turn on this option again after finishing the download.
 
 Download the Agent Installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,10 +118,11 @@ Refer to the Agent Downloads section.
 Install the Agent
 ~~~~~~~~~~~~~~~~~
 
-1. Run the installer. It is normally saved in 'Downloads' directory by default.
+1. Run the installer. It is saved in the 'Downloads' directory by default.
 
 
-2. If you don't have JDK installed on a new server instance, the installer will show the Prerequisites Wizard to guide you to install JDK from Oracle website. The enStratus Agent for Windows is dependent on Oracle JDK 7. Please download the suitable version of JDK and install it.
+2. If you don't have JDK installed on the server instance, the installer will show the Prerequisites Wizard to guide you to install 
+JDK from Oracle's website. The enStratus Agent for Windows is dependent on Oracle JDK 7. Please download the suitable version of the JDK and install it.
 
 .. figure:: ./images/prerequisite_wizard.png
    :height: 429 px
@@ -144,9 +140,9 @@ Install the Agent
    :alt: JDK installation
    :align: center
 
-   JDK installation
+   JDK Installation
 
-3. After installing JDK, you can proceed to the next step.
+3. After installing the JDK, you can proceed to the next step.
 
 .. figure:: ./images/install_start.png
    :height: 617 px
@@ -155,9 +151,8 @@ Install the Agent
    :alt: Welcome to installer.
    :align: center
 
-   Welcome to enStratus Agent Setup Wizard
 
-4. Installer will show you interactive dialogues to generate a configuration file. Please select the proper options in accordance with the information of your cloud service proviers.
+4. The installer will show you interactive dialogues to generate a configuration file. Select the proper options for your cloud service provider.
 
 .. figure:: ./images/configuration_options.png
    :height: 386 px
@@ -166,7 +161,6 @@ Install the Agent
    :alt: Configuration Options Dialogue
    :align: center
 
-   Configuration Options Dialogue
 
 .. list-table::
    :widths: 20 120
@@ -176,11 +170,18 @@ Install the Agent
    * - staging
      - should be used by on-premise customers using self-signed_certificates
 
-5. Also, it will check if you have prerequisite programs such as Powershell community extensions on the server and install the programs automatically.
+5. The installer will also check whether you have prerequisite programs such as Powershell community extensions on the server and install them automatically.
 
-6. You will see the agent icon from enStratus console after completing the installation.
+6. You will see the agent icon in the enStratus console after completing the installation.
 
-   .. note:: It will take a few minutes for the agent to show up in the enStratus console.
+.. figure:: ./images/agentAppears.png
+   :height: 223 px
+   :width: 367 px
+   :scale: 85 %
+   :alt: Agent in Console
+   :align: center
+
+.. note:: It will take a few minutes for the agent to appear in the enStratus console.
 
 Confirming the Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -196,7 +197,6 @@ You should now see the “remote access” option if the agent has installed pro
    :alt: Confirming Agent Installation
    :align: center
 
-   Confirming Agent Installation
 
 Select your account and click “Save”. After a few seconds, the account will show up at the top of the list.
 
@@ -207,7 +207,6 @@ Select your account and click “Save”. After a few seconds, the account will 
    :alt: Launch 2008 Instance
    :align: center
 
-   Launch 2008 Instance
 
 You can now RDP into the server. The enStratus agent is installed and working normally.
 
