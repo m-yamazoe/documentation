@@ -28,12 +28,15 @@ CentOS/RedHat x32/x64
 
 `CentOS/Redhat x32/x64 <http://es-download.s3.amazonaws.com/enstratus-agent-centos-latest.tar.gz>`_ fe9f6ab0349e767c75adb875a25edee8 Fri Oct  5 11:08:33 CDT 2012
 
-Windows Server 2003/2008 / Windows 7 x32/x64
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Windows 2003/2008 x32
+~~~~~~~~~~~~~~~~~~~~~
 
-`Windows Agent Installer <http://es-download.s3.amazonaws.com/enstratus-agent-windows-generic.exe>`_ 31afb88c2c79dd8f6a54bfeaf0f0490f 
+`Windows 2003/2008x32 <http://es-download.s3.amazonaws.com/enstratus-agent-windows-32bit-latest.zip>`_ db9b44d342008c3ccf229bad8c356048 Tue Sep  4 15:51:41 CDT 2012
 
-`Wrapper Script for Silent Install (Optional) <http://es-download.s3.amazonaws.com/install.bat>`_ 8afa3191bfc9fd1f7272f2352fe4b75f
+Windows 2003/2008 x64
+~~~~~~~~~~~~~~~~~~~~~
+
+`Windows 2003/2008x64 <http://es-download.s3.amazonaws.com/enstratus-agent-windows-64bit-latest.zip>`_ bd070c3f893c9f30e52bc3c95975b9e6 Tue Sep  4 15:51:42 CDT 2012
 
 SmartOS
 ~~~~~~~

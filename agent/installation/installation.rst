@@ -8,4 +8,5 @@ Installation
 
    rhel
    debian
-   windows
+   windows2008
+   windows2003
